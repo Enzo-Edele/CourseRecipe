@@ -707,6 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463372948}
+  - component: {fileID: 1463372949}
   m_Layer: 0
   m_Name: SpawnerArticle
   m_TagString: Untagged
@@ -728,6 +729,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463372949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463372947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9fc0f9a789d4d4a8beece8b181bc13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Knaki: {fileID: 2232721662580863876, guid: f62255ec86e82fd4681e97ee62523f67, type: 3}
 --- !u!1 &1967965299
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +932,22 @@ PrefabInstance:
     - target: {fileID: 6826704228455155434, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826704228455155437, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: 1.1513221
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826704228455155437, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.6591959
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826704228455155437, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
+      value: -0.77380335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826704228455155437, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
+      value: -0.8333057
       objectReference: {fileID: 0}
     - target: {fileID: 6826704228455155439, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
       propertyPath: m_Name
