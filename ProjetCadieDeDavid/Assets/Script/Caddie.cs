@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Caddie : MonoBehaviour
 {
+    public enum moveStates
+    {
+        Run,
+        Jump,
+        Death,
+    }
+
+    private static moveStates _MoveStates;
+    public static moveStates MoveStates;
+
     BoxCollider2D bc2d;
     float boxVar = 0.1f;
     float offsetVar = 0.03f;
@@ -27,6 +37,14 @@ public class Caddie : MonoBehaviour
         position.x = position.x + speed * horizontal * Time.deltaTime;
         position.y = position.y + speed * vertical * Time.deltaTime;
         transform.position = position;
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangeMoveState(moveStates.Jump);
+        }
+        else
+        {
+            ChangeMoveState(moveStates.Run);
+        }
  
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,5 +57,19 @@ public class Caddie : MonoBehaviour
         Vector2 offset = bc2d.offset;
         offset.y += offsetVar;
         bc2d.offset = offset;
+    }
+
+    public void ChangeMoveState(moveStates currentState)
+    {
+        _MoveStates = currentState;
+        switch(_MoveStates)
+        {
+            case moveStates.Run:
+                break;
+            case moveStates.Jump:
+                break;
+            case moveStates.Death:
+                break;
+        }
     }
 }
