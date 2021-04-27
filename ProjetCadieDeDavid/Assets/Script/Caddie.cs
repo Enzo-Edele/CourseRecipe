@@ -5,6 +5,9 @@ using UnityEngine;
 public class Caddie : MonoBehaviour
 {
     BoxCollider2D bc2d;
+    float boxVar = 0.1f;
+    float offsetVar = 0.03f;
+
     int capacité;
     int capacitéMax = 20;
 
@@ -31,10 +34,10 @@ public class Caddie : MonoBehaviour
         Articles recup = collision.GetComponent<Articles>();
         capacité -= 1;
         Vector2 box = bc2d.size;
-        box.y += 0.1f;
+        box.y += boxVar;
         bc2d.size = box;
         Vector2 offset = bc2d.offset;
-        offset.y += 0.03f;
+        offset.y += offsetVar;
         bc2d.offset = offset;
     }
 }
