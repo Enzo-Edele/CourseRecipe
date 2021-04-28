@@ -11,8 +11,8 @@ public class Caddie : MonoBehaviour
         Death,
     }
 
-    private static moveStates _MoveStates;
-    public static moveStates MoveStates;
+    private moveStates _MoveStates;
+    public moveStates MoveStates;
 
     BoxCollider2D bc2d;
     float boxVar = 0.1f;
@@ -24,9 +24,13 @@ public class Caddie : MonoBehaviour
     float speed = 20;
     float horizontal;
     float vertical;
+
+    Rigidbody2D rb2D;
+    float timer =5f;
     void Start()
     {
         bc2d = GetComponent<BoxCollider2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         capacité = capacitéMax;
     }
     void Update()
@@ -39,14 +43,24 @@ public class Caddie : MonoBehaviour
         transform.position = position;
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            ChangeMoveState(moveStates.Jump);
+            Jump();
         }
-        else
+        timer -=Time.deltaTime;
+        if(timer <0)
         {
             ChangeMoveState(moveStates.Run);
+            timer = 5f;
         }
- 
+        //Debug.Log(timer);
     }
+    void Jump()
+    {
+        Vector2 jump = this.transform.position;
+        jump.y += 10;
+        rb2D.velocity = jump;
+        ChangeMoveState(moveStates.Jump);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Articles recup = collision.GetComponent<Articles>();
@@ -65,8 +79,10 @@ public class Caddie : MonoBehaviour
         switch(_MoveStates)
         {
             case moveStates.Run:
+                //rb2D.gravityScale = 0;
                 break;
             case moveStates.Jump:
+                //rb2D.gravityScale = 1;
                 break;
             case moveStates.Death:
                 break;

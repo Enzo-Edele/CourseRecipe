@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EtaleBehaviour : MonoBehaviour
 {
-    Collider2D cd2D;
+    PlatformEffector2D effector2D;
     private void Start()
     {
-      //Layer a faire
+        effector2D = GetComponent<PlatformEffector2D>();
+    }
+
+    public void ChangeEffector2D(float rotation)
+    {
+        effector2D.rotationalOffset = rotation;
     }
 }
