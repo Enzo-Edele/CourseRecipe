@@ -7,8 +7,6 @@ public class EtaleBehaviour : MonoBehaviour
     PlatformEffector2D effector2D;
     [SerializeField]
     bool floor = false;
-    float time = 0;
-    float timer = 5;
     private void Start()
     {
         effector2D = GetComponent<PlatformEffector2D>();
