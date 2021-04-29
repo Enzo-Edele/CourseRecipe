@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7336077}
   - component: {fileID: 7336078}
   - component: {fileID: 7336079}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite-0002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7336074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -241,7 +241,7 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7336074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a03af5d050977343a003ed8fcb731d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor: 1
 --- !u!1 &198026645
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,13 +293,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198026645}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.6380153}
+  m_Offset: {x: 0, y: 1.957696}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -309,7 +310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.4, y: 0.47757864}
+  m_Size: {x: 6.4, y: 0.53085756}
   m_EdgeRadius: 0
 --- !u!212 &198026647
 SpriteRenderer:
@@ -383,7 +384,7 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198026645}
-  m_Enabled: 0
+  m_Enabled: 1
   m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
@@ -407,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a03af5d050977343a003ed8fcb731d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor: 0
 --- !u!1 &491089915
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +585,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: cadi (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2287222857548631851, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
+      propertyPath: etale.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287222857548631851, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
+      propertyPath: jumpPower
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287222857548631851, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
+      propertyPath: etale.Array.data[0]
+      value: 
+      objectReference: {fileID: 7336074}
+    - target: {fileID: 2287222857548631851, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
+      propertyPath: etale.Array.data[1]
+      value: 
+      objectReference: {fileID: 198026645}
+    - target: {fileID: 2287222857548631851, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
+      propertyPath: etaleGO
+      value: 
+      objectReference: {fileID: 7336074}
+    - target: {fileID: 2287222857548631851, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
+      propertyPath: etaleGO1
+      value: 
+      objectReference: {fileID: 198026645}
     - target: {fileID: 2287222857548631853, guid: 7d2027f6f284e2349821ed2c9645dd7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7033459
