@@ -25,7 +25,7 @@ public class Caddie : MonoBehaviour
 
     float spriteHeight;
     [SerializeField]
-    float speed = 20;
+    float speed = 500;
     [SerializeField]
     float jumpPower = 20;
     float horizontal;
@@ -45,6 +45,8 @@ public class Caddie : MonoBehaviour
 
     private void Update()
     {
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -53,8 +55,6 @@ public class Caddie : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 box = bc2d.size;
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
         Vector3 position = Camera.main.WorldToScreenPoint(this.transform.position);
         if(colliderFix)
         {

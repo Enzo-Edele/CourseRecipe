@@ -4,17 +4,55 @@ using UnityEngine;
 
 public class SpawnerArticle : MonoBehaviour
 {
-    [SerializeField]
-    GameObject Knaki;
+    public GameObject knaki, fraise, fromage, myrtille;
+    int tailleList;
+    List<GameObject> Rayon = new List<GameObject>();
+    GameObject articlesSelect, memory;
+    public enum Rayons
+    {
+        Rayon1,
+        Rayon2,
+        Rayon3
+    }
+    private Rayons _rayonActuel;
+    public Rayons _RayonsActuel
+    {
+        get
+        {
+            return _rayonActuel;
+        }
+    }
+
     Vector3 positionSpawn;
     float positionRnd;
-    float timeRnd;
-    float timer = 3;
+    float timer = 3, timeMin = 3, timeMax = 8;
 
-    GameObject memory;
     void Start()
     {
         positionSpawn = Camera.main.WorldToScreenPoint(transform.position);
+        this.RayonChange(Rayons.Rayon1);
+    }
+    public void RayonChange(Rayons newState)
+    {
+        _rayonActuel = newState;
+        switch (_rayonActuel)
+        {
+            case Rayons.Rayon1:
+                Rayon.Clear();
+                Rayon.Add(knaki);
+                Rayon.Add(fromage);
+                tailleList = Rayon.Count;
+                break;
+            case Rayons.Rayon2:
+                Rayon.Clear();
+                Rayon.Add(fraise);
+                Rayon.Add(myrtille);
+                tailleList = Rayon.Count;
+                break;
+            case Rayons.Rayon3:
+                Rayon.Clear();
+                break;
+        }
     }
     void Update()
     {
@@ -26,6 +64,15 @@ public class SpawnerArticle : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+
+        if(Input.GetKeyDown("1"))
+        {
+            this.RayonChange(Rayons.Rayon1);
+        }
+        else if (Input.GetKeyDown("2"))
+        {
+            this.RayonChange(Rayons.Rayon2);
+        }
     }
     void Generate()
     {
@@ -35,10 +82,10 @@ public class SpawnerArticle : MonoBehaviour
         positionSpawn.y = Screen.height * 1.1f;
         positionSpawn = Camera.main.ScreenToWorldPoint(positionSpawn);
         positionSpawn.z = 0;
-        if (Knaki != null)
+        if (knaki != null)
         {
-            Instantiate(Knaki, positionSpawn, Quaternion.identity);
+            Instantiate(Rayon[Random.Range(0, tailleList)], positionSpawn, Quaternion.identity);
         }
-        timer = Random.Range(2, 8);
+        timer = Random.Range(timeMin, timeMax);
     }
 }

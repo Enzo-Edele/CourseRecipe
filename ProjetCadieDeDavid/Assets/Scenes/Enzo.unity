@@ -166,7 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9fc0f9a789d4d4a8beece8b181bc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Knaki: {fileID: 2232721662580863876, guid: f62255ec86e82fd4681e97ee62523f67, type: 3}
+  knaki: {fileID: 2232721662580863876, guid: f62255ec86e82fd4681e97ee62523f67, type: 3}
+  fraise: {fileID: 7984065997605212525, guid: 935e9addfd118124e8047601873eae38, type: 3}
+  fromage: {fileID: 2550162714654118408, guid: 58fbc364abefd094f8ea92cd0d81e095, type: 3}
+  myrtille: {fileID: 1248781797410697530, guid: 0c2a51ec568579242a8363595feae484, type: 3}
 --- !u!1 &1825271714
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +342,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6826704228455155433, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6826704228455155434, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.21
@@ -382,6 +389,10 @@ PrefabInstance:
     - target: {fileID: 6826704228455155434, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826704228455155436, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
+      propertyPath: speed
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6826704228455155439, guid: 9155c99345a27b043b141a2fc461f287, type: 3}
       propertyPath: m_Name
