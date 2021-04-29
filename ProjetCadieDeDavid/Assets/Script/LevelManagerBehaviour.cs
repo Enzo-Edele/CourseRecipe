@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManagerBehaviour : MonoBehaviour
 {
     public float backgroundSpeed;
+    public int capaciteCaddie;
     public enum levelStates
     {
         Collect,

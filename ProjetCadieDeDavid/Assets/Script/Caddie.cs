@@ -11,58 +11,58 @@ public class Caddie : MonoBehaviour
         Death,
     }
 
-    private moveStates _MoveStates;
-    public moveStates MoveStates;
+    private static moveStates _MoveStates;
+    public static moveStates MoveStates;
 
-    BoxCollider2D bc2d;
     float boxVar = 0.075f;
     float offsetVar = 0.04f;
 
     int capacité;
     int capacitéMax = 20;
 
-    float speed = 10;
+    BoxCollider2D bc2d;
+    Rigidbody2D rb2D;
+
+    float spriteHeight;
+    [SerializeField]
+    float speed = 20;
+    [SerializeField]
+    float jumpPower = 20;
     float horizontal;
     float vertical;
 
-    Rigidbody2D rb2D;
-    float timer =5f;
     void Start()
     {
-        bc2d = GetComponent<BoxCollider2D>();
         rb2D = GetComponent<Rigidbody2D>();
+        bc2d = GetComponent<BoxCollider2D>();
         capacité = capacitéMax;
     }
-    void Update()
+
+
+    private void FixedUpdate()
     {
+        Vector2 box = bc2d.size;
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        if(Input.GetKeyDown(KeyCode.Space))
+        Vector3 position = Camera.main.WorldToScreenPoint(this.transform.position);
+        position.x += speed * horizontal * Time.deltaTime;
+        position.y += speed * vertical * Time.deltaTime;
+        position.x = Mathf.Clamp(position.x, box.x, Screen.width - box.x);
+        position.y = Mathf.Clamp(position.y, spriteHeight * 0.5f, Screen.height - spriteHeight * 0.5f);
+        transform.position = Camera.main.ScreenToWorldPoint(position);
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-        timer -=Time.deltaTime;
-        if(timer <0)
-        {
-            ChangeMoveState(moveStates.Run);
-            timer = 5f;
-        }
-        //Debug.Log(timer);
     }
-    void FixedUpdate()
-    {
-        Vector2 position = transform.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
-        rb2D.MovePosition(position);
-    }
+
+
     void Jump()
     {
-        Vector2 jump = this.transform.position;
-        jump.y += 10;
+        Vector2 jump = new Vector2(0, jumpPower);
         rb2D.velocity = jump;
-        ChangeMoveState(moveStates.Jump);
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -86,10 +86,11 @@ public class Caddie : MonoBehaviour
         }
     }
 
+
     public void ChangeMoveState(moveStates currentState)
     {
         _MoveStates = currentState;
-        switch(_MoveStates)
+        switch (_MoveStates)
         {
             case moveStates.Run:
                 //rb2D.gravityScale = 0;
@@ -101,4 +102,5 @@ public class Caddie : MonoBehaviour
                 break;
         }
     }
+
 }
