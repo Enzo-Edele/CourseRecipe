@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f0aae42d1331429e9dcafa5ae3634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveStates: 0
+  speed: 500
+  jumpPower: 20
+  etaleGO: {fileID: 0}
+  etaleGO1: {fileID: 0}
 --- !u!60 &6826704228455155437
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -178,4 +181,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 7
