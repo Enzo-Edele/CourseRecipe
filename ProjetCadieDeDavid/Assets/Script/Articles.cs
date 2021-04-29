@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class Articles : MonoBehaviour
 {
+    public Rigidbody2D rb2d;
     public string nom;
+
+    public float speed;
     void Start()
     {
-        
+        rb2d = GetComponent<Rigidbody2D>();
+        speed = Random.Range(3, 6);
     }
-    void Update()
+    /*void Update()
     {
-        
-    }
-    void OnTriggerEnter2D(Collider2D collision)
+        Vector2 position = transform.position;
+        position.y = position.y - speed * Time.deltaTime;
+        transform.position = position;
+    }*/
+    void FixedUpdate()
     {
-        Destroy(gameObject);
+        if (rb2d != null)
+        {
+            Vector2 position = rb2d.position;
+            position.y = position.y - speed * Time.deltaTime;
+            rb2d.MovePosition(position);
+        }
     }
 }

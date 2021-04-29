@@ -15,13 +15,13 @@ public class Caddie : MonoBehaviour
     public moveStates MoveStates;
 
     BoxCollider2D bc2d;
-    float boxVar = 0.1f;
-    float offsetVar = 0.03f;
+    float boxVar = 0.075f;
+    float offsetVar = 0.04f;
 
     int capacité;
     int capacitéMax = 20;
 
-    float speed = 20;
+    float speed = 10;
     float horizontal;
     float vertical;
 
@@ -37,10 +37,6 @@ public class Caddie : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        Vector2 position = transform.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
-        transform.position = position;
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -53,6 +49,13 @@ public class Caddie : MonoBehaviour
         }
         //Debug.Log(timer);
     }
+    void FixedUpdate()
+    {
+        Vector2 position = transform.position;
+        position.x = position.x + speed * horizontal * Time.deltaTime;
+        position.y = position.y + speed * vertical * Time.deltaTime;
+        rb2D.MovePosition(position);
+    }
     void Jump()
     {
         Vector2 jump = this.transform.position;
@@ -63,14 +66,24 @@ public class Caddie : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Articles recup = collision.GetComponent<Articles>();
-        capacité -= 1;
-        Vector2 box = bc2d.size;
-        box.y += boxVar;
-        bc2d.size = box;
-        Vector2 offset = bc2d.offset;
-        offset.y += offsetVar;
-        bc2d.offset = offset;
+        if (capacité > 0)
+        {
+            capacité -= 1;
+            Articles recup = collision.GetComponent<Articles>();
+            collision.gameObject.transform.SetParent(this.transform);
+            Destroy(collision.attachedRigidbody);
+            recup.speed = 0;
+            Vector2 box = bc2d.size;
+            box.y += boxVar;
+            bc2d.size = box;
+            Vector2 offset = bc2d.offset;
+            offset.y += offsetVar;
+            bc2d.offset = offset;
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     public void ChangeMoveState(moveStates currentState)

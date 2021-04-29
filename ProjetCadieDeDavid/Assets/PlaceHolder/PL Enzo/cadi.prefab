@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f0aae42d1331429e9dcafa5ae3634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveStates: 0
 --- !u!60 &6826704228455155437
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -123,17 +124,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.3048506, y: 0.6235635}
-      - {x: 1.1554554, y: -0.69226074}
-      - {x: -0.76846385, y: -0.6616125}
-      - {x: -1.0888015, y: 0.61207515}
-      - {x: -1.2859178, y: 0.62058437}
-      - {x: -0.9382773, y: -0.8358654}
-      - {x: -0.7696701, y: -0.8043741}
-      - {x: -0.287408, y: -0.81552815}
-      - {x: 1.2525994, y: -0.8184117}
-      - {x: 1.2531761, y: -0.81692135}
-      - {x: 1.4167337, y: 0.6257303}
+    - - {x: 1.2450452, y: -0.8527653}
+      - {x: 1.3996654, y: 0.5991612}
+      - {x: 1.3362632, y: 0.5999494}
+      - {x: 1.1960223, y: -0.7973598}
+      - {x: -0.91475415, y: -0.7957127}
+      - {x: -1.2255985, y: 0.60666364}
+      - {x: -1.3049388, y: 0.6097514}
+      - {x: -0.95999146, y: -0.8670316}
 --- !u!61 &6826704228455155438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +145,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17394209, y: -0.58251953}
+  m_Offset: {x: 0.1428988, y: -0.7438166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -158,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9212093, y: 0.1545558}
+  m_Size: {x: 1.9851594, y: 0.07578039}
   m_EdgeRadius: 0
 --- !u!50 &6826704228455155433
 Rigidbody2D:
@@ -180,4 +178,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
