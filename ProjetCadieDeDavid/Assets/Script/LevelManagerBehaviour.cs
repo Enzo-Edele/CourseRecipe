@@ -6,15 +6,22 @@ public class LevelManagerBehaviour : MonoBehaviour
 {
     public float backgroundSpeed;
     public int capaciteCaddie;
-    public enum levelStates
+
+    public int minSpeed;
+    public int maxSpeed;
+    public int minTime;
+    public int maxTime;
+
+    public int playerLife;
+    public enum LevelStates
     {
         Collect,
         Run,
     }
-    private static levelStates _LevelStates;
-    public static levelStates LevelStates;
+    private static LevelStates _LevelState;
+    public static LevelStates LevelState;
     private static LevelManagerBehaviour _instance;
-    public LevelManagerBehaviour instance
+    public static LevelManagerBehaviour instance
     {
         get
         {
@@ -27,14 +34,14 @@ public class LevelManagerBehaviour : MonoBehaviour
         _instance = this;
     }
 
-    public void ChangeLevelStates(levelStates currentState)
+    public void ChangeLevelStates(LevelStates currentState)
     {
-        _LevelStates = currentState;
-        switch(_LevelStates)
+        _LevelState = currentState;
+        switch(_LevelState)
         {
-            case levelStates.Collect:
+            case LevelStates.Collect:
                 break;
-            case levelStates.Run:
+            case LevelStates.Run:
                 break;
         }
     }

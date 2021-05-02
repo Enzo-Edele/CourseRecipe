@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Caddie : MonoBehaviour
 {
-    public enum moveStates
+    public enum MoveStates
     {
         Run,
         Jump,
         Death,
     }
 
-    private static moveStates _MoveStates;
-    public static moveStates MoveStates;
+    private static MoveStates _MoveState;
+    public static MoveStates MoveState;
 
     float boxVar = 0.075f;
     float offsetVar = 0.04f;
@@ -28,6 +28,7 @@ public class Caddie : MonoBehaviour
     float speed = 500;
     [SerializeField]
     float jumpPower = 20;
+    int life;
     float horizontal;
     float vertical;
 
@@ -41,13 +42,14 @@ public class Caddie : MonoBehaviour
         bc2d = GetComponent<BoxCollider2D>();
         spriteHeight = GetComponent<SpriteRenderer>().sprite.rect.height;
         capacité = capacitéMax;
+        life = LevelManagerBehaviour.instance.playerLife;
     }
 
     private void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
         {
             Jump();
         }
@@ -71,7 +73,7 @@ public class Caddie : MonoBehaviour
 
     void Jump()
     {
-        ChangeMoveState(moveStates.Jump);
+        ChangeMoveState(MoveStates.Jump);
         Vector2 jump = new Vector2(0, jumpPower);
         rb2D.velocity = jump;
     }
@@ -103,13 +105,20 @@ public class Caddie : MonoBehaviour
         }
     }
 
-
-    public void ChangeMoveState(moveStates currentState)
+    public void ChangeLife(int value)
     {
-        _MoveStates = currentState;
-        switch (_MoveStates)
+        life += value;
+        if(life <= 0)
         {
-            case moveStates.Run:
+            Destroy(this.gameObject);
+        }
+    }
+    public void ChangeMoveState(MoveStates currentState)
+    {
+        _MoveState = currentState;
+        switch (_MoveState)
+        {
+            case MoveStates.Run:
                 rb2D.gravityScale = 0;
                 EtaleBehaviour etale = etaleGO.GetComponent<EtaleBehaviour>();
                 etale.ChangeEffector2D(180f);
@@ -117,16 +126,15 @@ public class Caddie : MonoBehaviour
                 etale.ChangeEffector2D(180f);
                 colliderFix = true;
                 break;
-            case moveStates.Jump:
+            case MoveStates.Jump:
                 rb2D.gravityScale = 1;
                 EtaleBehaviour etaleFix = etaleGO.GetComponent<EtaleBehaviour>();
                 etaleFix.ChangeEffector2D(0f);
                 etaleFix = etaleGO1.GetComponent<EtaleBehaviour>();
                 etaleFix.ChangeEffector2D(0f);
                 break;
-            case moveStates.Death:
+            case MoveStates.Death:
                 break;
         }
     }
-
 }

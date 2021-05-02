@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManagerBehaviour : MonoBehaviour
 {
-    public enum gameStates
+    public enum GameStates
     {
         MainMenu,
         InGame,
@@ -12,8 +12,8 @@ public class GameManagerBehaviour : MonoBehaviour
         GameOver,
         Recipe,
     }
-    private static gameStates _GameStates;
-    public static gameStates GameStates;
+    private static GameStates _GameState;
+    public static GameStates GameState;
     private static GameManagerBehaviour _instance;
     public GameManagerBehaviour instance
     {
@@ -28,20 +28,20 @@ public class GameManagerBehaviour : MonoBehaviour
         _instance = this;
     }
 
-    public void ChangeLevelStates(gameStates currentState)
+    public void ChangeLevelStates(GameStates currentState)
     {
-        _GameStates = currentState;
-        switch (_GameStates)
+        _GameState = currentState;
+        switch (_GameState)
         {
-            case gameStates.MainMenu:
+            case GameStates.MainMenu:
                 break;
-            case gameStates.InGame:
+            case GameStates.InGame:
                 break;
-            case gameStates.Pause:
+            case GameStates.Pause:
                 break;
-            case gameStates.GameOver:
+            case GameStates.GameOver:
                 break;
-            case gameStates.Recipe:
+            case GameStates.Recipe:
                 break;
         }
     }

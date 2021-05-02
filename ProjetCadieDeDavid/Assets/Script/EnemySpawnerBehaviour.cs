@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class EnemySpawnerBehaviour : MonoBehaviour
 {
-    public float speed;
-    public bool left;
-    public float TimerSpawn = 10;
+    public bool right;
     float time = 0;
-    [SerializeField]
-    GameObject prefabEnemy;
-    void Start()
-    {
-        
-    }
+    public GameObject prefabEnemy;
 
     void Update()
     {
@@ -21,6 +14,19 @@ public class EnemySpawnerBehaviour : MonoBehaviour
         if(time <0)
         {
             Instantiate(prefabEnemy, this.transform.position, Quaternion.identity,this.transform);
+            time = RandomTime();
         }
+    }
+
+    public int RandomSpeed()
+    {
+        int rngSpeed = Random.Range(LevelManagerBehaviour.instance.minSpeed, LevelManagerBehaviour.instance.maxSpeed);
+        return rngSpeed;
+    }
+
+    float RandomTime()
+    {
+        float rngTime = Random.Range(LevelManagerBehaviour.instance.minTime, LevelManagerBehaviour.instance.maxTime);
+        return rngTime;
     }
 }

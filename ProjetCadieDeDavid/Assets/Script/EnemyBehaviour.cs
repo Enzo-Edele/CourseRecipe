@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    public int damage;
     float speed;
     EnemySpawnerBehaviour parent;
     SpriteRenderer sprite;
@@ -11,8 +12,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         GameObject daddyGO = this.transform.parent.gameObject;
         parent = daddyGO.GetComponent<EnemySpawnerBehaviour>();
-        speed = parent.speed;
-        if(parent.left)
+        speed = parent.RandomSpeed();
+        if(parent.right)
         {
             speed *=-1;
             sprite = GetComponent<SpriteRenderer>();
@@ -30,5 +31,14 @@ public class EnemyBehaviour : MonoBehaviour
         Vector2 position = this.transform.position;
         position.x += speed * Time.deltaTime;
         this.transform.position = position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Caddie caddie = collision.GetComponent<Caddie>();
+        if(caddie != null)
+        {
+            caddie.ChangeLife(damage);
+        }
     }
 }
