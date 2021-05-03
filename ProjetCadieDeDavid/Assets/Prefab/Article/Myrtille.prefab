@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1248781797410697532}
   - component: {fileID: 1248781797410697534}
   - component: {fileID: 1248781797410697533}
-  - component: {fileID: 5598136811250058350}
+  - component: {fileID: 1899117667520535259}
   m_Layer: 8
   m_Name: Myrtille
   m_TagString: Untagged
@@ -126,7 +126,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32586098, y: 0.28399003}
   m_EdgeRadius: 0
---- !u!50 &5598136811250058350
+--- !u!50 &1899117667520535259
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

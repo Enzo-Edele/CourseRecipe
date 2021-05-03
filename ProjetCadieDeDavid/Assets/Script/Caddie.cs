@@ -78,7 +78,11 @@ public class Caddie : MonoBehaviour
         rb2D.velocity = jump;
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rb2D.gravityScale = 1;
+        rb2D.gravityScale = 0;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Articles article = collision.GetComponent<Articles>();
@@ -89,7 +93,7 @@ public class Caddie : MonoBehaviour
                 capacité -= 1;
                 Articles recup = collision.GetComponent<Articles>();
                 collision.gameObject.transform.SetParent(this.transform);
-                Destroy(collision.attachedRigidbody);
+                //Destroy(collision.attachedRigidbody);
                 recup.speed = 0;
                 Vector2 box = bc2d.size;
                 box.y += boxVar;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2232721662580863874}
   - component: {fileID: 2232721662580863872}
   - component: {fileID: 2232721662580863875}
-  - component: {fileID: 4762621672119977680}
+  - component: {fileID: -5494827800026716654}
   m_Layer: 8
   m_Name: Knacki
   m_TagString: Untagged
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb632bcf2d6b6a45ba6a05f4baabb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
   nom: Knack
   speed: 0
 --- !u!61 &2232721662580863875
@@ -125,7 +126,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &4762621672119977680
+--- !u!50 &-5494827800026716654
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

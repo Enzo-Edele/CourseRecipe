@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2550162714654118414}
   - component: {fileID: 2550162714654118412}
   - component: {fileID: 2550162714654118415}
-  - component: {fileID: 9189591547511695196}
+  - component: {fileID: -2261863511213251875}
   m_Layer: 8
   m_Name: Fromage
   m_TagString: Untagged
@@ -126,7 +126,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2968912, y: 0.2926811}
   m_EdgeRadius: 0
---- !u!50 &9189591547511695196
+--- !u!50 &-2261863511213251875
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
