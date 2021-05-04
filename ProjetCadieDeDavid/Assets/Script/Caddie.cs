@@ -25,6 +25,11 @@ public class Caddie : MonoBehaviour
 
     float spriteHeight;
     [SerializeField]
+    float timerY = 200;
+    float timeY = 0;
+    [SerializeField]
+    int moveY = 2;
+    [SerializeField]
     float speed = 500;
     [SerializeField]
     float jumpPower = 20;
@@ -49,28 +54,41 @@ public class Caddie : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        if(vertical != 0)
+        {
+            timeY -= Time.deltaTime;
+            Debug.Log(timeY);
+        }
+        Move();
         if (Input.GetKeyDown(KeyCode.Space) && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
         {
             Jump();
         }
     }
-    private void FixedUpdate()
+
+    private void Move()
     {
         Vector2 box = bc2d.size;
-        Vector3 position = Camera.main.WorldToScreenPoint(this.transform.position);
-        if(colliderFix)
+        Vector3 position = this.transform.position;
+        if (colliderFix)
         {
             vertical = -15;
             colliderFix = false;
         }
-        position.x += speed * horizontal * Time.deltaTime;
-        position.y += speed * vertical * Time.deltaTime;
-        position.x = Mathf.Clamp(position.x, box.x, Screen.width - box.x);
-        position.y = Mathf.Clamp(position.y, spriteHeight * 0.5f, Screen.height - spriteHeight * 0.5f);
-        transform.position = Camera.main.ScreenToWorldPoint(position);
+        if(position.x + speed * horizontal * Time.deltaTime >= -8 && position.x + speed * horizontal * Time.deltaTime <= 8)
+        {
+            position.x += speed * horizontal * Time.deltaTime;
+        }
+        if (timeY <0)
+        {
+            if(position.y + moveY * vertical* Time.deltaTime <= -1 && position.y + moveY * vertical * Time.deltaTime >= -4)
+            {
+                position.y += moveY * vertical * Time.deltaTime;
+                timeY = timerY;
+            }
+        }
+        transform.position = position;
     }
-
-
     void Jump()
     {
         ChangeMoveState(MoveStates.Jump);
