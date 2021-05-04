@@ -7,6 +7,7 @@ public class GameManagerBehaviour : MonoBehaviour
     public enum GameStates
     {
         MainMenu,
+        LevelSelection,
         InGame,
         Pause,
         GameOver,
@@ -15,7 +16,7 @@ public class GameManagerBehaviour : MonoBehaviour
     private static GameStates _GameState;
     public static GameStates GameState;
     private static GameManagerBehaviour _instance;
-    public GameManagerBehaviour instance
+    public static GameManagerBehaviour instance
     {
         get
         {
@@ -28,20 +29,59 @@ public class GameManagerBehaviour : MonoBehaviour
         _instance = this;
     }
 
-    public void ChangeLevelStates(GameStates currentState)
+    public void ChangeGameState(GameStates currentState)
     {
         _GameState = currentState;
         switch (_GameState)
         {
             case GameStates.MainMenu:
+                UIManagerBehaviour.instance.SetMainMenuActive();
+                Time.timeScale = 0;
+                break;
+            case GameStates.LevelSelection:
+                UIManagerBehaviour.instance.SetLevelSelectionActive();
+                Time.timeScale = 0;
                 break;
             case GameStates.InGame:
+                UIManagerBehaviour.instance.SetHUDActive();
+                Time.timeScale = 1;
                 break;
             case GameStates.Pause:
+                UIManagerBehaviour.instance.SetPauseActive();
+                Time.timeScale = 0;
                 break;
             case GameStates.GameOver:
+                UIManagerBehaviour.instance.SetGameOverActive();
+                Time.timeScale = 0;
                 break;
             case GameStates.Recipe:
+                UIManagerBehaviour.instance.SetRecipeActive();
+                ScenesManagerBehaviour.instance.LoadRecipeScene();
+                break;
+        }
+    }
+
+    public void ChangeGameStateByUI(int currentState)
+    {
+        switch(currentState)
+        {
+            case 0:
+                ChangeGameState(GameStates.MainMenu);
+                break;
+            case 1:
+                ChangeGameState(GameStates.LevelSelection);
+                break;
+            case 2:
+                ChangeGameState(GameStates.InGame);
+                break;
+            case 3:
+                ChangeGameState(GameStates.Pause);
+                break;
+            case 4:
+                ChangeGameState(GameStates.GameOver);
+                break;
+            case 5:
+                ChangeGameState(GameStates.Recipe);
                 break;
         }
     }
