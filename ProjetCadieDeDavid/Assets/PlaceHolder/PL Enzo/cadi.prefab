@@ -98,8 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f0aae42d1331429e9dcafa5ae3634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerY: 200
-  moveY: 750
+  posY:
+  - -3.8
+  - -2.5
+  - -1
+  timer: 1
   speed: 5
   jumpPower: 20
   etaleGO: {fileID: 0}
@@ -150,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1428988, y: -0.7438166}
+  m_Offset: {x: 0.09429002, y: -0.7438166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -161,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9851594, y: 0.07578039}
+  m_Size: {x: 1.4581351, y: 0.07578039}
   m_EdgeRadius: 0
 --- !u!50 &6826704228455155433
 Rigidbody2D:

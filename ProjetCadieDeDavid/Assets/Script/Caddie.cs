@@ -29,14 +29,14 @@ public class Caddie : MonoBehaviour
     BoxCollider2D bc2d;
     Rigidbody2D rb2D;
 
-    float spriteHeight;
     [SerializeField]
-    float timerY = 200;
-    float timeY = 0;
+    float[] posY;
+    int currentPos = 0;
     [SerializeField]
-    int moveY = 2;
+    float timer = 1;
+    float time = 0;
     [SerializeField]
-    float speed = 500;
+    float speed = 5;
     [SerializeField]
     float jumpPower = 20;
     int life;
@@ -51,7 +51,6 @@ public class Caddie : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
-        spriteHeight = GetComponent<SpriteRenderer>().sprite.rect.height;
         capacité = capacitéMax;
         life = LevelManagerBehaviour.instance.playerLife;
     }
@@ -60,11 +59,7 @@ public class Caddie : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        if(vertical != 0)
-        {
-            timeY -= Time.deltaTime;
-            Debug.Log(timeY);
-        }
+        time -= Time.deltaTime;
         Move();
         if (Input.GetKeyDown(KeyCode.Space) && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
         {
@@ -74,7 +69,6 @@ public class Caddie : MonoBehaviour
 
     private void Move()
     {
-        Vector2 box = bc2d.size;
         Vector3 position = this.transform.position;
         if (colliderFix)
         {
@@ -85,13 +79,25 @@ public class Caddie : MonoBehaviour
         {
             position.x += speed * horizontal * Time.deltaTime;
         }
-        if (timeY <0)
+        if(time < 0)
         {
-            if(position.y + moveY * vertical* Time.deltaTime <= -1 && position.y + moveY * vertical * Time.deltaTime >= -4)
+            if (vertical > 0)
             {
-                position.y += moveY * vertical * Time.deltaTime;
-                timeY = timerY;
+                if (currentPos < 2)
+                {
+                    currentPos++;
+                }
+                position.y = posY[currentPos];
             }
+            else if (vertical < 0)
+            {
+                if (currentPos > 0)
+                {
+                    currentPos--;
+                }
+                position.y = posY[currentPos];
+            }
+            time = timer;
         }
         transform.position = position;
     }
