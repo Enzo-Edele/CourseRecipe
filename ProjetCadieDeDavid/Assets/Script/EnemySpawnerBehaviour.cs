@@ -7,14 +7,18 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     public bool right;
     float time = 0;
     public GameObject prefabEnemy;
+    public float[] posY;
 
     void Update()
     {
-        time -= Time.deltaTime;
-        if(time <0)
+        if(GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
         {
-            Instantiate(prefabEnemy, this.transform.position, Quaternion.identity,this.transform);
-            time = RandomTime();
+            time -= Time.deltaTime;
+            if (time < 0)
+            {
+                Instantiate(prefabEnemy, RandomPosY(), Quaternion.identity, this.transform);
+                time = RandomTime();
+            }
         }
     }
 
@@ -28,5 +32,13 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     {
         float rngTime = Random.Range(LevelManagerBehaviour.instance.minTime, LevelManagerBehaviour.instance.maxTime);
         return rngTime;
+    }
+
+    Vector2 RandomPosY()
+    {
+        Vector2 position = this.transform.position;
+        int pos = Random.Range(0, posY.Length);
+        position.y = posY[pos];
+        return position;
     }
 }

@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2.unity
     guid: 810fb4afd5b60254ba73e5b9f46ba0ff
   - enabled: 1
+    path: Assets/Scenes/Enzo.unity
+    guid: 936655157ec1cc44fa9e0cbb8ade4215
+  - enabled: 1
+    path: Assets/Scenes/Fred.unity
+    guid: 26f6787d1ff7120499ed7f9dd1e24061
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

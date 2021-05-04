@@ -14,7 +14,13 @@ public class GameManagerBehaviour : MonoBehaviour
         Recipe,
     }
     private static GameStates _GameState;
-    public static GameStates GameState;
+    public static GameStates GameState
+    {
+        get
+        {
+            return _GameState;
+        }
+    }
     private static GameManagerBehaviour _instance;
     public static GameManagerBehaviour instance
     {
@@ -28,7 +34,10 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         _instance = this;
     }
-
+    private void Update()
+    {
+        Debug.Log(_GameState);
+    }
     public void ChangeGameState(GameStates currentState)
     {
         _GameState = currentState;
@@ -61,9 +70,10 @@ public class GameManagerBehaviour : MonoBehaviour
         }
     }
 
+    //Button UI
     public void ChangeGameStateByUI(int currentState)
     {
-        switch(currentState)
+        switch (currentState)
         {
             case 0:
                 ChangeGameState(GameStates.MainMenu);
@@ -82,6 +92,19 @@ public class GameManagerBehaviour : MonoBehaviour
                 break;
             case 5:
                 ChangeGameState(GameStates.Recipe);
+                break;
+        }
+    }
+
+    public void ChangeLevelStatebyUI(int levelState)
+    {
+        switch(levelState)
+        {
+            case 1:
+                LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
+                break;
+            case 2:
+                LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
                 break;
         }
     }

@@ -35,9 +35,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Caddie caddie = collision.GetComponent<Caddie>();
-        if(caddie != null)
+        PlayerBehaviour player = collision.GetComponent<PlayerBehaviour>();
+        Caddie caddie;
+        if(player != null)
         {
+            caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
             caddie.ChangeLife(damage);
         }
     }

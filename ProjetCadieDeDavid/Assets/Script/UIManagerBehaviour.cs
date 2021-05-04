@@ -7,6 +7,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public GameObject mainMenu;
     public GameObject levelSelection;
     public GameObject HUD;
+    public GameObject levelBriefing;
     public GameObject pause;
     public GameObject gameOver;
     private static UIManagerBehaviour _instance;
@@ -27,6 +28,7 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         mainMenu.SetActive(true);
         levelSelection.SetActive(false);
+        levelBriefing.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -35,6 +37,7 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         mainMenu.SetActive(false);
         levelSelection.SetActive(true);
+        levelBriefing.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -43,6 +46,7 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         mainMenu.SetActive(false);
         levelSelection.SetActive(false);
+        levelBriefing.SetActive(false);
         HUD.SetActive(true);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -51,6 +55,7 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         mainMenu.SetActive(false);
         levelSelection.SetActive(false);
+        levelBriefing.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(true);
         gameOver.SetActive(false);
@@ -59,6 +64,7 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         mainMenu.SetActive(false);
         levelSelection.SetActive(false);
+        levelBriefing.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(true);
@@ -67,8 +73,19 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         mainMenu.SetActive(false);
         levelSelection.SetActive(false);
+        levelBriefing.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
+    }
+    public void SetLevelBriefingActive()
+    {
+        HUD.SetActive(false);
+        levelBriefing.SetActive(true);
+    }
+    public void SetLevelBriefingNotActive()
+    {
+        HUD.SetActive(true);
+        levelBriefing.SetActive(false);
     }
 }

@@ -29,8 +29,7 @@ public class Caddie : MonoBehaviour
     BoxCollider2D bc2d;
     Rigidbody2D rb2D;
 
-    [SerializeField]
-    float[] posY;
+    public float[] posY;
     int currentPos = 0;
     [SerializeField]
     float timer = 1;

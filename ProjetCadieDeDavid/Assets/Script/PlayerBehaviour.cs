@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Enemy
-    }
+    
 }
