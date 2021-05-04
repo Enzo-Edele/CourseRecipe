@@ -111,7 +111,7 @@ public class Caddie : MonoBehaviour
                 capacité -= 1;
                 Articles recup = collision.GetComponent<Articles>();
                 collision.gameObject.transform.SetParent(this.transform);
-                //Destroy(collision.attachedRigidbody);
+                Destroy(collision.attachedRigidbody);
                 recup.speed = 0;
                 Vector2 box = bc2d.size;
                 box.y += boxVar;

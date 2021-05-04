@@ -43,7 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9fc0f9a789d4d4a8beece8b181bc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knaki: {fileID: 2232721662580863876, guid: f62255ec86e82fd4681e97ee62523f67, type: 3}
-  fraise: {fileID: 7984065997605212525, guid: 935e9addfd118124e8047601873eae38, type: 3}
-  fromage: {fileID: 2550162714654118408, guid: 58fbc364abefd094f8ea92cd0d81e095, type: 3}
-  myrtille: {fileID: 1248781797410697530, guid: 0c2a51ec568579242a8363595feae484, type: 3}
+  rayonLaitier:
+  - {fileID: 1562830053337495440, guid: 9fc54d00e44876941a52467a809e0e42, type: 3}
+  - {fileID: 7437159809973629215, guid: c5c8d7eb80675b646b54d9dc7e163979, type: 3}
+  - {fileID: 2550162714654118408, guid: 58fbc364abefd094f8ea92cd0d81e095, type: 3}
+  rayonFruit:
+  - {fileID: 7984065997605212525, guid: 935e9addfd118124e8047601873eae38, type: 3}
+  - {fileID: 1248781797410697530, guid: 0c2a51ec568579242a8363595feae484, type: 3}

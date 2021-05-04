@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SpawnerArticle : MonoBehaviour
 {
-    public GameObject knaki, fraise, fromage, myrtille;
-    int tailleList;
+    public GameObject[] rayonLaitier = new GameObject[0];
+    public GameObject[] rayonFruit = new GameObject[0];
     List<GameObject> Rayon = new List<GameObject>();
-    GameObject articlesSelect, memory;
+    int tailleList;
+    int rndArticle, memory;
     public enum Rayons
     {
         Rayon1,
@@ -39,14 +40,18 @@ public class SpawnerArticle : MonoBehaviour
         {
             case Rayons.Rayon1:
                 Rayon.Clear();
-                Rayon.Add(knaki);
-                Rayon.Add(fromage);
+                for(int i = 0; i < rayonLaitier.Length; i++)
+                {
+                    Rayon.Add(rayonLaitier[i]);
+                }
                 tailleList = Rayon.Count;
                 break;
             case Rayons.Rayon2:
                 Rayon.Clear();
-                Rayon.Add(fraise);
-                Rayon.Add(myrtille);
+                for (int i = 0; i < rayonFruit.Length; i++)
+                {
+                    Rayon.Add(rayonFruit[i]);
+                }
                 tailleList = Rayon.Count;
                 break;
             case Rayons.Rayon3:
@@ -77,15 +82,18 @@ public class SpawnerArticle : MonoBehaviour
     void Generate()
     {
         positionSpawn = Camera.main.WorldToScreenPoint(transform.position);
-        positionRnd = Random.Range(0.1f, 0.2f);
+        positionRnd = Random.Range(0.1f, 0.9f);
         positionSpawn.x = Screen.width * positionRnd;
         positionSpawn.y = Screen.height * 1.1f;
         positionSpawn = Camera.main.ScreenToWorldPoint(positionSpawn);
         positionSpawn.z = 0;
-        if (knaki != null)
+        rndArticle = Random.Range(0, tailleList);
+        while(rndArticle == memory)
         {
-            Instantiate(Rayon[Random.Range(0, tailleList)], positionSpawn, Quaternion.identity);
+            rndArticle = Random.Range(0, tailleList);
         }
+        memory = rndArticle;
+        Instantiate(Rayon[rndArticle], positionSpawn, Quaternion.identity);
         timer = Random.Range(timeMin, timeMax);
     }
 }
