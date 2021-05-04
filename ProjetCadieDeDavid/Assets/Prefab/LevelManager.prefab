@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743200029150070085}
   - component: {fileID: 7156230040217466237}
+  - component: {fileID: 182193355537188928}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -53,3 +54,16 @@ MonoBehaviour:
   recette:
   - mirtille
   - oeuf
+--- !u!114 &182193355537188928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240286647449125144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835102f17b84a4f478f5586ee1aa2fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}

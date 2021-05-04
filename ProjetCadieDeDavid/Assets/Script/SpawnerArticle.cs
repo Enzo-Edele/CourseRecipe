@@ -82,7 +82,7 @@ public class SpawnerArticle : MonoBehaviour
     void Generate()
     {
         positionSpawn = Camera.main.WorldToScreenPoint(transform.position);
-        positionRnd = Random.Range(0.1f, 0.9f);
+        positionRnd = Random.Range(0.03f, 0.97f);
         positionSpawn.x = Screen.width * positionRnd;
         positionSpawn.y = Screen.height * 1.1f;
         positionSpawn = Camera.main.ScreenToWorldPoint(positionSpawn);
