@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  nom: Carrot
+  nom: carrot
   speed: 0
   speedMin: 3
   speedMax: 6
