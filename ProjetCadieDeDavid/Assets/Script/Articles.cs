@@ -7,11 +7,11 @@ public class Articles : MonoBehaviour
     public Rigidbody2D rb2d;
     public string nom;
 
-    public float speed;
+    public float speed, speedMin = 3, speedMax = 6;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        speed = Random.Range(3, 6);
+        speed = Random.Range(speedMin, speedMax);
     }
     /*
     private void Update()

@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  nom: Knack
+  nom: Strawberry
   speed: 0
+  speedMin: 3
+  speedMax: 6
 --- !u!61 &7984065997605212522
 BoxCollider2D:
   m_ObjectHideFlags: 0

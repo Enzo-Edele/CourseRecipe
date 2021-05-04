@@ -11,8 +11,14 @@ public class Caddie : MonoBehaviour
         Death,
     }
 
-    private static MoveStates _MoveState;
-    public static MoveStates MoveState;
+    private static MoveStates _moveState;
+    public static MoveStates _MoveState
+    {
+        get
+        {
+            return _moveState;
+        }
+    }
 
     float boxVar = 0.075f;
     float offsetVar = 0.04f;
@@ -137,8 +143,8 @@ public class Caddie : MonoBehaviour
     }
     public void ChangeMoveState(MoveStates currentState)
     {
-        _MoveState = currentState;
-        switch (_MoveState)
+        _moveState = currentState;
+        switch (_moveState)
         {
             case MoveStates.Run:
                 rb2D.gravityScale = 0;

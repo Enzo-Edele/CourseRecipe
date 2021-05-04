@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  nom: 
+  nom: Cream
   speed: 0
+  speedMin: 3
+  speedMax: 6
 --- !u!61 &790721032034461248
 BoxCollider2D:
   m_ObjectHideFlags: 0

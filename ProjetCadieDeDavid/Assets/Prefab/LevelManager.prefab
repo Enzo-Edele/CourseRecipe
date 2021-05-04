@@ -50,3 +50,6 @@ MonoBehaviour:
   minTime: 5
   maxTime: 11
   playerLife: 3
+  recette:
+  - mirtille
+  - oeuf

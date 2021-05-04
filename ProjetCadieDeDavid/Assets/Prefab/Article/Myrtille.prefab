@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4089908548a4ea5438c1c64d8ef81127, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4e2bc155888df843ab03ee409d7da0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  nom: Knack
+  nom: BlueBerry
   speed: 0
+  speedMin: 3
+  speedMax: 6
 --- !u!61 &1248781797410697533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,18 +115,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027216911, y: 0.0188424}
+  m_Offset: {x: -0.0036616325, y: -0.0068895817}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.56, y: 0.51}
+    oldSize: {x: 0.42727274, y: 0.4909091}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32586098, y: 0.28399003}
+  m_Size: {x: 0.41849613, y: 0.45896673}
   m_EdgeRadius: 0
 --- !u!50 &1899117667520535259
 Rigidbody2D:

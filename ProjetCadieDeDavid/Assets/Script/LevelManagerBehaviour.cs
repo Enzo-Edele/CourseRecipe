@@ -13,6 +13,8 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int maxTime;
 
     public int playerLife;
+
+    public string[] recette = new string[0];
     public enum LevelStates
     {
         Collect,
@@ -32,6 +34,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        //listetexte (recette[1] "saut de ligne" recette[2])
     }
 
     public void ChangeLevelStates(LevelStates currentState)

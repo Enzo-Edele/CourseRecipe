@@ -26,7 +26,7 @@ public class SpawnerArticle : MonoBehaviour
 
     Vector3 positionSpawn;
     float positionRnd;
-    float timer = 3, timeMin = 3, timeMax = 8;
+    float timer = 3, timeMin = 1, timeMax = 2;
 
     void Start()
     {
