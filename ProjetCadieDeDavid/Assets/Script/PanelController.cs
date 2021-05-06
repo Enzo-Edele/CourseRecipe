@@ -6,7 +6,7 @@ public class PanelController : MonoBehaviour
 {
     [SerializeField]
     float speed = 500;
-    SpawnDecorController panelSpawner;
+    SpawnerManagerBehavior panelSpawner;
     void Update()
     {
         if (LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
@@ -16,7 +16,7 @@ public class PanelController : MonoBehaviour
             transform.position = Camera.main.ScreenToWorldPoint(pos);
             if (pos.x <= -Screen.width * 0.5f)
             {
-                panelSpawner = FindObjectOfType(typeof(SpawnDecorController)) as SpawnDecorController;
+                panelSpawner = FindObjectOfType(typeof(SpawnerManagerBehavior)) as SpawnerManagerBehavior;
                 panelSpawner.SpawnDecor();
                 Destroy(gameObject);
             }
