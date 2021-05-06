@@ -8,6 +8,7 @@ public class SpawnDecorController : MonoBehaviour
     GameObject panel;
     Vector3 positionStart;
     Vector3 positionSpwan;
+    bool stop = false;
     void Start()
     {
         positionStart = Camera.main.WorldToScreenPoint(transform.position);
@@ -16,8 +17,24 @@ public class SpawnDecorController : MonoBehaviour
         positionSpwan.x = Screen.width * 1.5f;
         Instantiate(panel, Camera.main.ScreenToWorldPoint(positionSpwan), Quaternion.identity);
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown("1"))
+        {
+            LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            stop = true;
+        }
+    }
     public void SpawnDecor()
     {
         Instantiate(panel, Camera.main.ScreenToWorldPoint(positionSpwan), Quaternion.identity);
+        if(stop)
+        {
+            LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
+            stop = false;
+        }
     }
 }

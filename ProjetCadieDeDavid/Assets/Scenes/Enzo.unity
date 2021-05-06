@@ -347,10 +347,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnerArticle
       objectReference: {fileID: 0}
-    - target: {fileID: 7462569632099248014, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
-      propertyPath: rayonFruit.Array.data[0]
-      value: 
-      objectReference: {fileID: 1308028146621553465, guid: 935e9addfd118124e8047601873eae38, type: 3}
     - target: {fileID: 7462569632099248015, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.9610467

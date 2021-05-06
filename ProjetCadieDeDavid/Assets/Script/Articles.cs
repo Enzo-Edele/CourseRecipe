@@ -29,7 +29,7 @@ public class Articles : MonoBehaviour
             position.y = position.y - speed * Time.deltaTime;
             rb2d.MovePosition(position);
         }
-        if(transform.position.magnitude > 10.0f)
+        if(transform.position.magnitude > 12.0f)
         {
             Destroy(gameObject);
         }
