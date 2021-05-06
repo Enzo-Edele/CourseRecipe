@@ -79,17 +79,17 @@ public class UIManagerBehaviour : MonoBehaviour
 
     public void DisplayLevel()
     {
-        levelText.text = "Level" + LevelManagerBehaviour.instance.level;
+        levelText.text = "Level : " + LevelManagerBehaviour.instance.level;
     }
     public void DisplayCoin()
     {
-        coinText.text = "coin" + GameManagerBehaviour.instance.coin;
+        coinText.text = "Coin : " + GameManagerBehaviour.instance.coin;
     }
     public void DisplayListHUD()
     {
-        for (int i = 0; 0 < 15; i++)
+        for(int i = 0; i < 15; i++)
         {
-            listHUDText.text += "temp" + "\t" + "Nombre" + "\n";
+            listHUDText.text += "temp" + "\t" + "\t" + "\t" + "Nombre" + "\n";
         }
     }
 }

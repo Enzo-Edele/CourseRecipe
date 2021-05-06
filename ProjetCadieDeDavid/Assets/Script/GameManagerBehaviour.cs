@@ -43,6 +43,7 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         coin += numberOfCoin;
         coinPerLevel -= numberOfCoin;
+        UIManagerBehaviour.instance.DisplayCoin();
     }
 
     public void ChangeGameState(GameStates currentState)
@@ -84,6 +85,7 @@ public class GameManagerBehaviour : MonoBehaviour
         {
             case 0:
                 ChangeGameState(GameStates.MainMenu);
+                ScenesManagerBehaviour.instance.LoadMainMenu();
                 break;
             case 1:
                 ChangeGameState(GameStates.LevelSelection);
@@ -99,6 +101,7 @@ public class GameManagerBehaviour : MonoBehaviour
                 break;
             case 5:
                 ChangeGameState(GameStates.Recipe);
+                ScenesManagerBehaviour.instance.LoadRecipeScene();
                 break;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManagerBehaviour : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class LevelManagerBehaviour : MonoBehaviour
     public string[] recette = new string[0];
 
     public GameObject menuBriefing;
+    public Image imageArticle;
+    public Text articleName;
+    public Sprite[] article;
+    int articlePos = 0;
+
     public enum LevelStates
     {
         LevelBriefing,
@@ -51,8 +57,12 @@ public class LevelManagerBehaviour : MonoBehaviour
     }
     private void Start()
     {
-        //UIManagerBehaviour.instance.DisplayListHUD();
+        UIManagerBehaviour.instance.DisplayLevel();
+        UIManagerBehaviour.instance.DisplayListHUD();
+        imageArticle.preserveAspect = true;
+        ChangeSprite(0);
     }
+
     public void ChangeLevelStates(LevelStates currentState)
     {
         _LevelState = currentState;
@@ -87,6 +97,16 @@ public class LevelManagerBehaviour : MonoBehaviour
             case 2:
                 ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
                 break;
+        }
+    }
+
+    public void ChangeSprite(int amount)
+    {
+        if(articlePos + amount >= 0 && articlePos + amount < article.Length)
+        {
+            articlePos += amount;
+            imageArticle.sprite = article[articlePos];
+            articleName.text = article[articlePos].name;
         }
     }
 }
