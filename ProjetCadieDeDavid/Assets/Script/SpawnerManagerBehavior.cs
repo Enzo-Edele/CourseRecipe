@@ -202,7 +202,6 @@ public class SpawnerManagerBehavior : MonoBehaviour
         {
             Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
             panelTransition--;
-            Debug.Log(panelTransition);
         }
     }
 }
