@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManagerBehaviour : MonoBehaviour
 {
+    public int playerSkin = 0;
     public enum GameStates
     {
         MainMenu,
@@ -33,10 +34,6 @@ public class GameManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-    }
-    private void Update()
-    {
-        Debug.Log(_GameState);
     }
     public void ChangeGameState(GameStates currentState)
     {
@@ -95,17 +92,8 @@ public class GameManagerBehaviour : MonoBehaviour
                 break;
         }
     }
-
-    public void ChangeLevelStatebyUI(int levelState)
+    public void ChangePlayerSkin(int skin)
     {
-        switch(levelState)
-        {
-            case 1:
-                LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
-                break;
-            case 2:
-                LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
-                break;
-        }
+        playerSkin = skin;
     }
 }

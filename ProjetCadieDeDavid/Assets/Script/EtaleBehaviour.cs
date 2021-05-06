@@ -37,7 +37,7 @@ public class EtaleBehaviour : MonoBehaviour
         {
             if (floor & collision.relativeVelocity.y < 0)
             {
-                caddie.ChangeMoveState(Caddie.MoveStates.Run);
+                caddie.ChangeMoveState(Caddie.PlayerStates.Run);
             }
         }
     }

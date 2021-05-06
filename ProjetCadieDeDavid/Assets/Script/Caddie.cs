@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Caddie : MonoBehaviour
 {
-    public enum MoveStates
+    public enum PlayerStates
     {
         Run,
         Jump,
         Death,
     }
 
-    private static MoveStates _moveState;
-    public static MoveStates _MoveState
+    private static PlayerStates _moveState;
+    public static PlayerStates _MoveState
     {
         get
         {
@@ -102,7 +102,7 @@ public class Caddie : MonoBehaviour
     }
     void Jump()
     {
-        ChangeMoveState(MoveStates.Jump);
+        ChangeMoveState(PlayerStates.Jump);
         Vector2 jump = new Vector2(0, jumpPower);
         rb2D.velocity = jump;
     }
@@ -143,15 +143,15 @@ public class Caddie : MonoBehaviour
         life += value;
         if(life <= 0)
         {
-            Destroy(this.gameObject);
+            ChangeMoveState(PlayerStates.Death);
         }
     }
-    public void ChangeMoveState(MoveStates currentState)
+    public void ChangeMoveState(PlayerStates currentState)
     {
         _moveState = currentState;
         switch (_moveState)
         {
-            case MoveStates.Run:
+            case PlayerStates.Run:
                 rb2D.gravityScale = 0;
                 EtaleBehaviour etale = etaleGO.GetComponent<EtaleBehaviour>();
                 etale.ChangeEffector2D(180f);
@@ -159,14 +159,15 @@ public class Caddie : MonoBehaviour
                 etale.ChangeEffector2D(180f);
                 colliderFix = true;
                 break;
-            case MoveStates.Jump:
+            case PlayerStates.Jump:
                 rb2D.gravityScale = 1;
                 EtaleBehaviour etaleFix = etaleGO.GetComponent<EtaleBehaviour>();
                 etaleFix.ChangeEffector2D(0f);
                 etaleFix = etaleGO1.GetComponent<EtaleBehaviour>();
                 etaleFix.ChangeEffector2D(0f);
                 break;
-            case MoveStates.Death:
+            case PlayerStates.Death:
+                GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
                 break;
         }
     }

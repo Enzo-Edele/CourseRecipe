@@ -5,9 +5,8 @@ using UnityEngine;
 public class UIManagerBehaviour : MonoBehaviour
 {
     public GameObject mainMenu;
-    public GameObject levelSelection;
+    public GameObject selection;
     public GameObject HUD;
-    public GameObject levelBriefing;
     public GameObject pause;
     public GameObject gameOver;
     private static UIManagerBehaviour _instance;
@@ -27,8 +26,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetMainMenuActive()
     {
         mainMenu.SetActive(true);
-        levelSelection.SetActive(false);
-        levelBriefing.SetActive(false);
+        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -36,8 +34,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetLevelSelectionActive()
     {
         mainMenu.SetActive(false);
-        levelSelection.SetActive(true);
-        levelBriefing.SetActive(false);
+        selection.SetActive(true);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -45,8 +42,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetHUDActive()
     {
         mainMenu.SetActive(false);
-        levelSelection.SetActive(false);
-        levelBriefing.SetActive(false);
+        selection.SetActive(false);
         HUD.SetActive(true);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -54,8 +50,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetPauseActive()
     {
         mainMenu.SetActive(false);
-        levelSelection.SetActive(false);
-        levelBriefing.SetActive(false);
+        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(true);
         gameOver.SetActive(false);
@@ -63,8 +58,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetGameOverActive()
     {
         mainMenu.SetActive(false);
-        levelSelection.SetActive(false);
-        levelBriefing.SetActive(false);
+        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(true);
@@ -72,20 +66,10 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetRecipeActive()
     {
         mainMenu.SetActive(false);
-        levelSelection.SetActive(false);
-        levelBriefing.SetActive(false);
+        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
     }
-    public void SetLevelBriefingActive()
-    {
-        HUD.SetActive(false);
-        levelBriefing.SetActive(true);
-    }
-    public void SetLevelBriefingNotActive()
-    {
-        HUD.SetActive(true);
-        levelBriefing.SetActive(false);
-    }
+
 }

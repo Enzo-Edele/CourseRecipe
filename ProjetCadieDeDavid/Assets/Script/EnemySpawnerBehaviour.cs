@@ -11,7 +11,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 
     void Update()
     {
-        if(GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
+        if(GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Collect)
         {
             time -= Time.deltaTime;
             if (time < 0)
