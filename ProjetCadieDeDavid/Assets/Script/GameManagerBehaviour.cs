@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManagerBehaviour : MonoBehaviour
 {
     public int playerSkin = 0;
+    public int coin;
+    public int coinPerLevel;
     public enum GameStates
     {
         MainMenu,
@@ -34,7 +36,15 @@ public class GameManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        AddCoin(0);
     }
+
+    public void AddCoin(int numberOfCoin)
+    {
+        coin += numberOfCoin;
+        coinPerLevel -= numberOfCoin;
+    }
+
     public void ChangeGameState(GameStates currentState)
     {
         _GameState = currentState;

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelManagerBehaviour : MonoBehaviour
 {
+    public int level;
+    public bool levelDone;
+
     public float backgroundSpeed;
     public int capaciteCaddie;
 
@@ -46,7 +49,10 @@ public class LevelManagerBehaviour : MonoBehaviour
         ChangeLevelStates(LevelStates.LevelBriefing);
         //listetexte (recette[1] "saut de ligne" recette[2])
     }
-
+    private void Start()
+    {
+        //UIManagerBehaviour.instance.DisplayListHUD();
+    }
     public void ChangeLevelStates(LevelStates currentState)
     {
         _LevelState = currentState;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManagerBehaviour : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class UIManagerBehaviour : MonoBehaviour
     public GameObject HUD;
     public GameObject pause;
     public GameObject gameOver;
+
+    public Text levelText;
+    public Text coinText;
+    public Text listHUDText;
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
     {
@@ -22,7 +27,6 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         _instance = this;
     }
-
     public void SetMainMenuActive()
     {
         mainMenu.SetActive(true);
@@ -72,4 +76,20 @@ public class UIManagerBehaviour : MonoBehaviour
         gameOver.SetActive(false);
     }
 
+
+    public void DisplayLevel()
+    {
+        levelText.text = "Level" + LevelManagerBehaviour.instance.level;
+    }
+    public void DisplayCoin()
+    {
+        coinText.text = "coin" + GameManagerBehaviour.instance.coin;
+    }
+    public void DisplayListHUD()
+    {
+        for (int i = 0; 0 < 15; i++)
+        {
+            listHUDText.text += "temp" + "\t" + "Nombre" + "\n";
+        }
+    }
 }
