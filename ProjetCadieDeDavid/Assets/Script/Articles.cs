@@ -5,7 +5,6 @@ using UnityEngine;
 public class Articles : MonoBehaviour
 {
     public Rigidbody2D rb2d;
-    public string nom;
 
     public float speed, speedMin = 3, speedMax = 6;
     void Start()
@@ -13,14 +12,7 @@ public class Articles : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         speed = Random.Range(speedMin, speedMax);
     }
-    /*
-    private void Update()
-    {
-        Vector2 position = transform.position;
-        position.y -= speed * Time.deltaTime;
-        transform.position = position;
-    }
-    */
+
     void FixedUpdate()
     {
         if (rb2d != null)

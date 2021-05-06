@@ -14,6 +14,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public Text levelText;
     public Text coinText;
     public Text listHUDText;
+    public Text listNumberHUDText;
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
     {
@@ -76,7 +77,6 @@ public class UIManagerBehaviour : MonoBehaviour
         gameOver.SetActive(false);
     }
 
-
     public void DisplayLevel()
     {
         levelText.text = "Level : " + LevelManagerBehaviour.instance.level;
@@ -87,9 +87,10 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     public void DisplayListHUD()
     {
-        for(int i = 0; i < 15; i++)
+        for(int i = 0; i < LevelManagerBehaviour.instance.articleList.Length; i++)
         {
-            listHUDText.text += "temp" + "\t" + "\t" + "\t" + "Nombre" + "\n";
+            listHUDText.text += LevelManagerBehaviour.instance.articleList[i] + "\n";
+            listNumberHUDText.text += LevelManagerBehaviour.instance.articleListCurrentNumber[i] + "/" + LevelManagerBehaviour.instance.articleListNumber[i] + "\n";
         }
     }
 }

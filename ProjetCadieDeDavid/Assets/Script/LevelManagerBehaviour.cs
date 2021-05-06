@@ -9,21 +9,21 @@ public class LevelManagerBehaviour : MonoBehaviour
     public bool levelDone;
 
     public float backgroundSpeed;
-    public int capaciteCaddie;
 
     public int minSpeed;
     public int maxSpeed;
     public int minTime;
     public int maxTime;
 
+    public int capaciteCaddie;
     public int playerLife;
-
-    public string[] recette = new string[0];
 
     public GameObject menuBriefing;
     public Image imageArticle;
     public Text articleName;
-    public Sprite[] article;
+    public string[] articleList;
+    public int[] articleListNumber;
+    public int[] articleListCurrentNumber;
     int articlePos = 0;
 
     public enum LevelStates
@@ -53,7 +53,6 @@ public class LevelManagerBehaviour : MonoBehaviour
     {
         _instance = this;
         ChangeLevelStates(LevelStates.LevelBriefing);
-        //listetexte (recette[1] "saut de ligne" recette[2])
     }
     private void Start()
     {
@@ -102,11 +101,24 @@ public class LevelManagerBehaviour : MonoBehaviour
 
     public void ChangeSprite(int amount)
     {
-        if(articlePos + amount >= 0 && articlePos + amount < article.Length)
+        if(articlePos + amount >= 0 && articlePos + amount < articleList.Length)
         {
             articlePos += amount;
-            imageArticle.sprite = article[articlePos];
-            articleName.text = article[articlePos].name;
+            imageArticle.sprite = Resources.Load<Sprite>(articleList[articlePos]);
+            articleName.text = articleList[articlePos];
         }
+    }
+
+    public void GetArticle(string nameArticle)
+    {
+        Debug.Log(nameArticle.PadRight(nameArticle.Length - 7));
+        /*
+        for(int i = 0; i < articleList.Length;i++)
+        {
+            if(articleList[i].Equals(nameArticle))
+            {
+                Debug.Log("valide");
+            }
+        }*/
     }
 }

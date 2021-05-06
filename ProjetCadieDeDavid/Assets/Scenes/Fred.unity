@@ -296,7 +296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7462569632099248015, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7462569632099248015, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -369,28 +369,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.size
-      value: 17
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListNumber.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListCurrentNumber.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d5a0a7a591dcf34d8c78c92855a0c33, type: 3}
+      value: "Cr\xE8me"
+      objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f6f73e9836aa0d48828e9231a8f641d, type: 3}
+      value: Banane
+      objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 62c1e76d7fe54dc43af66b0d3e5acc2d, type: 3}
+      value: Aubergine
+      objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 72158c96748133246ae0c71e3d7dc53d, type: 3}
+      value: Myrtille
+      objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5349b0d6d21aff447b224f668a404af0, type: 3}
+      value: Lait
+      objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: article.Array.data[5]
       value: 
@@ -439,6 +451,46 @@ PrefabInstance:
       propertyPath: article.Array.data[16]
       value: 
       objectReference: {fileID: 21300000, guid: 86f69d355b2b7ac4380bb97af7a28b5a, type: 3}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleList.Array.data[0]
+      value: Banane
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleList.Array.data[1]
+      value: Myrtille
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleList.Array.data[2]
+      value: "Cr\xE8me"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleList.Array.data[3]
+      value: Sucre
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleList.Array.data[4]
+      value: Aubergine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListNumber.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListNumber.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListNumber.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListNumber.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleListNumber.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
 --- !u!1001 &5903422406663915405

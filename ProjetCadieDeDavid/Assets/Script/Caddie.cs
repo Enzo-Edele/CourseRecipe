@@ -50,14 +50,13 @@ public class Caddie : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
+        capacitéMax = LevelManagerBehaviour.instance.capaciteCaddie;
         capacité = capacitéMax;
         life = LevelManagerBehaviour.instance.playerLife;
     }
 
     private void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
         time -= Time.deltaTime;
         Move();
         if (Input.GetKeyDown(KeyCode.Space) && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
@@ -68,6 +67,8 @@ public class Caddie : MonoBehaviour
 
     private void Move()
     {
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
         Vector3 position = this.transform.position;
         if (colliderFix)
         {
@@ -120,16 +121,16 @@ public class Caddie : MonoBehaviour
             if (capacité > 0)
             {
                 capacité -= 1;
-                Articles recup = collision.GetComponent<Articles>();
                 collision.gameObject.transform.SetParent(this.transform);
                 Destroy(collision.attachedRigidbody);
-                recup.speed = 0;
+                article.speed = 0;
                 Vector2 box = bc2d.size;
                 box.y += boxVar;
                 bc2d.size = box;
                 Vector2 offset = bc2d.offset;
                 offset.y += offsetVar;
                 bc2d.offset = offset;
+                LevelManagerBehaviour.instance.GetArticle(collision.GetComponent<SpriteRenderer>().name);
             }
             else
             {

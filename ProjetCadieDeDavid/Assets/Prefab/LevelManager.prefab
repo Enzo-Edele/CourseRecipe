@@ -470,19 +470,16 @@ MonoBehaviour:
   level: 0
   levelDone: 0
   backgroundSpeed: 0
-  capaciteCaddie: 0
   minSpeed: 1
   maxSpeed: 6
   minTime: 5
   maxTime: 11
+  capaciteCaddie: 20
   playerLife: 3
-  recette:
-  - mirtille
-  - oeuf
   menuBriefing: {fileID: 1584621700}
   imageArticle: {fileID: 761061987585085794}
   articleName: {fileID: 4009110054392067538}
-  article: []
+  articleList: []
 --- !u!1 &538153255642694452
 GameObject:
   m_ObjectHideFlags: 0
