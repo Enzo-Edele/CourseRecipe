@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &172766376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 668497169}
-  selection: {fileID: 0}
+  selection: {fileID: 716718412}
   HUD: {fileID: 1382267101}
   pause: {fileID: 1596016421}
   gameOver: {fileID: 375688318}
