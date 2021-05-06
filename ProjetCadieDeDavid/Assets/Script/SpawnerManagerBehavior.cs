@@ -37,7 +37,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
         }
     }
 
-    public GameObject panel;
+    public GameObject panelInUse, panelUn;
     public GameObject panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
     Vector3 positionStart;
     Vector3 positionSpawnPannel;
@@ -47,10 +47,10 @@ public class SpawnerManagerBehavior : MonoBehaviour
         positionSpawnItem = Camera.main.WorldToScreenPoint(transform.position);
         this.RayonChange(Rayons.RayonEpicerieUn);
         positionStart = Camera.main.WorldToScreenPoint(transform.position);
-        Instantiate(panel, Camera.main.ScreenToWorldPoint(positionStart), Quaternion.identity);
+        Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionStart), Quaternion.identity);
         positionSpawnPannel = Camera.main.WorldToScreenPoint(transform.position);
         positionSpawnPannel.x = Screen.width * 1.5f;
-        Instantiate(panel, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
+        Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
     }
     public void RayonChange(Rayons newState)
     {
@@ -182,7 +182,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
     }
     public void SpawnDecor()
     {
-        Instantiate(panel, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
+        Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
         if (stopRunner)
         {
             LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
