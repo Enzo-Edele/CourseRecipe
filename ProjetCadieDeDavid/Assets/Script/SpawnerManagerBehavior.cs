@@ -38,9 +38,10 @@ public class SpawnerManagerBehavior : MonoBehaviour
     }
 
     public GameObject panelInUse, panelUn;
-    public GameObject panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
+    public GameObject panelRayon, panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
     Vector3 positionStart;
     Vector3 positionSpawnPannel;
+    int panelTransition = 5;
     bool stopRunner = false;
     void Start()
     {
@@ -64,6 +65,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonEpicerieUn[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelEpUn;
                 break;
             case Rayons.RayonEpicerieDeux:
                 Rayon.Clear();
@@ -72,6 +74,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonEpicerieDeux[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelEpDeux;
                 break;
             case Rayons.RayonLaitier:
                 Rayon.Clear();
@@ -80,6 +83,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonLaitier[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelLaitier;
                 break;
             case Rayons.RayonBoucheriePoissonnerie:
                 Rayon.Clear();
@@ -88,6 +92,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonBoucheriePoissonnerie[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelBouPoi;
                 break;
             case Rayons.RayonLegumeUn:
                 Rayon.Clear();
@@ -96,6 +101,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonLegumeUn[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelLegUn;
                 break;
             case Rayons.RayonLegumeDeux:
                 Rayon.Clear();
@@ -104,6 +110,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonLegumeDeux[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelLegDeux;
                 break;
             case Rayons.RayonFruit:
                 Rayon.Clear();
@@ -112,6 +119,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                     Rayon.Add(rayonFruit[i]);
                 }
                 tailleList = Rayon.Count;
+                panelRayon = panelFruit;
                 break;
         }
     }
@@ -157,10 +165,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
-        }
-        else if (Input.GetKeyDown("2"))
-        {
-            stopRunner = true;
+            panelTransition = 3;
         }
     }
     void Generate()
@@ -182,11 +187,22 @@ public class SpawnerManagerBehavior : MonoBehaviour
     }
     public void SpawnDecor()
     {
-        Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
         if (stopRunner)
         {
             LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
             stopRunner = false;
+        }
+        if (panelTransition == 0)
+        {
+            Instantiate(panelRayon, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
+            stopRunner = true;
+            panelTransition--;
+        }
+        else
+        {
+            Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
+            panelTransition--;
+            Debug.Log(panelTransition);
         }
     }
 }
