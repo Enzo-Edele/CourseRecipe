@@ -87,6 +87,9 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     public void DisplayListHUD()
     {
+        listHUDText.text = "";
+        listNumberHUDText.text = "";
+
         for(int i = 0; i < LevelManagerBehaviour.instance.articleList.Length; i++)
         {
             listHUDText.text += LevelManagerBehaviour.instance.articleList[i] + "\n";

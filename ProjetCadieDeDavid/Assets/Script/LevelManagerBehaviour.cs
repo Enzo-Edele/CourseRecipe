@@ -111,14 +111,13 @@ public class LevelManagerBehaviour : MonoBehaviour
 
     public void GetArticle(string nameArticle)
     {
-        Debug.Log(nameArticle.PadRight(nameArticle.Length - 7));
-        /*
-        for(int i = 0; i < articleList.Length;i++)
+        for (int i = 0; i < articleList.Length; i++)
         {
-            if(articleList[i].Equals(nameArticle))
+            if (articleList[i].Equals(nameArticle.Replace("(Clone)", "")))
             {
-                Debug.Log("valide");
+                articleListCurrentNumber[i]++;
+                UIManagerBehaviour.instance.DisplayListHUD();
             }
-        }*/
+        }
     }
 }
