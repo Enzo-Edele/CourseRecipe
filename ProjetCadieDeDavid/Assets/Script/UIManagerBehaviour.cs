@@ -15,6 +15,8 @@ public class UIManagerBehaviour : MonoBehaviour
     public Text coinText;
     public Text listHUDText;
     public Text listNumberHUDText;
+    public GameObject[] miniatureArtcileArray;
+
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
     {
@@ -27,6 +29,14 @@ public class UIManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+    }
+    private void Start()
+    {
+        for(int i = 0; i < miniatureArtcileArray.Length; i++)
+        {
+            miniatureArtcileArray[i].GetComponent<Image>().preserveAspect = true;
+            miniatureArtcileArray[i].SetActive(false);
+        }
     }
     public void SetMainMenuActive()
     {
@@ -89,11 +99,20 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         listHUDText.text = "";
         listNumberHUDText.text = "";
-
-        for(int i = 0; i < LevelManagerBehaviour.instance.articleList.Length; i++)
+        for (int i = 0; i < LevelManagerBehaviour.instance.articleCurrentList.Count; i++)
         {
-            listHUDText.text += LevelManagerBehaviour.instance.articleList[i] + "\n";
-            listNumberHUDText.text += LevelManagerBehaviour.instance.articleListCurrentNumber[i] + "/" + LevelManagerBehaviour.instance.articleListNumber[i] + "\n";
+            miniatureArtcileArray[i].SetActive(true);
+            miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(LevelManagerBehaviour.instance.articleCurrentList[i]);
+            listHUDText.text += LevelManagerBehaviour.instance.articleCurrentList[i] + "\n";
+            listNumberHUDText.text += LevelManagerBehaviour.instance.articleCurrentNumberList[i];
+            if (i < LevelManagerBehaviour.instance.articleNumberArray.Length)
+            {
+                listNumberHUDText.text += "/" + LevelManagerBehaviour.instance.articleNumberArray[i] + "\n";
+            }
+            else
+            {
+                listNumberHUDText.text += "\n";
+            }
         }
     }
 }

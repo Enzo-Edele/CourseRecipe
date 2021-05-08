@@ -21,10 +21,11 @@ public class LevelManagerBehaviour : MonoBehaviour
     public GameObject menuBriefing;
     public Image imageArticle;
     public Text articleName;
-    public string[] articleList;
-    public int[] articleListNumber;
-    public int[] articleListCurrentNumber;
     int articlePos = 0;
+    public string[] articleAskedArray;
+    public int[] articleNumberArray;
+    public List <string> articleCurrentList = new List<string>();
+    public List<int> articleCurrentNumberList = new List<int>();
 
     public enum LevelStates
     {
@@ -56,6 +57,11 @@ public class LevelManagerBehaviour : MonoBehaviour
     }
     private void Start()
     {
+        for(int i = 0; i < articleAskedArray.Length; i++)
+        {
+            articleCurrentList.Add(articleAskedArray[i]);
+            articleCurrentNumberList.Add(0);
+        }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
         imageArticle.preserveAspect = true;
@@ -101,23 +107,30 @@ public class LevelManagerBehaviour : MonoBehaviour
 
     public void ChangeSprite(int amount)
     {
-        if(articlePos + amount >= 0 && articlePos + amount < articleList.Length)
+        if(articlePos + amount >= 0 && articlePos + amount < articleAskedArray.Length)
         {
             articlePos += amount;
-            imageArticle.sprite = Resources.Load<Sprite>(articleList[articlePos]);
-            articleName.text = articleList[articlePos];
+            imageArticle.sprite = Resources.Load<Sprite>(articleAskedArray[articlePos]);
+            articleName.text = articleAskedArray[articlePos];
         }
     }
 
-    public void GetArticle(string nameArticle)
+    public void AddInArticleList(string nameArticle)
     {
-        for (int i = 0; i < articleList.Length; i++)
+        bool found = false;
+        for (int i = 0; i < articleCurrentList.Count; i++)
         {
-            if (articleList[i].Equals(nameArticle.Replace("(Clone)", "")))
+            if (articleCurrentList[i].Equals(nameArticle.Replace("(Clone)", "")))
             {
-                articleListCurrentNumber[i]++;
-                UIManagerBehaviour.instance.DisplayListHUD();
+                articleCurrentNumberList[i]++;
+                found = true;
             }
         }
+        if(!found)
+        {
+            articleCurrentList.Add(nameArticle.Replace("(Clone)", ""));
+            articleCurrentNumberList.Add(1);
+        }
+        UIManagerBehaviour.instance.DisplayListHUD();
     }
 }
