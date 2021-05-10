@@ -4291,7 +4291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1382267102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4361,6 +4361,8 @@ MonoBehaviour:
   playerSkin: 0
   coin: 0
   coinPerLevel: 0
+  level: 0
+  ticket: 0
 --- !u!1 &1409453681
 GameObject:
   m_ObjectHideFlags: 0

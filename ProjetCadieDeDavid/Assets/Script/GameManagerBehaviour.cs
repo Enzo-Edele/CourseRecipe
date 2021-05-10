@@ -7,6 +7,8 @@ public class GameManagerBehaviour : MonoBehaviour
     public int playerSkin = 0;
     public int coin;
     public int coinPerLevel;
+    public int level;
+    public int ticket;
     public enum GameStates
     {
         MainMenu,
