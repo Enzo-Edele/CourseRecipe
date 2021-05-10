@@ -130,7 +130,7 @@ public class Caddie : MonoBehaviour
                 Vector2 offset = bc2d.offset;
                 offset.y += offsetVar;
                 bc2d.offset = offset;
-                LevelManagerBehaviour.instance.AddInArticleList(collision.GetComponent<SpriteRenderer>().name);
+                LevelManagerBehaviour.instance.AddInArticleList(collision.GetComponent<SpriteRenderer>().sprite.name);
             }
             else
             {
