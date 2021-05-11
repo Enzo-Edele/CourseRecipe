@@ -132,6 +132,15 @@ public class LevelManagerBehaviour : MonoBehaviour
             {
                 articleCurrentNumberList[i]++;
                 found = true;
+                if( i < articleNumberArray.Length)
+                {
+                    if (articleCurrentNumberList[i] == articleNumberArray[i])
+                    {
+                        Caddie caddie;
+                        caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                        caddie.ParticlesEffect();
+                    }
+                }
             }
         }
         if(!found)

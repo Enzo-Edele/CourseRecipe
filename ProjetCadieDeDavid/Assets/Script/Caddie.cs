@@ -147,6 +147,12 @@ public class Caddie : MonoBehaviour
             ChangeMoveState(PlayerStates.Death);
         }
     }
+
+    public void ParticlesEffect()
+    {
+
+    }
+
     public void ChangeMoveState(PlayerStates currentState)
     {
         _moveState = currentState;
