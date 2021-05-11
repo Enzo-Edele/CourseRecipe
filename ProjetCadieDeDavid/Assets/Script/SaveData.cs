@@ -14,6 +14,5 @@ public class SaveData
         level = gameData.level;
         coin = gameData.coin;
         ticket = gameData.ticket;
-
     }
 }

@@ -27,6 +27,10 @@ public class LevelManagerBehaviour : MonoBehaviour
     public List <string> articleCurrentList = new List<string>();
     public List<int> articleCurrentNumberList = new List<int>();
 
+    public string[] rayonArray;
+    public List<string> rayonList = new List<string>();
+    int nombreRayon = 0;   
+
     public enum LevelStates
     {
         LevelBriefing,
@@ -54,6 +58,10 @@ public class LevelManagerBehaviour : MonoBehaviour
     {
         _instance = this;
         ChangeLevelStates(LevelStates.LevelBriefing);
+        for (int i = 0; i < rayonArray.Length; i++)
+        {
+            rayonList.Add(rayonArray[i]);
+        }
     }
     private void Start()
     {
