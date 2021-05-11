@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using TMPro;
 
 public class LevelManagerBehaviour : MonoBehaviour
 {
@@ -19,9 +21,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int playerLife;
 
     public GameObject menuBriefing;
-    public Image imageArticle;
     public Text articleName;
-    int articlePos = 0;
     public string[] articleAskedArray;
     public int[] articleNumberArray;
     public List <string> articleCurrentList = new List<string>();
@@ -32,6 +32,11 @@ public class LevelManagerBehaviour : MonoBehaviour
     public float timeCollect = 10;
     float timerCollect;
     public int runnerLenght = 2;
+
+
+    public TMP_Text[] listHUDText;
+    public TMP_Text[] listNumberHUDText;
+    public GameObject[] miniatureArtcileArray;
 
     public enum LevelStates
     {
@@ -59,7 +64,6 @@ public class LevelManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        ChangeLevelStates(LevelStates.LevelBriefing);
     }
     private void Start()
     {
@@ -70,8 +74,7 @@ public class LevelManagerBehaviour : MonoBehaviour
         }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
-        imageArticle.preserveAspect = true;
-        ChangeSprite(0);
+        ChangeLevelStates(LevelStates.LevelBriefing);
     }
     private void Update()
     {
@@ -102,6 +105,7 @@ public class LevelManagerBehaviour : MonoBehaviour
             case LevelStates.LevelBriefing:
                 UIManagerBehaviour.instance.HUD.SetActive(false);
                 menuBriefing.SetActive(true);
+                DisplayList();
                 Time.timeScale = 0;
                 break;
             case LevelStates.Collect:
@@ -132,13 +136,18 @@ public class LevelManagerBehaviour : MonoBehaviour
         }
     }
 
-    public void ChangeSprite(int amount)
+    void DisplayList()
     {
-        if(articlePos + amount >= 0 && articlePos + amount < articleAskedArray.Length)
+        for (int i = 0; i < articleCurrentList.Count; i++)
         {
-            articlePos += amount;
-            imageArticle.sprite = Resources.Load<Sprite>(articleAskedArray[articlePos]);
-            articleName.text = articleAskedArray[articlePos];
+            miniatureArtcileArray[i].SetActive(true);
+            miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(Instance.articleCurrentList[i]);
+            listHUDText[i].text = Instance.articleCurrentList[i];
+            listNumberHUDText[i].SetText(articleCurrentNumberList[i].ToString());
+            if (i < articleNumberArray.Length)
+            {
+                listNumberHUDText[i].text += "/" + articleNumberArray[i].ToString();
+            }
         }
     }
 
@@ -157,7 +166,7 @@ public class LevelManagerBehaviour : MonoBehaviour
                     {
                         Caddie caddie;
                         caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
-                        caddie.ParticlesEffect();
+                        caddie.ParticlesEffect(2);
                     }
                 }
             }
@@ -170,4 +179,5 @@ public class LevelManagerBehaviour : MonoBehaviour
         UIManagerBehaviour.instance.DisplayListHUD();
     }
 
+    
 }

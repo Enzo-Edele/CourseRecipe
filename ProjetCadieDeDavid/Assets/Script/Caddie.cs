@@ -7,7 +7,6 @@ public class Caddie : MonoBehaviour
     public enum PlayerStates
     {
         Run,
-        Jump,
         Death,
     }
 
@@ -36,15 +35,11 @@ public class Caddie : MonoBehaviour
     float time = 0;
     [SerializeField]
     float speed = 5;
-    [SerializeField]
-    float jumpPower = 20;
     int life;
     float horizontal;
     float vertical;
 
-    public GameObject etaleGO;
-    public GameObject etaleGO1;
-    bool colliderFix = false;
+    public GameObject[] starEffect;
 
     void Start()
     {
@@ -59,10 +54,6 @@ public class Caddie : MonoBehaviour
     {
         time -= Time.deltaTime;
         Move();
-        if (Input.GetKeyDown(KeyCode.Space) && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
-        {
-            Jump();
-        }
     }
 
     private void Move()
@@ -70,11 +61,6 @@ public class Caddie : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         Vector3 position = this.transform.position;
-        if (colliderFix)
-        {
-            vertical = -15;
-            colliderFix = false;
-        }
         if(position.x + speed * horizontal * Time.deltaTime >= -8 && position.x + speed * horizontal * Time.deltaTime <= 8)
         {
             position.x += speed * horizontal * Time.deltaTime;
@@ -100,12 +86,6 @@ public class Caddie : MonoBehaviour
             time = timer;
         }
         transform.position = position;
-    }
-    void Jump()
-    {
-        ChangeMoveState(PlayerStates.Jump);
-        Vector2 jump = new Vector2(0, jumpPower);
-        rb2D.velocity = jump;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -148,9 +128,9 @@ public class Caddie : MonoBehaviour
         }
     }
 
-    public void ParticlesEffect()
+    public void ParticlesEffect(int i)
     {
-
+        Instantiate(starEffect[i], this.transform.position, Quaternion.identity, this.transform);
     }
 
     public void ChangeMoveState(PlayerStates currentState)
@@ -159,19 +139,6 @@ public class Caddie : MonoBehaviour
         switch (_moveState)
         {
             case PlayerStates.Run:
-                rb2D.gravityScale = 0;
-                EtaleBehaviour etale = etaleGO.GetComponent<EtaleBehaviour>();
-                etale.ChangeEffector2D(180f);
-                etale = etaleGO1.GetComponent<EtaleBehaviour>();
-                etale.ChangeEffector2D(180f);
-                colliderFix = true;
-                break;
-            case PlayerStates.Jump:
-                rb2D.gravityScale = 1;
-                EtaleBehaviour etaleFix = etaleGO.GetComponent<EtaleBehaviour>();
-                etaleFix.ChangeEffector2D(0f);
-                etaleFix = etaleGO1.GetComponent<EtaleBehaviour>();
-                etaleFix.ChangeEffector2D(0f);
                 break;
             case PlayerStates.Death:
                 GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);

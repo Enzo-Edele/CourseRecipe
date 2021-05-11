@@ -213,6 +213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4078764024215806762, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
+      propertyPath: premierRayon
+      value: EpicerieUn
+      objectReference: {fileID: 0}
     - target: {fileID: 7462569632099248008, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
       propertyPath: m_Name
       value: SpawnerManager

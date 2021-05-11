@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using TMPro;
 
 public class UIManagerBehaviour : MonoBehaviour
 {
@@ -13,8 +15,8 @@ public class UIManagerBehaviour : MonoBehaviour
 
     public Text levelText;
     public Text coinText;
-    public Text listHUDText;
-    public Text listNumberHUDText;
+    public TMP_Text[] listHUDText;
+    public TMP_Text[] listNumberHUDText;
     public GameObject[] miniatureArtcileArray;
 
     private static UIManagerBehaviour _instance;
@@ -97,21 +99,15 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     public void DisplayListHUD()
     {
-        listHUDText.text = "";
-        listNumberHUDText.text = "";
         for (int i = 0; i < LevelManagerBehaviour.Instance.articleCurrentList.Count; i++)
         {
             miniatureArtcileArray[i].SetActive(true);
             miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(LevelManagerBehaviour.Instance.articleCurrentList[i]);
-            listHUDText.text += LevelManagerBehaviour.Instance.articleCurrentList[i] + "\n";
-            listNumberHUDText.text += LevelManagerBehaviour.Instance.articleCurrentNumberList[i];
+            listHUDText[i].text = LevelManagerBehaviour.Instance.articleCurrentList[i];
+            listNumberHUDText[i].SetText(LevelManagerBehaviour.Instance.articleCurrentNumberList[i].ToString());
             if (i < LevelManagerBehaviour.Instance.articleNumberArray.Length)
             {
-                listNumberHUDText.text += "/" + LevelManagerBehaviour.Instance.articleNumberArray[i] + "\n";
-            }
-            else
-            {
-                listNumberHUDText.text += "\n";
+                listNumberHUDText[i].text += "/" + LevelManagerBehaviour.Instance.articleNumberArray[i].ToString();
             }
         }
     }
