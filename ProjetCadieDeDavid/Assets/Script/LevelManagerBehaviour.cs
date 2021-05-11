@@ -30,7 +30,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     int rayonInUse = 0;
     public float timeCollect = 10;
     float timerCollect;
-    public int runnerLenght = 2;
+    public int runnerLentgh = 2;
 
 
     public TMP_Text[] listHUDText;
@@ -68,6 +68,15 @@ public class LevelManagerBehaviour : MonoBehaviour
             articleCurrentList.Add(articleAskedArray[i]);
             articleCurrentNumberList.Add(0);
         }
+        for (int i = 0; i < miniatureArtcileArray.Length; i++)
+        {
+            miniatureArtcileArray[i].GetComponent<Image>().preserveAspect = true;
+            miniatureArtcileArray[i].SetActive(false);
+            UIManagerBehaviour.instance.listHUDText[i].SetText("");
+            UIManagerBehaviour.instance.listHUDText[i].color = new Color32(0, 0, 0, 255);
+            UIManagerBehaviour.instance.listNumberHUDText[i].SetText("");
+            UIManagerBehaviour.instance.listNumberHUDText[i].color = new Color32(0, 0, 0, 255);
+        }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
     }
@@ -79,7 +88,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     {
         if(timerCollect < 0 && LevelState == LevelStates.Collect)
         {
-            SpawnerManagerBehavior.Instance.panelTransition = runnerLenght;
+            SpawnerManagerBehavior.Instance.panelTransition = runnerLentgh;
             rayonInUse++;
             if (rayonInUse < rayonArray.Length)
             {

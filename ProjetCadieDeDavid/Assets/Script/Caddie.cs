@@ -28,16 +28,10 @@ public class Caddie : MonoBehaviour
     BoxCollider2D bc2d;
     Rigidbody2D rb2D;
 
-    public float[] posY;
-    int currentPos = 0;
-    [SerializeField]
-    float timer = 1;
-    float time = 0;
     [SerializeField]
     float speed = 5;
     int life;
     float horizontal;
-    float vertical;
 
     public GameObject[] starEffect;
 
@@ -52,7 +46,6 @@ public class Caddie : MonoBehaviour
 
     private void Update()
     {
-        time -= Time.deltaTime;
         if (GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
         {
             Move();
@@ -62,31 +55,10 @@ public class Caddie : MonoBehaviour
     private void Move()
     {
         horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
         Vector3 position = this.transform.position;
         if(position.x + speed * horizontal * Time.deltaTime >= -8 && position.x + speed * horizontal * Time.deltaTime <= 8)
         {
             position.x += speed * horizontal * Time.deltaTime;
-        }
-        if(time < 0)
-        {
-            if (vertical > 0)
-            {
-                if (currentPos < 2)
-                {
-                    currentPos++;
-                }
-                position.y = posY[currentPos];
-            }
-            else if (vertical < 0)
-            {
-                if (currentPos > 0)
-                {
-                    currentPos--;
-                }
-                position.y = posY[currentPos];
-            }
-            time = timer;
         }
         transform.position = position;
     }
