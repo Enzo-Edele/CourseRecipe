@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e461ea9cd8a1e44b00100c4b350a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeMin: 1
+  timeMax: 2
+  premierRayon: Laitier
   rayonEpicerieUn:
   - {fileID: 431362367167235925, guid: 4a1443524283b3b419d7fe46d9d9e563, type: 3}
   - {fileID: 2242193847193272004, guid: fefa4a1a2dfdf5c42a2760fdbed5bc5f, type: 3}
@@ -71,9 +74,8 @@ MonoBehaviour:
   - {fileID: 1308028146621553465, guid: 935e9addfd118124e8047601873eae38, type: 3}
   - {fileID: 1248781797410697530, guid: 0c2a51ec568579242a8363595feae484, type: 3}
   - {fileID: 924415658736079490, guid: 54b1e495564f23340a1398bcca0778b9, type: 3}
-  premierRayon: Laitier
-  panelInUse: {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}
-  panelUn: {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}
+  panel:
+  - {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}
   panelEpUn: {fileID: 6359358930039568031, guid: 54b989561a2d42441add32a24e079dbe, type: 3}
   panelEpDeux: {fileID: 450492575120449403, guid: 7fafdd8458b81324fbc109b195c91caf, type: 3}
   panelLaitier: {fileID: 4291484036190538432, guid: e560c72631dff114ea8b0da1aecc27e3, type: 3}
