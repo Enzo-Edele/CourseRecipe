@@ -11,7 +11,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
     public GameObject[] rayonEpicerieUn = new GameObject[0];
     public GameObject[] rayonEpicerieDeux = new GameObject[0];
     public GameObject[] rayonLaitier = new GameObject[0];
-    public GameObject[] rayonBoucheriePoissonnerie = new GameObject[0];
+    public GameObject[] rayonBouPoi = new GameObject[0];
     public GameObject[] rayonLegumeUn = new GameObject[0];
     public GameObject[] rayonLegumeDeux = new GameObject[0];
     public GameObject[] rayonFruit = new GameObject[0];
@@ -36,11 +36,11 @@ public class SpawnerManagerBehavior : MonoBehaviour
             return _rayonActuel;
         }
     }
-    [SerializeField]
-    string premierRayon;
+    public string premierRayon;
 
     public GameObject panelInUse, panelUn;
-    public GameObject panelRayon, panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
+    public GameObject panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
+    GameObject panelRayon;
     Vector3 positionStart;
     Vector3 positionSpawnPannel;
     [HideInInspector]
@@ -100,9 +100,9 @@ public class SpawnerManagerBehavior : MonoBehaviour
                 break;
             case Rayons.RayonBoucheriePoissonnerie:
                 Rayon.Clear();
-                for (int i = 0; i < rayonBoucheriePoissonnerie.Length; i++)
+                for (int i = 0; i < rayonBouPoi.Length; i++)
                 {
-                    Rayon.Add(rayonBoucheriePoissonnerie[i]);
+                    Rayon.Add(rayonBouPoi[i]);
                 }
                 tailleList = Rayon.Count;
                 panelRayon = panelBouPoi;
