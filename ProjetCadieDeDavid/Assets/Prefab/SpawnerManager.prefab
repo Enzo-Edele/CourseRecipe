@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: 1562830053337495440, guid: 9fc54d00e44876941a52467a809e0e42, type: 3}
   - {fileID: 7437159809973629215, guid: c5c8d7eb80675b646b54d9dc7e163979, type: 3}
   - {fileID: 7801875380603631037, guid: 3d69189a3df26024bbd6cfc4faada13b, type: 3}
-  rayonBoucheriePoissonnerie:
+  rayonBouPoi:
   - {fileID: 4987135306835847736, guid: 4f6883902f3309d459ad1e142f75f46f, type: 3}
   - {fileID: 112697955939717946, guid: c53c99d4e1e6de747ae15e8b700fbe0f, type: 3}
   rayonLegumeUn:
@@ -71,6 +71,7 @@ MonoBehaviour:
   - {fileID: 1308028146621553465, guid: 935e9addfd118124e8047601873eae38, type: 3}
   - {fileID: 1248781797410697530, guid: 0c2a51ec568579242a8363595feae484, type: 3}
   - {fileID: 924415658736079490, guid: 54b1e495564f23340a1398bcca0778b9, type: 3}
+  premierRayon: Laitier
   panelInUse: {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}
   panelUn: {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}
   panelEpUn: {fileID: 6359358930039568031, guid: 54b989561a2d42441add32a24e079dbe, type: 3}
@@ -80,3 +81,4 @@ MonoBehaviour:
   panelLegUn: {fileID: 4979799268060547639, guid: e302703cd5b6ec2478806ff22b97d524, type: 3}
   panelLegDeux: {fileID: 4979799268060547639, guid: e302703cd5b6ec2478806ff22b97d524, type: 3}
   panelFruit: {fileID: 6066274365141833645, guid: c33cc1bf3d84f0d43a036c99dc0c34ab, type: 3}
+  panelTransition: 5

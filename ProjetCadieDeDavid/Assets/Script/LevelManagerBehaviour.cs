@@ -82,7 +82,7 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             SpawnerManagerBehavior.Instance.panelTransition = runnerLenght;
             rayonInUse++;
-            if (rayonInUse <= rayonArray.Length)
+            if (rayonInUse < rayonArray.Length)
             {
                 SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
             }

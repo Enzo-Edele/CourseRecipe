@@ -23,7 +23,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
         RayonEpicerieUn,
         RayonEpicerieDeux,
         RayonLaitier,
-        RayonBoucheriePoissonnerie,
+        RayonBouPoi,
         RayonLegumeUn,
         RayonLegumeDeux,
         RayonFruit
@@ -98,7 +98,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                 tailleList = Rayon.Count;
                 panelRayon = panelLaitier;
                 break;
-            case Rayons.RayonBoucheriePoissonnerie:
+            case Rayons.RayonBouPoi:
                 Rayon.Clear();
                 for (int i = 0; i < rayonBouPoi.Length; i++)
                 {
@@ -150,7 +150,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
                 this.RayonChange(Rayons.RayonLaitier);
                 break;
             case "BouPoi":
-                this.RayonChange(Rayons.RayonBoucheriePoissonnerie);
+                this.RayonChange(Rayons.RayonBouPoi);
                 break;
             case "LegumeUn":
                 this.RayonChange(Rayons.RayonLegumeUn);
