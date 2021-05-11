@@ -50,9 +50,9 @@ public class Caddie : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
-        capacitéMax = LevelManagerBehaviour.instance.capaciteCaddie;
+        capacitéMax = LevelManagerBehaviour.Instance.capaciteCaddie;
         capacité = capacitéMax;
-        life = LevelManagerBehaviour.instance.playerLife;
+        life = LevelManagerBehaviour.Instance.playerLife;
     }
 
     private void Update()
@@ -130,7 +130,7 @@ public class Caddie : MonoBehaviour
                 Vector2 offset = bc2d.offset;
                 offset.y += offsetVar;
                 bc2d.offset = offset;
-                LevelManagerBehaviour.instance.AddInArticleList(collision.GetComponent<SpriteRenderer>().sprite.name);
+                LevelManagerBehaviour.Instance.AddInArticleList(collision.GetComponent<SpriteRenderer>().sprite.name);
             }
             else
             {

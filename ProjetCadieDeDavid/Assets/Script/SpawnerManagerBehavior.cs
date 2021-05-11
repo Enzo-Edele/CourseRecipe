@@ -36,24 +36,37 @@ public class SpawnerManagerBehavior : MonoBehaviour
             return _rayonActuel;
         }
     }
+    [SerializeField]
+    string premierRayon;
 
     public GameObject panelInUse, panelUn;
     public GameObject panelRayon, panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
     Vector3 positionStart;
     Vector3 positionSpawnPannel;
-    int panelTransition = 5;
+    [HideInInspector]
+    public int panelTransition = 5;
     bool stopRunner = false;
+
+    private static SpawnerManagerBehavior _instance;
+    public static SpawnerManagerBehavior Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
     void Start()
     {
+        _instance = this;
+        ChangeRayonState(premierRayon);
         positionSpawnItem = Camera.main.WorldToScreenPoint(transform.position);
-        this.RayonChange(Rayons.RayonEpicerieUn);
         positionStart = Camera.main.WorldToScreenPoint(transform.position);
-        Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionStart), Quaternion.identity);
+        Instantiate(panelRayon, Camera.main.ScreenToWorldPoint(positionStart), Quaternion.identity);
         positionSpawnPannel = Camera.main.WorldToScreenPoint(transform.position);
         positionSpawnPannel.x = Screen.width * 1.5f;
         Instantiate(panelInUse, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
     }
-    public void RayonChange(Rayons newState)
+    void RayonChange(Rayons newState)
     {
         _rayonActuel = newState;
         switch (_rayonActuel)
@@ -123,6 +136,33 @@ public class SpawnerManagerBehavior : MonoBehaviour
                 break;
         }
     }
+    public void ChangeRayonState(string rayon)
+    {
+        switch(rayon)
+        {
+            case "EpicerieUn":
+                this.RayonChange(Rayons.RayonEpicerieUn);
+                break;
+            case "EpicerieDeux":
+                this.RayonChange(Rayons.RayonEpicerieDeux);
+                break;
+            case "Laitier":
+                this.RayonChange(Rayons.RayonLaitier);
+                break;
+            case "BouPoi":
+                this.RayonChange(Rayons.RayonBoucheriePoissonnerie);
+                break;
+            case "LegumeUn":
+                this.RayonChange(Rayons.RayonLegumeUn);
+                break;
+            case "LegumeDeux":
+                this.RayonChange(Rayons.RayonLegumeDeux);
+                break;
+            case "Fruit":
+                this.RayonChange(Rayons.RayonFruit);
+                break;
+        }
+    }
     void Update()
     {
         if (timer < 0 && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Collect)
@@ -132,40 +172,6 @@ public class SpawnerManagerBehavior : MonoBehaviour
         else
         {
             timer -= Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown("[1]"))
-        {
-            this.RayonChange(Rayons.RayonEpicerieUn);
-        }
-        else if (Input.GetKeyDown("[2]"))
-        {
-            this.RayonChange(Rayons.RayonEpicerieDeux);
-        }
-        else if (Input.GetKeyDown("[3]"))
-        {
-            this.RayonChange(Rayons.RayonLaitier);
-        }
-        else if (Input.GetKeyDown("[4]"))
-        {
-            this.RayonChange(Rayons.RayonBoucheriePoissonnerie);
-        }
-        else if (Input.GetKeyDown("[5]"))
-        {
-            this.RayonChange(Rayons.RayonLegumeUn);
-        }
-        else if (Input.GetKeyDown("[6]"))
-        {
-            this.RayonChange(Rayons.RayonLegumeDeux);
-        }
-        else if (Input.GetKeyDown("[7]"))
-        {
-            this.RayonChange(Rayons.RayonFruit);
-        }
-        if (Input.GetKeyDown("1"))
-        {
-            LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
-            panelTransition = 3;
         }
     }
     void Generate()
@@ -189,10 +195,10 @@ public class SpawnerManagerBehavior : MonoBehaviour
     {
         if (stopRunner)
         {
-            LevelManagerBehaviour.instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
+            LevelManagerBehaviour.Instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
             stopRunner = false;
         }
-        if (panelTransition == 0)
+        if (panelTransition == 1)
         {
             Instantiate(panelRayon, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
             stopRunner = true;

@@ -24,13 +24,13 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 
     public int RandomSpeed()
     {
-        int rngSpeed = Random.Range(LevelManagerBehaviour.instance.minSpeed, LevelManagerBehaviour.instance.maxSpeed);
+        int rngSpeed = Random.Range(LevelManagerBehaviour.Instance.minSpeed, LevelManagerBehaviour.Instance.maxSpeed);
         return rngSpeed;
     }
 
     float RandomTime()
     {
-        float rngTime = Random.Range(LevelManagerBehaviour.instance.minTime, LevelManagerBehaviour.instance.maxTime);
+        float rngTime = Random.Range(LevelManagerBehaviour.Instance.minTime, LevelManagerBehaviour.Instance.maxTime);
         return rngTime;
     }
 

@@ -89,7 +89,7 @@ public class UIManagerBehaviour : MonoBehaviour
 
     public void DisplayLevel()
     {
-        levelText.text = "Level : " + LevelManagerBehaviour.instance.level;
+        levelText.text = "Level : " + LevelManagerBehaviour.Instance.level;
     }
     public void DisplayCoin()
     {
@@ -99,15 +99,15 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         listHUDText.text = "";
         listNumberHUDText.text = "";
-        for (int i = 0; i < LevelManagerBehaviour.instance.articleCurrentList.Count; i++)
+        for (int i = 0; i < LevelManagerBehaviour.Instance.articleCurrentList.Count; i++)
         {
             miniatureArtcileArray[i].SetActive(true);
-            miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(LevelManagerBehaviour.instance.articleCurrentList[i]);
-            listHUDText.text += LevelManagerBehaviour.instance.articleCurrentList[i] + "\n";
-            listNumberHUDText.text += LevelManagerBehaviour.instance.articleCurrentNumberList[i];
-            if (i < LevelManagerBehaviour.instance.articleNumberArray.Length)
+            miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(LevelManagerBehaviour.Instance.articleCurrentList[i]);
+            listHUDText.text += LevelManagerBehaviour.Instance.articleCurrentList[i] + "\n";
+            listNumberHUDText.text += LevelManagerBehaviour.Instance.articleCurrentNumberList[i];
+            if (i < LevelManagerBehaviour.Instance.articleNumberArray.Length)
             {
-                listNumberHUDText.text += "/" + LevelManagerBehaviour.instance.articleNumberArray[i] + "\n";
+                listNumberHUDText.text += "/" + LevelManagerBehaviour.Instance.articleNumberArray[i] + "\n";
             }
             else
             {

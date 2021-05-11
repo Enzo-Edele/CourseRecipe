@@ -28,8 +28,10 @@ public class LevelManagerBehaviour : MonoBehaviour
     public List<int> articleCurrentNumberList = new List<int>();
 
     public string[] rayonArray;
-    public List<string> rayonList = new List<string>();
-    int nombreRayon = 0;   
+    int rayonInUse = 0;
+    public float timeCollect = 10;
+    float timerCollect;
+    public int runnerLenght = 2;
 
     public enum LevelStates
     {
@@ -37,16 +39,16 @@ public class LevelManagerBehaviour : MonoBehaviour
         Collect,
         Run,
     }
-    private static LevelStates _LevelState;
+    private static LevelStates _levelState;
     public static LevelStates LevelState
     {
         get
         {
-            return _LevelState;
+            return _levelState;
         }
     }
     private static LevelManagerBehaviour _instance;
-    public static LevelManagerBehaviour instance
+    public static LevelManagerBehaviour Instance
     {
         get
         {
@@ -58,10 +60,6 @@ public class LevelManagerBehaviour : MonoBehaviour
     {
         _instance = this;
         ChangeLevelStates(LevelStates.LevelBriefing);
-        for (int i = 0; i < rayonArray.Length; i++)
-        {
-            rayonList.Add(rayonArray[i]);
-        }
     }
     private void Start()
     {
@@ -75,11 +73,31 @@ public class LevelManagerBehaviour : MonoBehaviour
         imageArticle.preserveAspect = true;
         ChangeSprite(0);
     }
-
+    private void Update()
+    {
+        if(timerCollect < 0 && LevelState == LevelStates.Collect)
+        {
+            SpawnerManagerBehavior.Instance.panelTransition = runnerLenght;
+            rayonInUse++;
+            if (rayonInUse <= rayonArray.Length)
+            {
+                SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
+            }
+            else
+            {
+                Debug.Log("End");
+            }
+            ChangeLevelStates(LevelStates.Run);
+        }
+        else
+        {
+            timerCollect -= Time.deltaTime;
+        }
+    }
     public void ChangeLevelStates(LevelStates currentState)
     {
-        _LevelState = currentState;
-        switch(_LevelState)
+        _levelState = currentState;
+        switch(_levelState)
         {
             case LevelStates.LevelBriefing:
                 UIManagerBehaviour.instance.HUD.SetActive(false);
@@ -90,6 +108,7 @@ public class LevelManagerBehaviour : MonoBehaviour
                 UIManagerBehaviour.instance.HUD.SetActive(true);
                 menuBriefing.SetActive(false);
                 Time.timeScale = 1;
+                timerCollect = timeCollect;
                 break;
             case LevelStates.Run:
                 UIManagerBehaviour.instance.HUD.SetActive(true);
@@ -150,4 +169,5 @@ public class LevelManagerBehaviour : MonoBehaviour
         }
         UIManagerBehaviour.instance.DisplayListHUD();
     }
+
 }
