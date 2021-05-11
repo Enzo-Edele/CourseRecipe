@@ -18,6 +18,9 @@ public class UIManagerBehaviour : MonoBehaviour
     public TMP_Text[] listHUDText;
     public TMP_Text[] listNumberHUDText;
     public GameObject[] miniatureArtcileArray;
+    public Color32 red;
+    public Color32 orange;
+    public Color32 green;
 
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
@@ -39,6 +42,9 @@ public class UIManagerBehaviour : MonoBehaviour
             miniatureArtcileArray[i].GetComponent<Image>().preserveAspect = true;
             miniatureArtcileArray[i].SetActive(false);
         }
+        red.a = 255;
+        orange.a = 255;
+        green.a = 255;
     }
     public void SetMainMenuActive()
     {
@@ -71,6 +77,8 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(true);
         gameOver.SetActive(false);
+        LevelManagerBehaviour.Instance.DisplayList();
+        LevelManagerBehaviour.Instance.menuBriefing.SetActive(true);
     }
     public void SetGameOverActive()
     {
@@ -104,6 +112,21 @@ public class UIManagerBehaviour : MonoBehaviour
             miniatureArtcileArray[i].SetActive(true);
             miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(LevelManagerBehaviour.Instance.articleCurrentList[i]);
             listHUDText[i].text = LevelManagerBehaviour.Instance.articleCurrentList[i];
+            if (i >= LevelManagerBehaviour.Instance.articleAskedArray.Length)
+            {
+                listHUDText[i].color = red;
+            }
+            else
+            {
+                if (LevelManagerBehaviour.Instance.articleCurrentNumberList[i] == LevelManagerBehaviour.Instance.articleNumberArray[i])
+                {
+                    listHUDText[i].color = green;
+                }
+                else if (LevelManagerBehaviour.Instance.articleCurrentNumberList[i] > LevelManagerBehaviour.Instance.articleNumberArray[i])
+                {
+                    listHUDText[i].color = orange;
+                }
+            }
             listNumberHUDText[i].SetText(LevelManagerBehaviour.Instance.articleCurrentNumberList[i].ToString());
             if (i < LevelManagerBehaviour.Instance.articleNumberArray.Length)
             {

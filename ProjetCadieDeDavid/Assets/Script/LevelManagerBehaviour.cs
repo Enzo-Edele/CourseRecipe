@@ -21,7 +21,6 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int playerLife;
 
     public GameObject menuBriefing;
-    public Text articleName;
     public string[] articleAskedArray;
     public int[] articleNumberArray;
     public List <string> articleCurrentList = new List<string>();
@@ -64,16 +63,16 @@ public class LevelManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-    }
-    private void Start()
-    {
-        for(int i = 0; i < articleAskedArray.Length; i++)
+        for (int i = 0; i < articleAskedArray.Length; i++)
         {
             articleCurrentList.Add(articleAskedArray[i]);
             articleCurrentNumberList.Add(0);
         }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
+    }
+    private void Start()
+    {
         ChangeLevelStates(LevelStates.LevelBriefing);
     }
     private void Update()
@@ -95,6 +94,10 @@ public class LevelManagerBehaviour : MonoBehaviour
         else
         {
             timerCollect -= Time.deltaTime;
+        }
+        if(menuBriefing.activeSelf && GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame && LevelState != LevelStates.LevelBriefing)
+        {
+            menuBriefing.SetActive(false);
         }
     }
     public void ChangeLevelStates(LevelStates currentState)
@@ -136,13 +139,28 @@ public class LevelManagerBehaviour : MonoBehaviour
         }
     }
 
-    void DisplayList()
+    public void DisplayList()
     {
         for (int i = 0; i < articleCurrentList.Count; i++)
         {
             miniatureArtcileArray[i].SetActive(true);
-            miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(Instance.articleCurrentList[i]);
-            listHUDText[i].text = Instance.articleCurrentList[i];
+            miniatureArtcileArray[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(articleCurrentList[i]);
+            listHUDText[i].text = articleCurrentList[i];
+            if (i >= articleAskedArray.Length)
+            {
+                listHUDText[i].color = UIManagerBehaviour.instance.red;
+            }
+            else
+            {
+                if (articleCurrentNumberList[i] == articleNumberArray[i])
+                {
+                    listHUDText[i].color = UIManagerBehaviour.instance.green;
+                }
+                else if (articleCurrentNumberList[i] > articleNumberArray[i])
+                {
+                    listHUDText[i].color = UIManagerBehaviour.instance.orange;
+                }
+            }
             listNumberHUDText[i].SetText(articleCurrentNumberList[i].ToString());
             if (i < articleNumberArray.Length)
             {
@@ -160,7 +178,7 @@ public class LevelManagerBehaviour : MonoBehaviour
             {
                 articleCurrentNumberList[i]++;
                 found = true;
-                if( i < articleNumberArray.Length)
+                if(found && i < articleNumberArray.Length)
                 {
                     if (articleCurrentNumberList[i] == articleNumberArray[i])
                     {
@@ -168,6 +186,24 @@ public class LevelManagerBehaviour : MonoBehaviour
                         caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
                         caddie.ParticlesEffect(2);
                     }
+                    else if (articleCurrentNumberList[i] < articleNumberArray[i])
+                    {
+                        Caddie caddie;
+                        caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                        caddie.ParticlesEffect(1);
+                    }
+                    else
+                    {
+                        Caddie caddie;
+                        caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                        caddie.ParticlesEffect(0);
+                    }
+                }
+                else if(found)
+                {
+                    Caddie caddie;
+                    caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                    caddie.ParticlesEffect(0);
                 }
             }
         }
@@ -175,6 +211,9 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             articleCurrentList.Add(nameArticle.Replace("(Clone)", ""));
             articleCurrentNumberList.Add(1);
+            Caddie caddie;
+            caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+            caddie.ParticlesEffect(0);
         }
         UIManagerBehaviour.instance.DisplayListHUD();
     }
