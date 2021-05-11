@@ -40,7 +40,28 @@ public class GameManagerBehaviour : MonoBehaviour
         _instance = this;
         AddCoin(0);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown("[5]"))
+        {
+            SaveSysteme.Save(this);
+        }
+        if (Input.GetKeyDown("[7]"))
+        {
+            SaveData data = SaveSysteme.LoadData();
+            level = data.level;
+            coin = data.coin;
+            ticket = data.ticket;
+        }
+        if(Input.GetKeyDown("[8]"))
+        {
+            coin++;
+        }
+        if (Input.GetKeyDown("[9]"))
+        {
+            Debug.Log("Pièce : " + coin);
+        }
+    }
     public void AddCoin(int numberOfCoin)
     {
         coin += numberOfCoin;

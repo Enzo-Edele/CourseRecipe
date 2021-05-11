@@ -88,7 +88,7 @@ public class LevelManagerBehaviour : MonoBehaviour
             }
             else
             {
-                Debug.Log("End");
+                GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
             }
             ChangeLevelStates(LevelStates.Run);
         }
