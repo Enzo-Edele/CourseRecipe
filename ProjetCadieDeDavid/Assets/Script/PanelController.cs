@@ -9,7 +9,7 @@ public class PanelController : MonoBehaviour
     SpawnerManagerBehavior panelSpawner;
     void Update()
     {
-        if (LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run)
+        if (LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run && GameManagerBehaviour.GameState != GameManagerBehaviour.GameStates.GameOver)
         {
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
             pos.x -= speed * Time.deltaTime;

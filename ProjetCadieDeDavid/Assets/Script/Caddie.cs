@@ -53,7 +53,10 @@ public class Caddie : MonoBehaviour
     private void Update()
     {
         time -= Time.deltaTime;
-        Move();
+        if (GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
+        {
+            Move();
+        }
     }
 
     private void Move()
