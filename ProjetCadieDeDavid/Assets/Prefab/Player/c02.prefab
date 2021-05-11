@@ -99,15 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f0aae42d1331429e9dcafa5ae3634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posY:
-  - -3.8
-  - -2.5
-  - -1
-  timer: 1
   speed: 5
-  jumpPower: 20
-  etaleGO: {fileID: 0}
-  etaleGO1: {fileID: 0}
+  starEffect:
+  - {fileID: 7528182648380704124, guid: e3d85d5cf680e5b4587d9fac4358aed1, type: 3}
+  - {fileID: 1508008729518715546, guid: c9e1e73be1990e54795adbbe380fa841, type: 3}
+  - {fileID: 4345287333246355910, guid: bd16d078cf1fd0b45bf004f23964c0c9, type: 3}
 --- !u!60 &6847414496168130679
 PolygonCollider2D:
   m_ObjectHideFlags: 0
