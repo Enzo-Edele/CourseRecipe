@@ -52,14 +52,15 @@ public class GameManagerBehaviour : MonoBehaviour
             level = data.level;
             coin = data.coin;
             ticket = data.ticket;
+            LevelUnlocker.instance.UnlockLevel();
         }
         if(Input.GetKeyDown("[8]"))
         {
-            coin++;
+            level++;
         }
         if (Input.GetKeyDown("[9]"))
         {
-            Debug.Log("Pièce : " + coin);
+            Debug.Log("Level : " + level);
         }
     }
     public void AddCoin(int numberOfCoin)
