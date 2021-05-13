@@ -496,7 +496,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: timeCollect
-      value: 90
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: firstStar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: secondStar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: thirdStar
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a1754b2d3a30145911228e3507193d, type: 3}

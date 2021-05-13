@@ -168,7 +168,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
     }
     void Update()
     {
-        if (timer < 0 && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Collect)
+        if (timer < 0 && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Collect && GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
         {
             this.Generate();
         }

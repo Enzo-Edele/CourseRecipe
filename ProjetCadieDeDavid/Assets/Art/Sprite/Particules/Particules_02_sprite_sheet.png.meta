@@ -1,43 +1,16 @@
 fileFormatVersion: 2
-guid: 089c6f6cdca9d2a46a4b5a12598b7aca
+guid: 76257fede5f5574438b78db3ba230411
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5207526778995507698
-    second: mamie_velo_sprite_sheet_0
+      213: 8132562094196293070
+    second: Particules_02_sprite_sheet_0
   - first:
-      213: -3198019799149285943
-    second: mamie_velo_sprite_sheet_1
+      213: 7291993258901931040
+    second: Particules_02_sprite_sheet_1
   - first:
-      213: -2923655433795598138
-    second: mamie_velo_sprite_sheet_2
-  - first:
-      213: -5676789089475069913
-    second: mamie_velo_sprite_sheet_3
-  - first:
-      213: 2174162196365542281
-    second: mamie_velo_sprite_sheet_4
-  - first:
-      213: -2213974970858489678
-    second: mamie_velo_sprite_sheet_5
-  - first:
-      213: 416431296270391544
-    second: mamie_velo_sprite_sheet_0
-  - first:
-      213: -2583293940371285067
-    second: mamie_velo_sprite_sheet_1
-  - first:
-      213: -3455344002847901221
-    second: mamie_velo_sprite_sheet_2
-  - first:
-      213: -6961287332306390883
-    second: mamie_velo_sprite_sheet_3
-  - first:
-      213: -1330820016534832420
-    second: mamie_velo_sprite_sheet_4
-  - first:
-      213: 1464851398133643288
-    second: mamie_velo_sprite_sheet_5
+      213: 1837210333750654191
+    second: Particules_02_sprite_sheet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -82,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,127 +98,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mamie_velo_sprite_sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 189
-        width: 318
-        height: 189
-      alignment: 9
-      pivot: {x: 0.58, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f85d8fbe0677c500800000000000000
-      internalID: 416431296270391544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mamie_velo_sprite_sheet_1
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 189
-        width: 318
-        height: 189
-      alignment: 9
-      pivot: {x: 0.58, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bb10cd19db462cd0800000000000000
-      internalID: -2583293940371285067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mamie_velo_sprite_sheet_2
-      rect:
-        serializedVersion: 2
-        x: 636
-        y: 189
-        width: 318
-        height: 189
-      alignment: 9
-      pivot: {x: 0.58, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd97975cfe62c00d0800000000000000
-      internalID: -3455344002847901221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mamie_velo_sprite_sheet_3
+      name: Particules_02_sprite_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 318
-        height: 189
-      alignment: 9
-      pivot: {x: 0.58, y: 0.3}
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d907372cd0a846f90800000000000000
-      internalID: -6961287332306390883
+      spriteID: ecd7062f22aacd070800000000000000
+      internalID: 8132562094196293070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mamie_velo_sprite_sheet_4
+      name: Particules_02_sprite_sheet_1
       rect:
         serializedVersion: 2
-        x: 318
+        x: 200
         y: 0
-        width: 318
-        height: 189
-      alignment: 9
-      pivot: {x: 0.58, y: 0.3}
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda3676fe3af78de0800000000000000
-      internalID: -1330820016534832420
+      spriteID: 024846dfb3d523560800000000000000
+      internalID: 7291993258901931040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mamie_velo_sprite_sheet_5
+      name: Particules_02_sprite_sheet_2
       rect:
         serializedVersion: 2
-        x: 636
+        x: 400
         y: 0
-        width: 318
-        height: 189
-      alignment: 9
-      pivot: {x: 0.58, y: 0.3}
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8187d72e592345410800000000000000
-      internalID: 1464851398133643288
+      spriteID: fe472e880151f7910800000000000000
+      internalID: 1837210333750654191
       vertices: []
       indices: 
       edges: []

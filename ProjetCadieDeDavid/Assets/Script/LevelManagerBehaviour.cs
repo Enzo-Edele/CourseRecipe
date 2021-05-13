@@ -9,9 +9,12 @@ public class LevelManagerBehaviour : MonoBehaviour
 {
     public int level;
     public bool levelDone;
+    public int score = 0;
+    public int firstStar;
+    public int secondStar;
+    public int thirdStar;
 
     public float backgroundSpeed;
-
     public int minSpeed;
     public int maxSpeed;
     public int minTime;
@@ -109,44 +112,6 @@ public class LevelManagerBehaviour : MonoBehaviour
             menuBriefing.SetActive(false);
         }
     }
-    public void ChangeLevelStates(LevelStates currentState)
-    {
-        _levelState = currentState;
-        switch(_levelState)
-        {
-            case LevelStates.LevelBriefing:
-                UIManagerBehaviour.instance.HUD.SetActive(false);
-                menuBriefing.SetActive(true);
-                DisplayList();
-                Time.timeScale = 0;
-                break;
-            case LevelStates.Collect:
-                UIManagerBehaviour.instance.HUD.SetActive(true);
-                menuBriefing.SetActive(false);
-                Time.timeScale = 1;
-                timerCollect = timeCollect;
-                break;
-            case LevelStates.Run:
-                UIManagerBehaviour.instance.HUD.SetActive(true);
-                menuBriefing.SetActive(false);
-                Time.timeScale = 1;
-                break;
-        }
-    }
-
-    //Button
-    public void ChangeLevelStatebyUI(int levelState)
-    {
-        switch (levelState)
-        {
-            case 1:
-                ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
-                break;
-            case 2:
-                ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
-                break;
-        }
-    }
 
     public void DisplayList()
     {
@@ -227,5 +192,45 @@ public class LevelManagerBehaviour : MonoBehaviour
         UIManagerBehaviour.instance.DisplayListHUD();
     }
 
-    
+    public void ChangeLevelStates(LevelStates currentState)
+    {
+        _levelState = currentState;
+        switch (_levelState)
+        {
+            case LevelStates.LevelBriefing:
+                UIManagerBehaviour.instance.HUD.SetActive(false);
+                menuBriefing.SetActive(true);
+                DisplayList();
+                Time.timeScale = 0;
+                break;
+            case LevelStates.Collect:
+                menuBriefing.SetActive(false);
+                Time.timeScale = 1;
+                timerCollect = timeCollect;
+                break;
+            case LevelStates.Run:
+                menuBriefing.SetActive(false);
+                Time.timeScale = 1;
+                break;
+        }
+    }
+
+    //Button
+    public void ChangeLevelStatebyUI(int levelState)
+    {
+        switch (levelState)
+        {
+            case 1:
+                ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
+                break;
+            case 2:
+                ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
+                break;
+        }
+    }
+
+    public void SetHUDOn()
+    {
+        UIManagerBehaviour.instance.HUD.SetActive(true);
+    }
 }

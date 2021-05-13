@@ -92,7 +92,6 @@ public class GameManagerBehaviour : MonoBehaviour
                 break;
             case GameStates.GameOver:
                 UIManagerBehaviour.instance.SetGameOverActive();
-                Time.timeScale = 0;
                 break;
             case GameStates.Recipe:
                 UIManagerBehaviour.instance.SetRecipeActive();

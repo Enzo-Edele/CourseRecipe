@@ -22,6 +22,10 @@ public class UIManagerBehaviour : MonoBehaviour
     public Color32 orange;
     public Color32 green;
 
+    public GameObject[] stars;
+    public GameObject nextLevel;
+    public TMP_Text scoreText;
+
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
     {
@@ -87,6 +91,7 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(true);
+        StartCoroutine(ShowStars());
     }
     public void SetRecipeActive()
     {
@@ -96,7 +101,49 @@ public class UIManagerBehaviour : MonoBehaviour
         pause.SetActive(false);
         gameOver.SetActive(false);
     }
-
+    IEnumerator ShowStars()
+    {
+        scoreText.text = "Score : " + LevelManagerBehaviour.Instance.score;
+        stars[0].SetActive(false);
+        stars[1].SetActive(false);
+        stars[2].SetActive(false);
+        nextLevel.SetActive(false);
+        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.thirdStar)
+        {
+            stars[0].SetActive(true);
+            nextLevel.SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            stars[1].SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            stars[2].SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            GameManagerBehaviour.instance.coinPerLevel = 0;
+        }
+        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.secondStar)
+        {
+            stars[0].SetActive(true);
+            nextLevel.SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            stars[1].SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            GameManagerBehaviour.instance.coinPerLevel = 0;
+        }
+        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.firstStar)
+        {
+            stars[0].SetActive(true);
+            nextLevel.SetActive(true);
+            GameManagerBehaviour.instance.coinPerLevel = 0;
+        }
+        else
+        {
+            stars[0].SetActive(false);
+            stars[1].SetActive(false);
+            stars[2].SetActive(false);
+            nextLevel.SetActive(false);
+            GameManagerBehaviour.instance.AddCoin(GameManagerBehaviour.instance.coinPerLevel * -1);
+            GameManagerBehaviour.instance.coinPerLevel = 0;
+        }
+    }
     public void DisplayLevel()
     {
         levelText.text = "Level : " + LevelManagerBehaviour.Instance.level;
