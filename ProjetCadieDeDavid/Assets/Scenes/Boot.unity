@@ -1948,7 +1948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.2, y: -0}
+  m_AnchoredPosition: {x: -19.2, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375681080
@@ -3741,6 +3741,10 @@ MonoBehaviour:
   - {fileID: 1690156337}
   - {fileID: 1680006312}
   - {fileID: 169573407}
+  particles:
+  - {fileID: 7528182648380704124, guid: e3d85d5cf680e5b4587d9fac4358aed1, type: 3}
+  - {fileID: 4345287333246355910, guid: bd16d078cf1fd0b45bf004f23964c0c9, type: 3}
+  - {fileID: 1508008729518715546, guid: c9e1e73be1990e54795adbbe380fa841, type: 3}
   nextLevel: {fileID: 1906285237}
   scoreText: {fileID: 1121362445}
 --- !u!1 &668497169

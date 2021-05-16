@@ -23,6 +23,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public Color32 green;
 
     public GameObject[] stars;
+    public GameObject[] particles;
     public GameObject nextLevel;
     public TMP_Text scoreText;
 
@@ -103,6 +104,7 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     IEnumerator ShowStars()
     {
+        GameOverAnimation();
         scoreText.text = "Score : " + LevelManagerBehaviour.Instance.score;
         stars[0].SetActive(false);
         stars[1].SetActive(false);
@@ -180,5 +182,10 @@ public class UIManagerBehaviour : MonoBehaviour
                 listNumberHUDText[i].text += "/" + LevelManagerBehaviour.Instance.articleNumberArray[i].ToString();
             }
         }
+    }
+
+    void GameOverAnimation()
+    {
+        Instantiate(particles[1], scoreText.transform.position, Quaternion.identity);
     }
 }

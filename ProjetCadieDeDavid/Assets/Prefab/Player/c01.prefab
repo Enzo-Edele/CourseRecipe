@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8244022811164635986}
-  - component: {fileID: 950179667174725461}
   - component: {fileID: 8388893357213901761}
   - component: {fileID: 5393967295260977398}
   m_Layer: 9
@@ -33,57 +32,6 @@ Transform:
   m_Father: {fileID: 4569513636097032329}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &950179667174725461
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799013382050855677}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 6b17b1f160f0afb4b97b43100bf0e61d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.2, y: 4.88}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!114 &8388893357213901761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +84,7 @@ GameObject:
   - component: {fileID: -6017016197480506609}
   - component: {fileID: -5951933428684112097}
   - component: {fileID: -6372792445973921318}
+  - component: {fileID: 1448089160761908109}
   m_Layer: 0
   m_Name: c01
   m_TagString: Untagged
@@ -198,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 0d9e689ec62350544bdcf9cc27b8f7f6, type: 3}
+  m_Sprite: {fileID: -7520061333523162449, guid: aebdb029bb215594f9f106463e5274fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -221,11 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f0aae42d1331429e9dcafa5ae3634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posY:
-  - -3.8
-  - -2.5
-  - -1
-  timer: 1
   speed: 5
   starEffect:
   - {fileID: 7528182648380704124, guid: e3d85d5cf680e5b4587d9fac4358aed1, type: 3}
@@ -247,8 +191,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.48, y: 1.68}
+    pivot: {x: 0.65, y: 0.35}
+    oldSize: {x: 3.9598792, y: 2.56}
     newSize: {x: 4.56, y: 2.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -282,8 +226,8 @@ BoxCollider2D:
   m_Offset: {x: 0.29150903, y: -0.4345013}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.48, y: 1.68}
+    pivot: {x: 0.65, y: 0.35}
+    oldSize: {x: 3.9598792, y: 2.56}
     newSize: {x: 4.56, y: 2.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -313,3 +257,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &1448089160761908109
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629747436346916572}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cddd9b0fe5fe5b14a9bea97232905d9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
