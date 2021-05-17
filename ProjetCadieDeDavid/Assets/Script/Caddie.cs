@@ -27,6 +27,7 @@ public class Caddie : MonoBehaviour
 
     BoxCollider2D bc2d;
     Rigidbody2D rb2D;
+    Animator animator;
 
     [SerializeField]
     float speed = 5;
@@ -37,6 +38,7 @@ public class Caddie : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         capacitéMax = LevelManagerBehaviour.Instance.capaciteCaddie;
@@ -55,6 +57,14 @@ public class Caddie : MonoBehaviour
     private void Move()
     {
         horizontal = Input.GetAxis("Horizontal");
+        if(horizontal != 0)
+        {
+            animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
+        }
         Vector3 position = this.transform.position;
         if(position.x + speed * horizontal * Time.deltaTime >= -8 && position.x + speed * horizontal * Time.deltaTime <= 8)
         {

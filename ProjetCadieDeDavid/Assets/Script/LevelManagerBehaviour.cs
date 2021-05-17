@@ -79,6 +79,7 @@ public class LevelManagerBehaviour : MonoBehaviour
             UIManagerBehaviour.instance.listHUDText[i].color = new Color32(0, 0, 0, 255);
             UIManagerBehaviour.instance.listNumberHUDText[i].SetText("");
             UIManagerBehaviour.instance.listNumberHUDText[i].color = new Color32(0, 0, 0, 255);
+            UIManagerBehaviour.instance.miniatureArtcileArray[i].SetActive(false);
         }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
