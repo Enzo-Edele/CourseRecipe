@@ -9,7 +9,7 @@ public class BookManager : MonoBehaviour
 {
     int levelMax = 13;
     int levelProgress;
-    int levelSelect = 1;
+    int levelSelect;
 
     readonly string listeRecetteUn = "Liste Recette Un";
     readonly string listeRecetteDeux = "Liste Recette Deux";
@@ -59,7 +59,9 @@ public class BookManager : MonoBehaviour
     private void Awake()
     {
         InUse = ImageRecette.GetComponent<Image>();
+        ImageRecette.GetComponent<Image>().preserveAspect = true;
         levelProgress = GameManagerBehaviour.instance.level;
+        levelSelect = 1;
     }
     private void Start()
     {
@@ -71,6 +73,7 @@ public class BookManager : MonoBehaviour
         if (levelSelect <= levelProgress)
         {
             SceneManager.LoadScene("Level " + levelSelect);
+            GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.InGame);
         }
     }
     public void NextLevel()

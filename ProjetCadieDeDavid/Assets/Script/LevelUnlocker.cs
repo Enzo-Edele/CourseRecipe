@@ -22,7 +22,7 @@ public class LevelUnlocker : MonoBehaviour
     /*
      * void EndLevel()
      * {
-     *      if((SceneManagement.Scene.GetBuildIndex() - X) > level)
+     *      if((SceneManagement.Scene.GetBuildIndex()) > level)
      *      {
      *             level = SceneManagement.Scene.GetBuildIndex() ;
      *      }
