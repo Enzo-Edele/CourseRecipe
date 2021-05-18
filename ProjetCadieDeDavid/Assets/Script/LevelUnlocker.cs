@@ -22,9 +22,13 @@ public class LevelUnlocker : MonoBehaviour
     /*
      * void EndLevel()
      * {
-     *      if((SceneManagement.Scene.GetBuildIndex()) > level)
+     *      if(score > GameManagerBehaviour.scoreList[SceneManagement.Scene.GetBuildIndex()])
      *      {
-     *             level = SceneManagement.Scene.GetBuildIndex() ;
+     *          GameManagerBehaviour.scoreList[SceneManagement.Scene.GetBuildIndex()] = score;
+     *      }
+     *      if((SceneManagement.Scene.GetBuildIndex()) == level)
+     *      {
+     *             level = SceneManagement.Scene.GetBuildIndex() + 1;
      *      }
      *}
     */

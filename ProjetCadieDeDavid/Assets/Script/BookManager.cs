@@ -7,9 +7,8 @@ using TMPro;
 
 public class BookManager : MonoBehaviour
 {
-    int levelMax = 13;
     int levelProgress;
-    int levelSelect;
+    public int levelSelect;
 
     readonly string listeRecetteUn = "Liste Recette Un";
     readonly string listeRecetteDeux = "Liste Recette Deux";
@@ -26,6 +25,7 @@ public class BookManager : MonoBehaviour
     readonly string listeRecetteTreize = "Liste Recette Treize";
 
     public TMP_Text listRecette;
+    public TMP_Text score;
 
     readonly string recetteUn = "Recette Un";
     readonly string recetteDeux = "Recette Deux";
@@ -40,13 +40,14 @@ public class BookManager : MonoBehaviour
     readonly string recetteOnze = "Recette Onze";
     readonly string recetteDouze = "Recette Douze";
     readonly string recetteTreize = "Recette Treize";
-
     
     public TMP_Text recette;
     public GameObject ImageRecette;
     Image InUse;
 
     public Sprite[] newImageRecette;
+
+    public List<int> scoreList;
 
     private BookManager _instance;
     public BookManager instance
@@ -69,7 +70,6 @@ public class BookManager : MonoBehaviour
     }
     public void LevelLoad()
     {
-        Debug.Log("LevelPreogress : " + levelProgress);
         if (levelSelect <= levelProgress)
         {
             SceneManager.LoadScene("Level " + levelSelect);
@@ -78,7 +78,7 @@ public class BookManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        if (levelSelect < levelMax)
+        if (levelSelect < GameManagerBehaviour.instance.maxLevel)
         {
             levelSelect++;
         }
@@ -151,5 +151,6 @@ public class BookManager : MonoBehaviour
         }
         InUse.sprite = newImageRecette[level - 1];
         levelSelect = level;
+        score.text = "Score : " + GameManagerBehaviour.instance.scoreList[level - 1];
     }
 }

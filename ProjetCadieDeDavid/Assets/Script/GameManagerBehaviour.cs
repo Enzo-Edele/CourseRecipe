@@ -7,8 +7,13 @@ public class GameManagerBehaviour : MonoBehaviour
     public int playerSkin = 0;
     public int coin;
     public int coinPerLevel;
+    public int maxLevel;
     public int level = 1;
     public int ticket;
+    public List<int> scoreList;
+    public List<int> firstStar;
+    public List<int> secondStar;
+    public List<int> thirdStar;
     public enum GameStates
     {
         MainMenu,
@@ -39,6 +44,10 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         _instance = this;
         AddCoin(0);
+        for(int i = 0; i < maxLevel; i++)
+        {
+            scoreList.Add(0);
+        }
     }
     private void Update()
     {
@@ -52,7 +61,11 @@ public class GameManagerBehaviour : MonoBehaviour
             level = data.level;
             coin = data.coin;
             ticket = data.ticket;
-            LevelUnlocker.instance.UnlockLevel();
+            for (int i = 0; i < data.highScoreList.Length; i++)
+            {
+                scoreList.Add(data.highScoreList[i]);
+            }
+            this.UnlockLevel();
         }
         if(Input.GetKeyDown("[8]"))
         {
@@ -131,5 +144,21 @@ public class GameManagerBehaviour : MonoBehaviour
     public void ChangePlayerSkin(int skin)
     {
         playerSkin = skin;
+    }
+    public void UnlockLevel()
+    {
+        for (int i = 0; i < maxLevel; i++)
+        {
+            if (i <= GameManagerBehaviour.instance.level)
+            {
+                Debug.Log("Unlock Level " + i);
+                //fct pour l'UI(i)
+            }
+            if (i < GameManagerBehaviour.instance.level)
+            {
+                Debug.Log("Unlock recette " + i);
+                //fct pour l'UI(i)
+            }
+        }
     }
 }

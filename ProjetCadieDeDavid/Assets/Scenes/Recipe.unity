@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 195712811}
   - component: {fileID: 195712810}
   m_Layer: 0
-  m_Name: Liste
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,7 +494,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 245174530}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -630,9 +630,9 @@ RectTransform:
   - {fileID: 2005137201}
   - {fileID: 525706120}
   - {fileID: 1606054578}
-  - {fileID: 1405532571}
   - {fileID: 263595910}
   - {fileID: 195712809}
+  - {fileID: 1405532571}
   m_Father: {fileID: 982437074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -709,7 +709,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 245174530}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1545,6 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listRecette: {fileID: 1405532572}
+  score: {fileID: 195712810}
   recette: {fileID: 1092821293}
   ImageRecette: {fileID: 121045064}
   newImageRecette:
@@ -1561,6 +1562,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
+  scoreList: 
 --- !u!1 &1092821291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +1925,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 245174530}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
