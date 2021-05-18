@@ -2,24 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreUIBehaviour : MonoBehaviour
 {
     public GameObject[] image;
     [SerializeField]
+    float timer = 2;
+    [SerializeField]
     float speed = 5;
     Vector2 position;
     Vector2 positionUI;
-
+    TMP_Text scoreText;
     private void Start()
     {
-        Instantiate(image[0], this.transform.position, Quaternion.identity, this.transform);
+        scoreText = GetComponent<TMP_Text>();
+        if(UIManagerBehaviour.instance.currentScoreUI < 0)
+        {
+            Instantiate(image[0], this.transform.position, Quaternion.identity, this.transform);
+            scoreText.SetText(UIManagerBehaviour.instance.currentScoreUI.ToString());
+        }
+        else
+        {
+            Instantiate(image[1], this.transform.position, Quaternion.identity, this.transform);
+            scoreText.text = "+ " + UIManagerBehaviour.instance.currentScoreUI;
+        }
         positionUI = UIManagerBehaviour.instance.scoreText.transform.position;
     }
 
     private void Update()
     {
         Move();
+        timer -= Time.deltaTime;
+        if(timer < 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 

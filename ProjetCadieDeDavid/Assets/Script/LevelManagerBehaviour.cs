@@ -113,6 +113,10 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             menuBriefing.SetActive(false);
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
+        }
     }
 
     public void DisplayList()
@@ -156,6 +160,7 @@ public class LevelManagerBehaviour : MonoBehaviour
                     {
                         found = true;
                         articleCurrentNumberList[i]++;
+                        score += 500;
                         if (articleCurrentNumberList[i] == articleNumberArray[i])
                         {
                             Caddie caddie;
@@ -174,6 +179,10 @@ public class LevelManagerBehaviour : MonoBehaviour
                 {
                     found = true;
                     articleCurrentNumberList[i]++;
+                    score -= 50;
+                    Caddie caddie;
+                    caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                    caddie.ParticlesEffect(0);
                 }
             }
         }
@@ -187,12 +196,14 @@ public class LevelManagerBehaviour : MonoBehaviour
             {
                 articleCurrentList.Add(nameArticle.Replace("(Clone)", ""));
                 articleCurrentNumberList.Add(1);
+                score -= 50;
                 Caddie caddie;
                 caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
                 caddie.ParticlesEffect(0);
             }
         }
         UIManagerBehaviour.instance.DisplayListHUD();
+        VerifArticles();
     }
 
     public void ChangeLevelStates(LevelStates currentState)
@@ -214,6 +225,20 @@ public class LevelManagerBehaviour : MonoBehaviour
                 Time.timeScale = 1;
                 break;
         }
+    }
+
+    void VerifArticles()
+    {
+        bool complete = true;
+        for(int i =0; i < articleNumberArray.Length;i++)
+        {
+            if(articleCurrentNumberList[i] != articleNumberArray[i])
+            {
+                complete = false;
+                break;
+            }
+        }
+        levelDone = complete;
     }
 
     //Button

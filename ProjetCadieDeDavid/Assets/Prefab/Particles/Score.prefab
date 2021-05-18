@@ -148,5 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image:
+  - {fileID: 6735566287603383221, guid: 2e3265716632c2941bac6a5bcd43d5cd, type: 3}
   - {fileID: 4055435493108675175, guid: 40842db78d2f5b547802550069df1327, type: 3}
+  timer: 2
   speed: 1

@@ -28,6 +28,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public GameObject nextLevel;
     public TMP_Text scoreText;
     int scoreUI;
+    public int currentScoreUI;
 
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
@@ -109,7 +110,7 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     IEnumerator ShowStars()
     {
-        scoreText.text = "Score : 0";
+        scoreText.text = "Score : " + scoreUI;
         stars[0].SetActive(false);
         stars[1].SetActive(false);
         stars[2].SetActive(false);
@@ -117,16 +118,22 @@ public class UIManagerBehaviour : MonoBehaviour
         for (int i = 0; i < LevelManagerBehaviour.Instance.articleCurrentList.Count; i++)
         {
             Vector3 pos = LevelManagerBehaviour.Instance.miniatureArtcileArray[i].transform.position;
-            Instantiate(particlesScore, pos, Quaternion.identity, LevelManagerBehaviour.Instance.transform.Find("Canvas"));
-            if(i<LevelManagerBehaviour.Instance.articleAskedArray.Length)
+            if (i<LevelManagerBehaviour.Instance.articleAskedArray.Length)
             {
-                StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50, true));
+                if(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] != 0)
+                {
+                    StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 500, true));
+                    currentScoreUI = LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 500;
+                    Instantiate(particlesScore, pos, Quaternion.identity, LevelManagerBehaviour.Instance.transform.Find("Canvas"));
+                }
             }
             else
             {
-                StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50, false));
+                StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50 * -1, false));
+                currentScoreUI = LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50 * -1;
+                Instantiate(particlesScore, pos, Quaternion.identity, LevelManagerBehaviour.Instance.transform.Find("Canvas"));
             }
-            yield return new WaitForSeconds(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50 * 0.01f);
+            yield return new WaitForSeconds(1f);
         }
         if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.thirdStar)
         {
@@ -163,20 +170,25 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     IEnumerator AddUIScore(int score, bool plus)
     {
-        if(plus)
+        if(score != 0)
         {
-            for(int i = 0; i <= score; i++)
+            if (plus)
             {
-                scoreText.text = "Score : " + scoreUI++;
-                yield return new WaitForSeconds(0.01f);
+                for (int i = 0; i < score; i++)
+                {
+                    scoreUI++;
+                    scoreText.text = "Score : " + scoreUI;
+                    yield return new WaitForSeconds(0.01f);
+                }
             }
-        }
-        else
-        {
-            for (int i = 0; i <= score; i++)
+            else
             {
-                scoreText.text = "Score : " + scoreUI--;
-                yield return new WaitForSeconds(0.01f);
+                for (int i = 0; i > score; i--)
+                {
+                    scoreUI--;
+                    scoreText.text = "Score : " + scoreUI;
+                    yield return new WaitForSeconds(0.01f);
+                }
             }
         }
     }
