@@ -75,6 +75,7 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             miniatureArtcileArray[i].GetComponent<Image>().preserveAspect = true;
             miniatureArtcileArray[i].SetActive(false);
+            UIManagerBehaviour.instance.listHUDText[i].fontStyle = FontStyles.Normal;
             UIManagerBehaviour.instance.listHUDText[i].SetText("");
             UIManagerBehaviour.instance.listHUDText[i].color = new Color32(0, 0, 0, 255);
             UIManagerBehaviour.instance.listNumberHUDText[i].SetText("");
@@ -124,16 +125,14 @@ public class LevelManagerBehaviour : MonoBehaviour
             if (i >= articleAskedArray.Length)
             {
                 listHUDText[i].color = UIManagerBehaviour.instance.red;
+                listNumberHUDText[i].color = UIManagerBehaviour.instance.red;
             }
             else
             {
                 if (articleCurrentNumberList[i] == articleNumberArray[i])
                 {
-                    listHUDText[i].color = UIManagerBehaviour.instance.green;
-                }
-                else if (articleCurrentNumberList[i] > articleNumberArray[i])
-                {
-                    listHUDText[i].color = UIManagerBehaviour.instance.orange;
+                    listHUDText[i].fontStyle = FontStyles.Strikethrough;
+                    listNumberHUDText[i].color = UIManagerBehaviour.instance.green;
                 }
             }
             listNumberHUDText[i].SetText(articleCurrentNumberList[i].ToString());
@@ -151,44 +150,47 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             if (articleCurrentList[i].Equals(nameArticle.Replace("(Clone)", "")))
             {
-                articleCurrentNumberList[i]++;
-                found = true;
-                if(found && i < articleNumberArray.Length)
+                if(i < articleNumberArray.Length)
                 {
-                    if (articleCurrentNumberList[i] == articleNumberArray[i])
+                    if (articleCurrentNumberList[i] < articleNumberArray[i])
                     {
-                        Caddie caddie;
-                        caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
-                        caddie.ParticlesEffect(2);
-                    }
-                    else if (articleCurrentNumberList[i] < articleNumberArray[i])
-                    {
-                        Caddie caddie;
-                        caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
-                        caddie.ParticlesEffect(1);
-                    }
-                    else
-                    {
-                        Caddie caddie;
-                        caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
-                        caddie.ParticlesEffect(0);
+                        found = true;
+                        articleCurrentNumberList[i]++;
+                        if (articleCurrentNumberList[i] == articleNumberArray[i])
+                        {
+                            Caddie caddie;
+                            caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                            caddie.ParticlesEffect(2);
+                        }
+                        else if (articleCurrentNumberList[i] < articleNumberArray[i])
+                        {
+                            Caddie caddie;
+                            caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                            caddie.ParticlesEffect(1);
+                        }
                     }
                 }
-                else if(found)
+                else
                 {
-                    Caddie caddie;
-                    caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
-                    caddie.ParticlesEffect(0);
+                    found = true;
+                    articleCurrentNumberList[i]++;
                 }
             }
         }
         if(!found)
         {
-            articleCurrentList.Add(nameArticle.Replace("(Clone)", ""));
-            articleCurrentNumberList.Add(1);
-            Caddie caddie;
-            caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
-            caddie.ParticlesEffect(0);
+            if (articleCurrentList.Count >= miniatureArtcileArray.Length)
+            {
+                GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
+            }
+            else
+            {
+                articleCurrentList.Add(nameArticle.Replace("(Clone)", ""));
+                articleCurrentNumberList.Add(1);
+                Caddie caddie;
+                caddie = FindObjectOfType(typeof(Caddie)) as Caddie;
+                caddie.ParticlesEffect(0);
+            }
         }
         UIManagerBehaviour.instance.DisplayListHUD();
     }
@@ -205,12 +207,10 @@ public class LevelManagerBehaviour : MonoBehaviour
                 Time.timeScale = 0;
                 break;
             case LevelStates.Collect:
-                menuBriefing.SetActive(false);
                 Time.timeScale = 1;
                 timerCollect = timeCollect;
                 break;
             case LevelStates.Run:
-                menuBriefing.SetActive(false);
                 Time.timeScale = 1;
                 break;
         }

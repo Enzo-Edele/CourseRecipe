@@ -3687,6 +3687,7 @@ MonoBehaviour:
   HUD: {fileID: 1382267101}
   pause: {fileID: 1596016421}
   gameOver: {fileID: 375688318}
+  canvas: {fileID: 1170056899}
   levelText: {fileID: 49289853}
   coinText: {fileID: 11401698}
   listHUDText:
@@ -3741,10 +3742,7 @@ MonoBehaviour:
   - {fileID: 1690156337}
   - {fileID: 1680006312}
   - {fileID: 169573407}
-  particles:
-  - {fileID: 7528182648380704124, guid: e3d85d5cf680e5b4587d9fac4358aed1, type: 3}
-  - {fileID: 4345287333246355910, guid: bd16d078cf1fd0b45bf004f23964c0c9, type: 3}
-  - {fileID: 1508008729518715546, guid: c9e1e73be1990e54795adbbe380fa841, type: 3}
+  particlesScore: {fileID: 7668553192338555617, guid: 7d794629381124c429b364ff06912f88, type: 3}
   nextLevel: {fileID: 1906285237}
   scoreText: {fileID: 1121362445}
 --- !u!1 &668497169
@@ -4144,7 +4142,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

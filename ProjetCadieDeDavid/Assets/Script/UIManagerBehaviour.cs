@@ -12,6 +12,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public GameObject HUD;
     public GameObject pause;
     public GameObject gameOver;
+    public GameObject canvas;
 
     public Text levelText;
     public Text coinText;
@@ -23,9 +24,10 @@ public class UIManagerBehaviour : MonoBehaviour
     public Color32 green;
 
     public GameObject[] stars;
-    public GameObject[] particles;
+    public GameObject particlesScore;
     public GameObject nextLevel;
     public TMP_Text scoreText;
+    int scoreUI;
 
     private static UIManagerBehaviour _instance;
     public static UIManagerBehaviour instance
@@ -92,6 +94,9 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(true);
+        scoreUI = 0;
+        LevelManagerBehaviour.Instance.DisplayList();
+        LevelManagerBehaviour.Instance.menuBriefing.SetActive(true);
         StartCoroutine(ShowStars());
     }
     public void SetRecipeActive()
@@ -104,12 +109,25 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     IEnumerator ShowStars()
     {
-        GameOverAnimation();
-        scoreText.text = "Score : " + LevelManagerBehaviour.Instance.score;
+        scoreText.text = "Score : 0";
         stars[0].SetActive(false);
         stars[1].SetActive(false);
         stars[2].SetActive(false);
         nextLevel.SetActive(false);
+        for (int i = 0; i < LevelManagerBehaviour.Instance.articleCurrentList.Count; i++)
+        {
+            Vector3 pos = LevelManagerBehaviour.Instance.miniatureArtcileArray[i].transform.position;
+            Instantiate(particlesScore, pos, Quaternion.identity, LevelManagerBehaviour.Instance.transform.Find("Canvas"));
+            if(i<LevelManagerBehaviour.Instance.articleAskedArray.Length)
+            {
+                StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50, true));
+            }
+            else
+            {
+                StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50, false));
+            }
+            yield return new WaitForSeconds(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 50 * 0.01f);
+        }
         if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.thirdStar)
         {
             stars[0].SetActive(true);
@@ -119,7 +137,6 @@ public class UIManagerBehaviour : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             stars[2].SetActive(true);
             yield return new WaitForSeconds(1.0f);
-            GameManagerBehaviour.instance.coinPerLevel = 0;
         }
         else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.secondStar)
         {
@@ -128,13 +145,11 @@ public class UIManagerBehaviour : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             stars[1].SetActive(true);
             yield return new WaitForSeconds(1.0f);
-            GameManagerBehaviour.instance.coinPerLevel = 0;
         }
         else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.firstStar)
         {
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
-            GameManagerBehaviour.instance.coinPerLevel = 0;
         }
         else
         {
@@ -143,7 +158,26 @@ public class UIManagerBehaviour : MonoBehaviour
             stars[2].SetActive(false);
             nextLevel.SetActive(false);
             GameManagerBehaviour.instance.AddCoin(GameManagerBehaviour.instance.coinPerLevel * -1);
-            GameManagerBehaviour.instance.coinPerLevel = 0;
+        }
+        GameManagerBehaviour.instance.coinPerLevel = 0;
+    }
+    IEnumerator AddUIScore(int score, bool plus)
+    {
+        if(plus)
+        {
+            for(int i = 0; i <= score; i++)
+            {
+                scoreText.text = "Score : " + scoreUI++;
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+        else
+        {
+            for (int i = 0; i <= score; i++)
+            {
+                scoreText.text = "Score : " + scoreUI--;
+                yield return new WaitForSeconds(0.01f);
+            }
         }
     }
     public void DisplayLevel()
@@ -164,16 +198,14 @@ public class UIManagerBehaviour : MonoBehaviour
             if (i >= LevelManagerBehaviour.Instance.articleAskedArray.Length)
             {
                 listHUDText[i].color = red;
+                listNumberHUDText[i].color = red;
             }
             else
             {
                 if (LevelManagerBehaviour.Instance.articleCurrentNumberList[i] == LevelManagerBehaviour.Instance.articleNumberArray[i])
                 {
-                    listHUDText[i].color = green;
-                }
-                else if (LevelManagerBehaviour.Instance.articleCurrentNumberList[i] > LevelManagerBehaviour.Instance.articleNumberArray[i])
-                {
-                    listHUDText[i].color = orange;
+                    listHUDText[i].fontStyle = FontStyles.Strikethrough;
+                    listNumberHUDText[i].color = green;
                 }
             }
             listNumberHUDText[i].SetText(LevelManagerBehaviour.Instance.articleCurrentNumberList[i].ToString());
@@ -184,8 +216,4 @@ public class UIManagerBehaviour : MonoBehaviour
         }
     }
 
-    void GameOverAnimation()
-    {
-        Instantiate(particles[1], scoreText.transform.position, Quaternion.identity);
-    }
 }
