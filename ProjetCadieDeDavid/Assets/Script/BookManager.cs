@@ -10,21 +10,21 @@ public class BookManager : MonoBehaviour
     int levelProgress;
     public int levelSelect;
 
-    readonly string listeRecetteUn = "Liste Recette Un";
-    readonly string listeRecetteDeux = "Liste Recette Deux";
-    readonly string listeRecetteTrois = "Liste Recette Trois";
-    readonly string listeRecetteQuatre = "Liste Recette Quatre";
-    readonly string listeRecetteCinq = "Liste Recette Cinq";
-    readonly string listeRecetteSix = "Liste Recette Six";
-    readonly string listeRecetteSept = "Liste Recette Sept";
-    readonly string listeRecetteHuit = "Liste Recette Huit";
-    readonly string listeRecetteNeuf = "Liste Recette Neuf";
-    readonly string listeRecetteDix = "Liste Recette Dix";
-    readonly string listeRecetteOnze = "Liste Recette Onze";
-    readonly string listeRecetteDouze = "Liste Recette Douze";
-    readonly string listeRecetteTreize = "Liste Recette Treize";
+    public GameObject listeRecetteUn;
+    public GameObject listeRecetteDeux;
+    public GameObject listeRecetteTrois;
+    public GameObject listeRecetteQuatre;
+    public GameObject listeRecetteCinq;
+    public GameObject listeRecetteSix;
+    public GameObject listeRecetteSept;
+    public GameObject listeRecetteHuit;
+    public GameObject listeRecetteNeuf;
+    public GameObject listeRecetteDix;
+    public GameObject listeRecetteOnze;
+    public GameObject listeRecetteDouze;
+    public GameObject listeRecetteTreize;
 
-    public TMP_Text listRecette;
+    public GameObject listRecette;
     public TMP_Text score;
 
     readonly string recetteUn = "Recette Un";
@@ -97,55 +97,55 @@ public class BookManager : MonoBehaviour
         switch(level)
         {
             case 1:
-                listRecette.text = listeRecetteUn;
+                listRecette = listeRecetteUn;
                 recette.text = recetteUn;
                 break;
             case 2:
-                listRecette.text = listeRecetteDeux;
+                listRecette = listeRecetteDeux;
                 recette.text = recetteDeux;
                 break;
             case 3:
-                listRecette.text = listeRecetteTrois;
+                listRecette = listeRecetteTrois;
                 recette.text = recetteTrois;
                 break;
             case 4:
-                listRecette.text = listeRecetteQuatre;
+                listRecette = listeRecetteQuatre;
                 recette.text = recetteQuatre;
                 break;
             case 5:
-                listRecette.text = listeRecetteCinq;
+                listRecette = listeRecetteCinq;
                 recette.text = recetteCinq;
                 break;
             case 6:
-                listRecette.text = listeRecetteSix;
+                listRecette = listeRecetteSix;
                 recette.text = recetteSix;
                 break;
             case 7:
-                listRecette.text = listeRecetteSept;
+                listRecette = listeRecetteSept;
                 recette.text = recetteSept;
                 break;
             case 8:
-                listRecette.text = listeRecetteHuit;
+                listRecette = listeRecetteHuit;
                 recette.text = recetteHuit;
                 break;
             case 9:
-                listRecette.text = listeRecetteNeuf;
+                listRecette = listeRecetteNeuf;
                 recette.text = recetteNeuf;
                 break;
             case 10:
-                listRecette.text = listeRecetteDix;
+                listRecette = listeRecetteDix;
                 recette.text = recetteDix;
                 break;
             case 11:
-                listRecette.text = listeRecetteOnze;
+                listRecette = listeRecetteOnze;
                 recette.text = recetteOnze;
                 break;
             case 12:
-                listRecette.text = listeRecetteDouze;
+                listRecette = listeRecetteDouze;
                 recette.text = recetteDouze;
                 break;
             case 13:
-                listRecette.text = listeRecetteTreize;
+                listRecette = listeRecetteTreize;
                 recette.text = recetteTreize;
                 break;
         }
