@@ -46,7 +46,7 @@ public class GameManagerBehaviour : MonoBehaviour
         AddCoin(0);
         for(int i = 0; i < maxLevel; i++)
         {
-            scoreList.Add(0);
+            scoreList.Add(i);
         }
     }
     private void Update()
