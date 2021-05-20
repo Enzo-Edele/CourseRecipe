@@ -43,11 +43,14 @@ public class GameManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        AddCoin(5);
-        for(int i = 0; i < maxLevel; i++)
+        for (int i = 0; i < maxLevel; i++)
         {
             scoreList.Add(i);
         }
+    }
+    private void Start()
+    {
+        AddCoin(0);
     }
     private void Update()
     {
