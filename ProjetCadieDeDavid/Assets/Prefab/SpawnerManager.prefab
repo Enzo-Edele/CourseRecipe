@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 431362367167235925, guid: 4a1443524283b3b419d7fe46d9d9e563, type: 3}
   - {fileID: 6501327905123026238, guid: b789d51c9af3a6c4bba70c39332a03f9, type: 3}
   rayonEpicerieDeux:
-  - {fileID: 2242193847193272004, guid: fefa4a1a2dfdf5c42a2760fdbed5bc5f, type: 3}
+  - {fileID: 9098220060776173753, guid: 2ea54e353426d7b42ba95dc2647c3687, type: 3}
   - {fileID: 2242193847193272004, guid: fefa4a1a2dfdf5c42a2760fdbed5bc5f, type: 3}
   rayonLaitier:
   - {fileID: 1892978250123382723, guid: 7ac99b64dff43974781bca9aa6de4ebd, type: 3}
@@ -69,6 +69,8 @@ MonoBehaviour:
   rayonLegumeDeux:
   - {fileID: 2112924198926145651, guid: da2527fd4d3621e4a8d32f12ad676dde, type: 3}
   - {fileID: 8096119605718510900, guid: 0e588d04716cac54ebdcf4f3a9044807, type: 3}
+  - {fileID: 5534325545318595966, guid: 11376f109b71d89498d15e93809ca8fb, type: 3}
+  - {fileID: 8603588816558370670, guid: 3348c1db4d0059c4eb1bd80daa4084e7, type: 3}
   rayonFruit:
   - {fileID: 2612433343513912841, guid: 4ea7ec20bd2a8874ca16b793ae401618, type: 3}
   - {fileID: 4587939590815464096, guid: c35f16169d1b1144390a1bb6c9e6c4ec, type: 3}
