@@ -40,10 +40,15 @@ public class ScenesManagerBehaviour : MonoBehaviour
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if(!LevelManagerBehaviour.Instance.levelDone)
+        {
+            GameManagerBehaviour.instance.ResetCoinAndTicket();
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        SaveSysteme.Save(GameManagerBehaviour.instance);
     }
 }

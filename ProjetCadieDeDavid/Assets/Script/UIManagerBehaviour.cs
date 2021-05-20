@@ -138,29 +138,21 @@ public class UIManagerBehaviour : MonoBehaviour
         }
         if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[LevelManagerBehaviour.Instance.level -1])
         {
+            GameManagerBehaviour.instance.ticketPerLevel = 0;
+            GameManagerBehaviour.instance.coinPerLevel = 0;
             EndLevel();
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-            stars[1].SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-            stars[2].SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-        }
-        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[LevelManagerBehaviour.Instance.level - 1])
-        {
-            EndLevel();
-            stars[0].SetActive(true);
-            nextLevel.SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-            stars[1].SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-        }
-        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[LevelManagerBehaviour.Instance.level - 1])
-        {
-            EndLevel();
-            stars[0].SetActive(true);
-            nextLevel.SetActive(true);
+            if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[LevelManagerBehaviour.Instance.level - 1])
+            {
+                yield return new WaitForSeconds(1.0f);
+                stars[1].SetActive(true);
+                if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[LevelManagerBehaviour.Instance.level - 1])
+                {
+                    yield return new WaitForSeconds(1.0f);
+                    stars[2].SetActive(true);
+                }
+            }
         }
         else
         {
@@ -168,9 +160,8 @@ public class UIManagerBehaviour : MonoBehaviour
             stars[1].SetActive(false);
             stars[2].SetActive(false);
             nextLevel.SetActive(false);
-            GameManagerBehaviour.instance.AddCoin(GameManagerBehaviour.instance.coinPerLevel * -1);
         }
-        GameManagerBehaviour.instance.coinPerLevel = 0;
+        GameManagerBehaviour.instance.ResetCoinAndTicket();
     }
     IEnumerator AddUIScore(int score, bool plus)
     {

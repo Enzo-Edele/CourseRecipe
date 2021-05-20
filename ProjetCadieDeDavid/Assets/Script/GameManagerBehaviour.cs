@@ -92,12 +92,29 @@ public class GameManagerBehaviour : MonoBehaviour
                 Debug.Log("HighScore Level : "+ (i+1) +" = "+HighScoreList[i]);
             }
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangeGameState(GameStates.GameOver);
+        }
     }
     public void AddCoin(int numberOfCoin)
     {
         coin += numberOfCoin;
         coinPerLevel -= numberOfCoin;
         UIManagerBehaviour.instance.DisplayCoin();
+    }
+    public void AddTicket(int numberOfTicket)
+    {
+        ticket += numberOfTicket;
+        ticketPerLevel -= numberOfTicket;
+    }
+
+    public void ResetCoinAndTicket()
+    {
+        AddCoin(coinPerLevel);
+        AddTicket(ticketPerLevel);
+        coinPerLevel = 0;
+        ticketPerLevel = 0;
     }
 
     public void ChangeGameState(GameStates currentState)

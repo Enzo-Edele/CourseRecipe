@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4613540962709217748}
   - component: {fileID: 1414956972501625906}
+  - component: {fileID: 1127188224291510601}
+  - component: {fileID: 7975567311342189502}
   m_Layer: 0
   m_Name: Jeton
   m_TagString: Untagged
@@ -82,3 +84,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1127188224291510601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151611062320846309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc6ee7656d36024abfc4d7e023e8526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: 1
+  amount: 1
+--- !u!58 &7975567311342189502
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151611062320846309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
