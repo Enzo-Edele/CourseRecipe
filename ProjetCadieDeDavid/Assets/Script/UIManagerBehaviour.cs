@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManagerBehaviour : MonoBehaviour
 {
@@ -135,8 +136,9 @@ public class UIManagerBehaviour : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.thirdStar)
+        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[LevelManagerBehaviour.Instance.level -1])
         {
+            EndLevel();
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
             yield return new WaitForSeconds(1.0f);
@@ -145,16 +147,18 @@ public class UIManagerBehaviour : MonoBehaviour
             stars[2].SetActive(true);
             yield return new WaitForSeconds(1.0f);
         }
-        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.secondStar)
+        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[LevelManagerBehaviour.Instance.level - 1])
         {
+            EndLevel();
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
             yield return new WaitForSeconds(1.0f);
             stars[1].SetActive(true);
             yield return new WaitForSeconds(1.0f);
         }
-        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= LevelManagerBehaviour.Instance.firstStar)
+        else if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[LevelManagerBehaviour.Instance.level - 1])
         {
+            EndLevel();
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
         }
@@ -174,9 +178,9 @@ public class UIManagerBehaviour : MonoBehaviour
         {
             if (plus)
             {
-                for (int i = 0; i < score; i++)
+                for (int i = 0; i < score * 0.1f - 1; i++)
                 {
-                    scoreUI++;
+                    scoreUI+= 10;
                     scoreText.text = "Score : " + scoreUI;
                     yield return new WaitForSeconds(0.01f);
                 }
@@ -227,5 +231,15 @@ public class UIManagerBehaviour : MonoBehaviour
             }
         }
     }
-
+    void EndLevel()
+     {
+        if(LevelManagerBehaviour.Instance.score > GameManagerBehaviour.instance.scoreList[SceneManager.GetActiveScene().buildIndex]-1)
+        {
+              GameManagerBehaviour.instance.scoreList[SceneManager.GetActiveScene().buildIndex] = LevelManagerBehaviour.Instance.score;
+        }
+        if ((SceneManager.GetActiveScene().buildIndex) == GameManagerBehaviour.instance.level)
+        {
+            GameManagerBehaviour.instance.level = SceneManager.GetActiveScene().buildIndex;
+        }
+    }
 }

@@ -90,6 +90,7 @@ public class GameManagerBehaviour : MonoBehaviour
         {
             case GameStates.MainMenu:
                 UIManagerBehaviour.instance.SetMainMenuActive();
+                UIManagerBehaviour.instance.StopAllCoroutines();
                 Time.timeScale = 0;
                 break;
             case GameStates.LevelSelection:
@@ -98,6 +99,7 @@ public class GameManagerBehaviour : MonoBehaviour
                 break;
             case GameStates.InGame:
                 UIManagerBehaviour.instance.SetHUDActive();
+                UIManagerBehaviour.instance.StopAllCoroutines();
                 Time.timeScale = 1;
                 break;
             case GameStates.Pause:

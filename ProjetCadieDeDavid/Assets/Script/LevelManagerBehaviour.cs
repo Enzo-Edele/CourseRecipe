@@ -10,9 +10,6 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int level;
     public bool levelDone;
     public int score = 0;
-    public int firstStar;
-    public int secondStar;
-    public int thirdStar;
 
     public float backgroundSpeed;
     public int minSpeed;
