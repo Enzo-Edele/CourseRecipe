@@ -33,6 +33,7 @@ public class Caddie : MonoBehaviour
     float speed = 5;
     int life;
     float horizontal;
+    float spriteWidth;
 
     public GameObject[] starEffect;
 
@@ -44,6 +45,7 @@ public class Caddie : MonoBehaviour
         capacitéMax = LevelManagerBehaviour.Instance.capaciteCaddie;
         capacité = capacitéMax;
         life = LevelManagerBehaviour.Instance.playerLife;
+        spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
     }
 
     private void Update()
@@ -52,6 +54,7 @@ public class Caddie : MonoBehaviour
         {
             Move();
         }
+        Debug.Log(spriteWidth);
     }
 
     private void Move()
@@ -65,12 +68,10 @@ public class Caddie : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
-        Vector3 position = this.transform.position;
-        if(position.x + speed * horizontal * Time.deltaTime >= -8 && position.x + speed * horizontal * Time.deltaTime <= 8)
-        {
-            position.x += speed * horizontal * Time.deltaTime;
-        }
-        transform.position = position;
+        Vector3 position = Camera.main.WorldToScreenPoint(this.transform.position);
+        position.x += speed * horizontal * Time.deltaTime; 
+        position.x = Mathf.Clamp(position.x, spriteWidth * 0.5f, Screen.width - spriteWidth * 0.5f);
+        transform.position = Camera.main.ScreenToWorldPoint(position);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -7,7 +7,6 @@ using TMPro;
 
 public class LevelManagerBehaviour : MonoBehaviour
 {
-    public int level;
     public bool levelDone;
     public int score = 0;
 

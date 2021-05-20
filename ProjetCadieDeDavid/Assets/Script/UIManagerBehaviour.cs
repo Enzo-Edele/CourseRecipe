@@ -136,18 +136,18 @@ public class UIManagerBehaviour : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[LevelManagerBehaviour.Instance.level - 1])
+        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[GameManagerBehaviour.instance.levelSelect])
         {
             GameManagerBehaviour.instance.ticketPerLevel = 0;
             GameManagerBehaviour.instance.coinPerLevel = 0;
             EndLevel();
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
-            if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[LevelManagerBehaviour.Instance.level - 1])
+            if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[GameManagerBehaviour.instance.levelSelect])
             {
                 yield return new WaitForSeconds(1.0f);
                 stars[1].SetActive(true);
-                if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[LevelManagerBehaviour.Instance.level - 1])
+                if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[GameManagerBehaviour.instance.levelSelect])
                 {
                     yield return new WaitForSeconds(1.0f);
                     stars[2].SetActive(true);
@@ -189,7 +189,7 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     public void DisplayLevel()
     {
-        levelText.text = "Level : " + LevelManagerBehaviour.Instance.level;
+        levelText.text = "Level : " + GameManagerBehaviour.instance.levelSelect;
     }
     public void DisplayCoin()
     {
