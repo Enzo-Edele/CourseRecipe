@@ -43,7 +43,7 @@ public class GameManagerBehaviour : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        AddCoin(0);
+        AddCoin(5);
         for(int i = 0; i < maxLevel; i++)
         {
             scoreList.Add(i);

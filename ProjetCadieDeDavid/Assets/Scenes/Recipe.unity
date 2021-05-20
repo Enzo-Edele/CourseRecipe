@@ -722,7 +722,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 39, y: 299}
-  m_SizeDelta: {x: 100, y: 432.8686}
+  m_SizeDelta: {x: 100, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136382699
 MonoBehaviour:
@@ -1307,8 +1307,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -561.8, y: 406.9}
-  m_SizeDelta: {x: 79.96553, y: 104.3949}
+  m_AnchoredPosition: {x: -561.8, y: 423.99}
+  m_SizeDelta: {x: 79.96553, y: 70.21594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422543559
 MonoBehaviour:
@@ -2374,6 +2374,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 245174530}
     m_Modifications:
+    - target: {fileID: 1998776386159240906, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
+      propertyPath: m_text
+      value: X/X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998776386606269492, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
+      propertyPath: m_text
+      value: X/X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998776387061459913, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
+      propertyPath: m_text
+      value: X/X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998776387314384770, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
+      propertyPath: m_text
+      value: X/X
+      objectReference: {fileID: 0}
     - target: {fileID: 1998776387671179732, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2461,6 +2477,14 @@ PrefabInstance:
     - target: {fileID: 1998776387671179733, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
       propertyPath: m_Name
       value: UIArticleBook
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998776388126764341, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
+      propertyPath: m_text
+      value: X/X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998776388234767347, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
+      propertyPath: m_text
+      value: X/X
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b651d6b96f8d2247aedfc3ebc3717b5, type: 3}
