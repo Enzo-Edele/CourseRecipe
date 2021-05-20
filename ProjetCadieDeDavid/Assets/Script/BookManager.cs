@@ -8,7 +8,6 @@ using TMPro;
 public class BookManager : MonoBehaviour
 {
     int levelProgress;
-    public int levelSelect;
 
     public GameObject listeRecetteUn;
     public GameObject listeRecetteDeux;
@@ -75,27 +74,27 @@ public class BookManager : MonoBehaviour
     }
     public void LevelLoad()
     {
-        if (levelSelect <= levelProgress)
+        if (GameManagerBehaviour.instance.levelSelect <= levelProgress)
         {
-            SceneManager.LoadScene("Level " + levelSelect);
+            SceneManager.LoadScene("Level " + GameManagerBehaviour.instance.levelSelect);
             GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.InGame);
         }
     }
     public void NextLevel()
     {
-        if (levelSelect < GameManagerBehaviour.instance.maxLevel)
+        if (GameManagerBehaviour.instance.levelSelect < GameManagerBehaviour.instance.maxLevel)
         {
-            levelSelect++;
+            GameManagerBehaviour.instance.levelSelect++;
         }
-        ChangeSelect(levelSelect);
+        ChangeSelect(GameManagerBehaviour.instance.levelSelect);
     }
     public void PreviousLevel()
     {
-        if (levelSelect > 1)
+        if (GameManagerBehaviour.instance.levelSelect > 1)
         {
-            levelSelect--;
+            GameManagerBehaviour.instance.levelSelect--;
         }
-        ChangeSelect(levelSelect);
+        ChangeSelect(GameManagerBehaviour.instance.levelSelect);
     }
     public void ChangeSelect(int level)
     {
@@ -155,22 +154,22 @@ public class BookManager : MonoBehaviour
                 break;
         }
         inUseRecette.sprite = newImageRecette[level - 1];
-        levelSelect = level;
+        GameManagerBehaviour.instance.levelSelect = level;
         inUseEtoileUn.sprite = etoileEmpty;
         inUseEtoileDeux.sprite = etoileEmpty;
         inUseEtoileTrois.sprite = etoileEmpty;
-        if (GameManagerBehaviour.instance.scoreList[level - 1] >= GameManagerBehaviour.instance.firstStar[level - 1])
+        if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.firstStar[level - 1])
         {
             inUseEtoileUn.sprite = etoileFull;
         }
-        if (GameManagerBehaviour.instance.scoreList[level - 1] >= GameManagerBehaviour.instance.secondStar[level - 1])
+        if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.secondStar[level - 1])
         {
             inUseEtoileDeux.sprite = etoileFull;
         }
-        if (GameManagerBehaviour.instance.scoreList[level - 1] >= GameManagerBehaviour.instance.thirdStar[level - 1])
+        if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.thirdStar[level - 1])
         {
             inUseEtoileTrois.sprite = etoileFull;
         }
-        score.text = "Score : " + GameManagerBehaviour.instance.scoreList[level - 1];
+        score.text = "Score : " + GameManagerBehaviour.instance.HighScoreList[level - 1];
     }
 }

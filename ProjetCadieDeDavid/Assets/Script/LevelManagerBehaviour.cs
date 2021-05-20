@@ -11,12 +11,11 @@ public class LevelManagerBehaviour : MonoBehaviour
     public bool levelDone;
     public int score = 0;
 
-    public float backgroundSpeed;
     public int minSpeed;
     public int maxSpeed;
     public int minTime;
     public int maxTime;
-
+    
     public int capaciteCaddie;
     public int playerLife;
 

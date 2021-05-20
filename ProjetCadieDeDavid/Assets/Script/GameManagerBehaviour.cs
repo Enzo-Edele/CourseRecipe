@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GameManagerBehaviour : MonoBehaviour
 {
-    public int playerSkin = 0;
+    public int playerSkin;
     public int coin;
     public int coinPerLevel;
     public int maxLevel;
-    public int level = 1;
+    public int level;
+    public int levelSelect;
     public int ticket;
-    public List<int> scoreList;
+    public int ticketPerLevel;
+    public List<int> HighScoreList;
     public List<int> firstStar;
     public List<int> secondStar;
     public List<int> thirdStar;
@@ -45,12 +47,22 @@ public class GameManagerBehaviour : MonoBehaviour
         _instance = this;
         for (int i = 0; i < maxLevel; i++)
         {
-            scoreList.Add(i);
+            HighScoreList.Add(0);
         }
     }
     private void Start()
     {
         AddCoin(0);
+        /*
+        SaveData data = SaveSysteme.LoadData();
+        level = data.level;
+        coin = data.coin;
+        ticket = data.ticket;
+        for (int i = 0; i < data.highScoreList.Length; i++)
+        {
+            HighScoreList.Add(data.highScoreList[i]);
+        }
+        */
     }
     private void Update()
     {
@@ -66,7 +78,7 @@ public class GameManagerBehaviour : MonoBehaviour
             ticket = data.ticket;
             for (int i = 0; i < data.highScoreList.Length; i++)
             {
-                scoreList.Add(data.highScoreList[i]);
+                HighScoreList.Add(data.highScoreList[i]);
             }
             this.UnlockLevel();
         }
@@ -77,6 +89,12 @@ public class GameManagerBehaviour : MonoBehaviour
         if (Input.GetKeyDown("[9]"))
         {
             Debug.Log("Level : " + level);
+            Debug.Log("Coin : " + coin);
+            Debug.Log("Ticket : " + ticket);
+            for (int i = 0; i < maxLevel; i++)
+            {
+                Debug.Log("HighScore Level : "+ (i+1) +" = "+HighScoreList[i]);
+            }
         }
     }
     public void AddCoin(int numberOfCoin)
@@ -156,13 +174,11 @@ public class GameManagerBehaviour : MonoBehaviour
         {
             if (i <= GameManagerBehaviour.instance.level)
             {
-                Debug.Log("Unlock Level " + i);
-                //fct pour l'UI(i)
+                Debug.Log("Unlock Level " + (i + 1));
             }
             if (i < GameManagerBehaviour.instance.level)
             {
-                Debug.Log("Unlock recette " + i);
-                //fct pour l'UI(i)
+                Debug.Log("Unlock recette " + (i + 1));
             }
         }
     }

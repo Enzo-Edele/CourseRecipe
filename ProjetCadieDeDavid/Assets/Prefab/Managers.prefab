@@ -6825,7 +6825,8 @@ MonoBehaviour:
   coin: 0
   coinPerLevel: 0
   maxLevel: 13
-  level: 0
+  level: 1
+  levelSelect: 1
   ticket: 0
   scoreList: 
   firstStar: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

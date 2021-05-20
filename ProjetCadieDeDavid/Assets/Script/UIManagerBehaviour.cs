@@ -233,9 +233,9 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     void EndLevel()
      {
-        if(LevelManagerBehaviour.Instance.score > GameManagerBehaviour.instance.scoreList[SceneManager.GetActiveScene().buildIndex]-1)
+        if(LevelManagerBehaviour.Instance.score > GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex]-1)
         {
-              GameManagerBehaviour.instance.scoreList[SceneManager.GetActiveScene().buildIndex] = LevelManagerBehaviour.Instance.score;
+              GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex] = LevelManagerBehaviour.Instance.score;
         }
         if ((SceneManager.GetActiveScene().buildIndex) == GameManagerBehaviour.instance.level)
         {
