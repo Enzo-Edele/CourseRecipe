@@ -110,10 +110,6 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             menuBriefing.SetActive(false);
         }
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
-        }
     }
 
     public void DisplayList()

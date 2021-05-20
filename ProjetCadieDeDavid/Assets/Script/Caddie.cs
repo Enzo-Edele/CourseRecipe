@@ -115,7 +115,14 @@ public class Caddie : MonoBehaviour
 
     public void ParticlesEffect(int i)
     {
-        Instantiate(starEffect[i], this.transform.position, Quaternion.identity, this.transform);
+        if( i != 1)
+        {
+            Instantiate(starEffect[i], this.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(starEffect[i], this.transform.position, Quaternion.identity, this.transform);
+        }
     }
 
     public void ChangeMoveState(PlayerStates currentState)

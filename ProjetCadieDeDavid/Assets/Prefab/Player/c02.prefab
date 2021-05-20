@@ -103,8 +103,8 @@ MonoBehaviour:
   speed: 5
   starEffect:
   - {fileID: 7528182648380704124, guid: e3d85d5cf680e5b4587d9fac4358aed1, type: 3}
-  - {fileID: 1508008729518715546, guid: c9e1e73be1990e54795adbbe380fa841, type: 3}
   - {fileID: 4345287333246355910, guid: bd16d078cf1fd0b45bf004f23964c0c9, type: 3}
+  - {fileID: 1508008729518715546, guid: c9e1e73be1990e54795adbbe380fa841, type: 3}
 --- !u!60 &6847414496168130679
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -121,8 +121,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.18, y: 1.89}
+    pivot: {x: 0.58, y: 0.3}
+    oldSize: {x: 5.3, y: 3.15}
     newSize: {x: 8.08, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,8 +158,8 @@ BoxCollider2D:
   m_Offset: {x: 1.1631857, y: -0.15070629}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.18, y: 1.89}
+    pivot: {x: 0.58, y: 0.3}
+    oldSize: {x: 5.3, y: 3.15}
     newSize: {x: 8.08, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
