@@ -119,9 +119,9 @@ public class UIManagerBehaviour : MonoBehaviour
         for (int i = 0; i < LevelManagerBehaviour.Instance.articleCurrentList.Count; i++)
         {
             Vector3 pos = LevelManagerBehaviour.Instance.miniatureArtcileArray[i].transform.position;
-            if (i<LevelManagerBehaviour.Instance.articleAskedArray.Length)
+            if (i < LevelManagerBehaviour.Instance.articleAskedArray.Length)
             {
-                if(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] != 0)
+                if (LevelManagerBehaviour.Instance.articleCurrentNumberList[i] != 0)
                 {
                     StartCoroutine(AddUIScore(LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 500, true));
                     currentScoreUI = LevelManagerBehaviour.Instance.articleCurrentNumberList[i] * 500;
@@ -136,7 +136,7 @@ public class UIManagerBehaviour : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[LevelManagerBehaviour.Instance.level -1])
+        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[LevelManagerBehaviour.Instance.level - 1])
         {
             GameManagerBehaviour.instance.ticketPerLevel = 0;
             GameManagerBehaviour.instance.coinPerLevel = 0;
@@ -226,11 +226,11 @@ public class UIManagerBehaviour : MonoBehaviour
      {
         if(LevelManagerBehaviour.Instance.score > GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex]-1)
         {
-              GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex] = LevelManagerBehaviour.Instance.score;
+              GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex - 1] = LevelManagerBehaviour.Instance.score;
         }
         if ((SceneManager.GetActiveScene().buildIndex) == GameManagerBehaviour.instance.level)
         {
-            GameManagerBehaviour.instance.level = SceneManager.GetActiveScene().buildIndex;
+            GameManagerBehaviour.instance.level = SceneManager.GetActiveScene().buildIndex + 1;
         }
     }
 }

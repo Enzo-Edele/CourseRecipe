@@ -24,6 +24,7 @@ public class BookManager : MonoBehaviour
     public GameObject listeRecetteTreize;
 
     public GameObject listRecette;
+    public TMP_Text levelText;
     public TMP_Text score;
     public GameObject etoileUn, etoileDeux, etoileTrois;
 
@@ -155,6 +156,7 @@ public class BookManager : MonoBehaviour
         }
         inUseRecette.sprite = newImageRecette[level - 1];
         GameManagerBehaviour.instance.levelSelect = level;
+        levelText.text = "L"+"\n"+"E"+"\n"+"V"+"\n"+"E"+"\n"+"L"+"\n"+"\n"+ level;
         inUseEtoileUn.sprite = etoileEmpty;
         inUseEtoileDeux.sprite = etoileEmpty;
         inUseEtoileTrois.sprite = etoileEmpty;
