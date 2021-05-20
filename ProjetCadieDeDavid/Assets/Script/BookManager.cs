@@ -26,6 +26,7 @@ public class BookManager : MonoBehaviour
 
     public GameObject listRecette;
     public TMP_Text score;
+    public GameObject etoileUn, etoileDeux, etoileTrois;
 
     readonly string recetteUn = "Recette Un";
     readonly string recetteDeux = "Recette Deux";
@@ -43,10 +44,11 @@ public class BookManager : MonoBehaviour
     
     public TMP_Text recette;
     public GameObject ImageRecette;
-    Image InUse;
-
+    Image inUseRecette;
     public Sprite[] newImageRecette;
 
+    Image inUseEtoileUn, inUseEtoileDeux, inUseEtoileTrois;
+    public Sprite etoileFull, etoileEmpty;
     public List<int> scoreList;
 
     private BookManager _instance;
@@ -59,10 +61,13 @@ public class BookManager : MonoBehaviour
     }
     private void Awake()
     {
-        InUse = ImageRecette.GetComponent<Image>();
+        inUseRecette = ImageRecette.GetComponent<Image>();
         ImageRecette.GetComponent<Image>().preserveAspect = true;
+        inUseEtoileUn = etoileUn.GetComponent<Image>();
+        inUseEtoileDeux = etoileDeux.GetComponent<Image>();
+        inUseEtoileTrois = etoileTrois.GetComponent<Image>();
         levelProgress = GameManagerBehaviour.instance.level;
-        levelSelect = 1;
+        this.ChangeSelect(1);
     }
     private void Start()
     {
@@ -149,8 +154,23 @@ public class BookManager : MonoBehaviour
                 recette.text = recetteTreize;
                 break;
         }
-        InUse.sprite = newImageRecette[level - 1];
+        inUseRecette.sprite = newImageRecette[level - 1];
         levelSelect = level;
+        inUseEtoileUn.sprite = etoileEmpty;
+        inUseEtoileDeux.sprite = etoileEmpty;
+        inUseEtoileTrois.sprite = etoileEmpty;
+        if (GameManagerBehaviour.instance.scoreList[level - 1] >= GameManagerBehaviour.instance.firstStar[level - 1])
+        {
+            inUseEtoileUn.sprite = etoileFull;
+        }
+        if (GameManagerBehaviour.instance.scoreList[level - 1] >= GameManagerBehaviour.instance.secondStar[level - 1])
+        {
+            inUseEtoileDeux.sprite = etoileFull;
+        }
+        if (GameManagerBehaviour.instance.scoreList[level - 1] >= GameManagerBehaviour.instance.thirdStar[level - 1])
+        {
+            inUseEtoileTrois.sprite = etoileFull;
+        }
         score.text = "Score : " + GameManagerBehaviour.instance.scoreList[level - 1];
     }
 }
