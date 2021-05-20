@@ -11,6 +11,7 @@ public class Articles : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         speed = Random.Range(speedMin, speedMax);
+        LevelManagerBehaviour.Instance.testSpwanArticle(GetComponent<SpriteRenderer>().sprite.name);
     }
 
     void FixedUpdate()

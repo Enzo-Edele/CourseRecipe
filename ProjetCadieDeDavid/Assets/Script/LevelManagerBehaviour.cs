@@ -23,6 +23,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int[] articleNumberArray;
     public List <string> articleCurrentList = new List<string>();
     public List<int> articleCurrentNumberList = new List<int>();
+    public List<int> articleSpawnedList = new List<int>();
 
     public string[] rayonArray;
     int rayonInUse = 0;
@@ -83,10 +84,14 @@ public class LevelManagerBehaviour : MonoBehaviour
     private void Start()
     {
         ChangeLevelStates(LevelStates.LevelBriefing);
+        for(int i = 0; i < articleNumberArray.Length; i++)
+        {
+            articleSpawnedList.Add(0);
+        }
     }
     private void Update()
     {
-        if(timerCollect < 0 && LevelState == LevelStates.Collect)
+        if(timerCollect < 0 && LevelState == LevelStates.Collect) //Mettre check ici
         {
             SpawnerManagerBehavior.Instance.panelTransition = runnerLentgh;
             rayonInUse++;
@@ -109,7 +114,17 @@ public class LevelManagerBehaviour : MonoBehaviour
             menuBriefing.SetActive(false);
         }
     }
-
+    public void testSpwanArticle(string art)
+    {
+        art.Replace("(Clone)", "");
+        for(int i = 0; i < articleAskedArray.Length; i++)
+        {
+            if(art.Equals(articleAskedArray[i]))
+            {
+                articleSpawnedList[i]++;
+            }
+        }
+    }
     public void DisplayList()
     {
         for (int i = 0; i < articleCurrentList.Count; i++)
