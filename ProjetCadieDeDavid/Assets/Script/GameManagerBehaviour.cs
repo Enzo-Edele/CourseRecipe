@@ -66,11 +66,11 @@ public class GameManagerBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown("[5]"))
+        if (Input.GetKeyDown("s"))
         {
             SaveSysteme.Save(this);
         }
-        if (Input.GetKeyDown("[7]"))
+        if (Input.GetKeyDown("l"))
         {
             SaveData data = SaveSysteme.LoadData();
             level = data.level;
@@ -82,11 +82,7 @@ public class GameManagerBehaviour : MonoBehaviour
             }
             this.UnlockLevel();
         }
-        if(Input.GetKeyDown("[8]"))
-        {
-            level++;
-        }
-        if (Input.GetKeyDown("[9]"))
+        if (Input.GetKeyDown("i"))
         {
             Debug.Log("Level : " + level);
             Debug.Log("Coin : " + coin);
@@ -170,15 +166,15 @@ public class GameManagerBehaviour : MonoBehaviour
     }
     public void UnlockLevel()
     {
-        for (int i = 0; i < maxLevel; i++)
+        for (int i = 1; i < maxLevel; i++)
         {
             if (i <= GameManagerBehaviour.instance.level)
             {
-                Debug.Log("Unlock Level " + (i + 1));
+                Debug.Log("Unlock Level " + (i));
             }
             if (i < GameManagerBehaviour.instance.level)
             {
-                Debug.Log("Unlock recette " + (i + 1));
+                Debug.Log("Unlock recette " + (i));
             }
         }
     }
