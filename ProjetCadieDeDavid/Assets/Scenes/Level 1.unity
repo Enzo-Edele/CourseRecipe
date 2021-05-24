@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: articleNumberArray.Array.data[0]
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: articleNumberArray.Array.data[1]
@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: timeCollect
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: runnerLentgh

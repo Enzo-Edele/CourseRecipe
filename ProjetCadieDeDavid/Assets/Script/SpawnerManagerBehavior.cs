@@ -18,7 +18,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
     public GameObject[] rayonLegumeUn = new GameObject[0];
     public GameObject[] rayonLegumeDeux = new GameObject[0];
     public GameObject[] rayonFruit = new GameObject[0];
-    List<GameObject> Rayon = new List<GameObject>();
+    public List<GameObject> rayon = new List<GameObject>();
     int tailleList;
     int rndArticle, memory, rndPanel;
 
@@ -100,7 +100,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
             rndArticle = Random.Range(0, tailleList);
         }
         memory = rndArticle;
-        Instantiate(Rayon[rndArticle], positionSpawnItem, Quaternion.identity);
+        Instantiate(rayon[rndArticle], positionSpawnItem, Quaternion.identity);
         timer = Random.Range(timeMin, timeMax);
     }
 
@@ -142,66 +142,66 @@ public class SpawnerManagerBehavior : MonoBehaviour
         switch (_rayonActuel)
         {
             case Rayons.RayonEpicerieUn:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonEpicerieUn.Length; i++)
                 {
-                    Rayon.Add(rayonEpicerieUn[i]);
+                    rayon.Add(rayonEpicerieUn[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelEpUn;
                 break;
             case Rayons.RayonEpicerieDeux:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonEpicerieDeux.Length; i++)
                 {
-                    Rayon.Add(rayonEpicerieDeux[i]);
+                    rayon.Add(rayonEpicerieDeux[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelEpDeux;
                 break;
             case Rayons.RayonLaitier:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonLaitier.Length; i++)
                 {
-                    Rayon.Add(rayonLaitier[i]);
+                    rayon.Add(rayonLaitier[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelLaitier;
                 break;
             case Rayons.RayonBouPoi:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonBouPoi.Length; i++)
                 {
-                    Rayon.Add(rayonBouPoi[i]);
+                    rayon.Add(rayonBouPoi[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelBouPoi;
                 break;
             case Rayons.RayonLegumeUn:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonLegumeUn.Length; i++)
                 {
-                    Rayon.Add(rayonLegumeUn[i]);
+                    rayon.Add(rayonLegumeUn[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelLegUn;
                 break;
             case Rayons.RayonLegumeDeux:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonLegumeDeux.Length; i++)
                 {
-                    Rayon.Add(rayonLegumeDeux[i]);
+                    rayon.Add(rayonLegumeDeux[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelLegDeux;
                 break;
             case Rayons.RayonFruit:
-                Rayon.Clear();
+                rayon.Clear();
                 for (int i = 0; i < rayonFruit.Length; i++)
                 {
-                    Rayon.Add(rayonFruit[i]);
+                    rayon.Add(rayonFruit[i]);
                 }
-                tailleList = Rayon.Count;
+                tailleList = rayon.Count;
                 panelRayon = panelFruit;
                 break;
         }

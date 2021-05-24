@@ -24,6 +24,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     public List <string> articleCurrentList = new List<string>();
     public List<int> articleCurrentNumberList = new List<int>();
     public List<int> articleSpawnedList = new List<int>();
+    List<int> indexSpawnedList = new List<int>();
 
     public string[] rayonArray;
     int rayonInUse = 0;
@@ -93,17 +94,28 @@ public class LevelManagerBehaviour : MonoBehaviour
     {
         if(timerCollect < 0 && LevelState == LevelStates.Collect) //Mettre check ici
         {
-            SpawnerManagerBehavior.Instance.panelTransition = runnerLentgh;
-            rayonInUse++;
-            if (rayonInUse < rayonArray.Length)
+            bool nextLevel = true;
+            for (int i = 0; i < indexSpawnedList.Count; i++)
             {
-                SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
+                if (articleSpawnedList[indexSpawnedList[i]] < articleNumberArray[i])
+                {
+                    nextLevel = false;
+                }
             }
-            else
+            if (nextLevel)
             {
-                GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
+                SpawnerManagerBehavior.Instance.panelTransition = runnerLentgh;
+                rayonInUse++;
+                if (rayonInUse < rayonArray.Length)
+                {
+                    SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
+                }
+                else
+                {
+                    GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
+                }
+                ChangeLevelStates(LevelStates.Run);
             }
-            ChangeLevelStates(LevelStates.Run);
         }
         else
         {
@@ -226,6 +238,14 @@ public class LevelManagerBehaviour : MonoBehaviour
             case LevelStates.Collect:
                 Time.timeScale = 1;
                 timerCollect = timeCollect;
+                indexSpawnedList.Clear();
+                for(int i = 0; i < articleAskedArray.Length; i++)
+                {
+                    if(articleAskedArray[i] == SpawnerManagerBehavior.Instance.rayon[i].name)
+                    {
+                        indexSpawnedList.Add(i);
+                    }
+                }
                 break;
             case LevelStates.Run:
                 Time.timeScale = 1;
