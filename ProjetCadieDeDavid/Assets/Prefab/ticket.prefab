@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8521280273545240629}
   - component: {fileID: -8468675622842646285}
   m_Layer: 0
-  m_Name: Ticket
+  m_Name: ticket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: 0
   amount: 1
+  particle: {fileID: 8066267568913080113, guid: 9561062e066e70741a321544669dbc9b, type: 3}
 --- !u!60 &-8468675622842646285
 PolygonCollider2D:
   m_ObjectHideFlags: 0

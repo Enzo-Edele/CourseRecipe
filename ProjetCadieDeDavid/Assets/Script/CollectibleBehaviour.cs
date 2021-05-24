@@ -6,6 +6,7 @@ public class CollectibleBehaviour : MonoBehaviour
 {
     public bool coin;
     public int amount;
+    public GameObject particle;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,13 +16,14 @@ public class CollectibleBehaviour : MonoBehaviour
             if(coin)
             {
                 GameManagerBehaviour.instance.AddCoin(amount);
-                Destroy(this.gameObject);
+                Instantiate(particle, this.transform.position, Quaternion.identity);
             }
             else
             {
                 GameManagerBehaviour.instance.AddTicket(amount);
-                Destroy(this.gameObject);
+                Instantiate(particle, this.transform.position, Quaternion.identity);
             }
+            Destroy(this.gameObject);
         }
     }
 }

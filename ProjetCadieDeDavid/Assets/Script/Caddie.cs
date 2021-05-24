@@ -46,6 +46,10 @@ public class Caddie : MonoBehaviour
         capacité = capacitéMax;
         life = LevelManagerBehaviour.Instance.playerLife;
         spriteWidth = GetComponent<SpriteRenderer>().sprite.rect.width;
+        if(GameManagerBehaviour.instance.playerSkin == 1)
+        {
+            spriteWidth *= 1.6f;
+        }
     }
 
     private void Update()
@@ -54,7 +58,6 @@ public class Caddie : MonoBehaviour
         {
             Move();
         }
-        Debug.Log(spriteWidth);
     }
 
     private void Move()

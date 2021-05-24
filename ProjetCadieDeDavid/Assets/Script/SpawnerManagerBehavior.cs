@@ -21,6 +21,17 @@ public class SpawnerManagerBehavior : MonoBehaviour
     List<GameObject> Rayon = new List<GameObject>();
     int tailleList;
     int rndArticle, memory, rndPanel;
+
+
+    public GameObject[] panel;
+    public GameObject panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
+    GameObject panelRayon;
+    public GameObject coin;
+    Vector3 positionStart;
+    Vector3 positionSpawnPannel;
+    [HideInInspector]
+    public int panelTransition;
+    bool stopRunner = false;
     public enum Rayons
     {
         RayonEpicerieUn,
@@ -39,15 +50,6 @@ public class SpawnerManagerBehavior : MonoBehaviour
             return _rayonActuel;
         }
     }
-
-    public GameObject[] panel;
-    public GameObject panelEpUn, panelEpDeux, panelLaitier, panelBouPoi, panelLegUn, panelLegDeux, panelFruit;
-    GameObject panelRayon;
-    Vector3 positionStart;
-    Vector3 positionSpawnPannel;
-    [HideInInspector]
-    public int panelTransition;
-    bool stopRunner = false;
 
     private static SpawnerManagerBehavior _instance;
     public static SpawnerManagerBehavior Instance
@@ -69,6 +71,71 @@ public class SpawnerManagerBehavior : MonoBehaviour
         rndPanel = Random.Range(0, panel.Length);
         Instantiate(panel[rndPanel], Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
     }
+    void Update()
+    {
+        if (timer < 0 && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Collect && GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
+        {
+            this.Generate();
+        }
+        else if (timer <0 && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Run && GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
+        {
+            GenerateCoin();
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+    void Generate()
+    {
+        positionSpawnItem = Camera.main.WorldToScreenPoint(transform.position);
+        positionRnd = Random.Range(positionRndMin, positionRndMax);
+        positionSpawnItem.x = Screen.width * positionRnd;
+        positionSpawnItem.y = Screen.height * 1.1f;
+        positionSpawnItem = Camera.main.ScreenToWorldPoint(positionSpawnItem);
+        positionSpawnItem.z = 0;
+        rndArticle = Random.Range(0, tailleList);
+        while (rndArticle == memory)
+        {
+            rndArticle = Random.Range(0, tailleList);
+        }
+        memory = rndArticle;
+        Instantiate(Rayon[rndArticle], positionSpawnItem, Quaternion.identity);
+        timer = Random.Range(timeMin, timeMax);
+    }
+
+    void GenerateCoin()
+    {
+        positionSpawnItem = Camera.main.WorldToScreenPoint(transform.position);
+        positionRnd = Random.Range(positionRndMin, positionRndMax);
+        positionSpawnItem.x = Screen.width * positionRnd;
+        positionSpawnItem.y = Screen.height * 1.1f;
+        positionSpawnItem = Camera.main.ScreenToWorldPoint(positionSpawnItem);
+        positionSpawnItem.z = 0;
+        Instantiate(coin, positionSpawnItem, Quaternion.identity);
+        timer = Random.Range(timeMin, timeMax);
+    }
+    public void SpawnDecor()
+    {
+        if (stopRunner)
+        {
+            LevelManagerBehaviour.Instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
+            stopRunner = false;
+        }
+        if (panelTransition == 1)
+        {
+            Instantiate(panelRayon, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
+            stopRunner = true;
+            panelTransition--;
+        }
+        else
+        {
+            rndPanel = Random.Range(0, panel.Length);
+            Instantiate(panel[rndPanel], Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
+            panelTransition--;
+        }
+    }
+
     void RayonChange(Rayons newState)
     {
         _rayonActuel = newState;
@@ -141,7 +208,7 @@ public class SpawnerManagerBehavior : MonoBehaviour
     }
     public void ChangeRayonState(string rayon)
     {
-        switch(rayon)
+        switch (rayon)
         {
             case "EpicerieUn":
                 this.RayonChange(Rayons.RayonEpicerieUn);
@@ -164,54 +231,6 @@ public class SpawnerManagerBehavior : MonoBehaviour
             case "Fruit":
                 this.RayonChange(Rayons.RayonFruit);
                 break;
-        }
-    }
-    void Update()
-    {
-        if (timer < 0 && LevelManagerBehaviour.LevelState == LevelManagerBehaviour.LevelStates.Collect && GameManagerBehaviour.GameState == GameManagerBehaviour.GameStates.InGame)
-        {
-            this.Generate();
-        }
-        else
-        {
-            timer -= Time.deltaTime;
-        }
-    }
-    void Generate()
-    {
-        positionSpawnItem = Camera.main.WorldToScreenPoint(transform.position);
-        positionRnd = Random.Range(positionRndMin, positionRndMax);
-        positionSpawnItem.x = Screen.width * positionRnd;
-        positionSpawnItem.y = Screen.height * 1.1f;
-        positionSpawnItem = Camera.main.ScreenToWorldPoint(positionSpawnItem);
-        positionSpawnItem.z = 0;
-        rndArticle = Random.Range(0, tailleList);
-        while (rndArticle == memory)
-        {
-            rndArticle = Random.Range(0, tailleList);
-        }
-        memory = rndArticle;
-        Instantiate(Rayon[rndArticle], positionSpawnItem, Quaternion.identity);
-        timer = Random.Range(timeMin, timeMax);
-    }
-    public void SpawnDecor()
-    {
-        if (stopRunner)
-        {
-            LevelManagerBehaviour.Instance.ChangeLevelStates(LevelManagerBehaviour.LevelStates.Collect);
-            stopRunner = false;
-        }
-        if (panelTransition == 1)
-        {
-            Instantiate(panelRayon, Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
-            stopRunner = true;
-            panelTransition--;
-        }
-        else
-        {
-            rndPanel = Random.Range(0, panel.Length);
-            Instantiate(panel[rndPanel], Camera.main.ScreenToWorldPoint(positionSpawnPannel), Quaternion.identity);
-            panelTransition--;
         }
     }
 }

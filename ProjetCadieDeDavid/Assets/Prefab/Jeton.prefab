@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1414956972501625906}
   - component: {fileID: 1127188224291510601}
   - component: {fileID: 7975567311342189502}
+  - component: {fileID: 7664975199272425494}
   m_Layer: 0
   m_Name: Jeton
   m_TagString: Untagged
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: 1
   amount: 1
+  particle: {fileID: 8066267568913080113, guid: 9561062e066e70741a321544669dbc9b, type: 3}
 --- !u!58 &7975567311342189502
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,3 +116,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!50 &7664975199272425494
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151611062320846309}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
