@@ -90,16 +90,16 @@ public class BookManager : MonoBehaviour
         if (GameManagerBehaviour.instance.levelSelect < GameManagerBehaviour.instance.maxLevel)
         {
             GameManagerBehaviour.instance.levelSelect++;
+            ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
-        ChangeSelect(GameManagerBehaviour.instance.levelSelect);
     }
     public void PreviousLevel()
     {
         if (GameManagerBehaviour.instance.levelSelect > 1)
         {
             GameManagerBehaviour.instance.levelSelect--;
+            ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
-        ChangeSelect(GameManagerBehaviour.instance.levelSelect);
     }
     public void ChangeSelect(int level)
     {
