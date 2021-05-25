@@ -27,7 +27,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     List<int> indexSpawnedList = new List<int>();
 
     public string[] rayonArray;
-    int rayonInUse = 0;
+    public int rayonInUse = 0;
     public float timeCollect = 10;
     float timerCollect;
     public int runnerLentgh = 2;
@@ -81,6 +81,7 @@ public class LevelManagerBehaviour : MonoBehaviour
         }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
+        //SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
     }
     private void Start()
     {
@@ -92,7 +93,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        if(timerCollect < 0 && LevelState == LevelStates.Collect) //Mettre check ici
+        if(timerCollect < 0 && LevelState == LevelStates.Collect)
         {
             bool nextLevel = true;
             for (int i = 0; i < indexSpawnedList.Count; i++)
@@ -105,12 +106,7 @@ public class LevelManagerBehaviour : MonoBehaviour
             if (nextLevel)
             {
                 SpawnerManagerBehavior.Instance.panelTransition = runnerLentgh;
-                rayonInUse++;
-                if (rayonInUse < rayonArray.Length)
-                {
-                    SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
-                }
-                else
+                if(rayonInUse >= rayonArray.Length)
                 {
                     GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
                 }
@@ -238,12 +234,17 @@ public class LevelManagerBehaviour : MonoBehaviour
             case LevelStates.Collect:
                 Time.timeScale = 1;
                 timerCollect = timeCollect;
+                SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
+                rayonInUse++;
                 indexSpawnedList.Clear();
                 for(int i = 0; i < articleAskedArray.Length; i++)
                 {
-                    if(articleAskedArray[i] == SpawnerManagerBehavior.Instance.rayon[i].name)
-                    {
-                        indexSpawnedList.Add(i);
+                    for (int y = 0; y < SpawnerManagerBehavior.Instance.rayon.Count; y++)
+                    { 
+                        if(articleAskedArray[i] == SpawnerManagerBehavior.Instance.rayon[y].name)
+                        {
+                            indexSpawnedList.Add(i);
+                        }
                     }
                 }
                 break;
