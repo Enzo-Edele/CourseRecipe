@@ -51,6 +51,9 @@ public class BookManager : MonoBehaviour
     public Sprite etoileFull, etoileEmpty;
     public List<int> scoreList;
 
+    public Image livreAnim;
+    Animator anim;
+
     private BookManager _instance;
     public BookManager instance
     {
@@ -66,6 +69,7 @@ public class BookManager : MonoBehaviour
         inUseEtoileUn = etoileUn.GetComponent<Image>();
         inUseEtoileDeux = etoileDeux.GetComponent<Image>();
         inUseEtoileTrois = etoileTrois.GetComponent<Image>();
+        anim = livreAnim.GetComponent<Animator>();
         levelProgress = GameManagerBehaviour.instance.level;
         this.ChangeSelect(1);
     }
@@ -154,6 +158,7 @@ public class BookManager : MonoBehaviour
                 recette.text = recetteTreize;
                 break;
         }
+        anim.SetTrigger("turnPage");
         inUseRecette.sprite = newImageRecette[level - 1];
         GameManagerBehaviour.instance.levelSelect = level;
         levelText.text = "L"+"\n"+"E"+"\n"+"V"+"\n"+"E"+"\n"+"L"+"\n"+"\n"+ level;

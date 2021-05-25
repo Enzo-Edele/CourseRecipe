@@ -150,6 +150,7 @@ public class GameManagerBehaviour : MonoBehaviour
             case GameStates.Recipe:
                 UIManagerBehaviour.instance.SetRecipeActive();
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
+                Time.timeScale = 1;
                 break;
         }
     }
