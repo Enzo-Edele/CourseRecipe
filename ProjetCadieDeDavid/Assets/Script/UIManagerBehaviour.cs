@@ -13,12 +13,10 @@ public class UIManagerBehaviour : MonoBehaviour
     public GameObject HUD;
     public GameObject pause;
     public GameObject gameOver;
-    public GameObject recipe;
     public GameObject canvas;
 
     public Text levelText;
     public Text coinText;
-    public TMP_Text ticketText;
     public TMP_Text[] listHUDText;
     public TMP_Text[] listNumberHUDText;
     public GameObject[] miniatureArtcileArray;
@@ -64,7 +62,6 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
-        recipe.SetActive(false);
     }
     public void SetLevelSelectionActive()
     {
@@ -73,7 +70,6 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
-        recipe.SetActive(false);
     }
     public void SetHUDActive()
     {
@@ -82,7 +78,6 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(true);
         pause.SetActive(false);
         gameOver.SetActive(false);
-        recipe.SetActive(false);
     }
     public void SetPauseActive()
     {
@@ -91,7 +86,6 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(true);
         gameOver.SetActive(false);
-        recipe.SetActive(false);
         LevelManagerBehaviour.Instance.DisplayList();
         LevelManagerBehaviour.Instance.menuBriefing.SetActive(true);
     }
@@ -102,7 +96,6 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(true);
-        recipe.SetActive(false);
         scoreUI = 0;
         LevelManagerBehaviour.Instance.DisplayList();
         LevelManagerBehaviour.Instance.menuBriefing.SetActive(true);
@@ -115,7 +108,6 @@ public class UIManagerBehaviour : MonoBehaviour
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
-        recipe.SetActive(true);
     }
     IEnumerator ShowStars()
     {
@@ -203,10 +195,6 @@ public class UIManagerBehaviour : MonoBehaviour
     public void DisplayCoin()
     {
         coinText.text = "Coin : " + GameManagerBehaviour.instance.coin;
-    }
-    public void DisplayTicket()
-    {
-        ticketText.text = "Ticket : " + GameManagerBehaviour.instance.ticket;
     }
     public void DisplayListHUD()
     {

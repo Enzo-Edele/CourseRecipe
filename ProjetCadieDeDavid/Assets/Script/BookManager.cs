@@ -27,6 +27,7 @@ public class BookManager : MonoBehaviour
     public TMP_Text levelText;
     public TMP_Text score;
     public GameObject etoileUn, etoileDeux, etoileTrois;
+    public TMP_Text ticketText;
 
     readonly string recetteUn = "Recette Un";
     readonly string recetteDeux = "Recette Deux";
@@ -72,20 +73,23 @@ public class BookManager : MonoBehaviour
         anim = livreAnim.GetComponent<Animator>();
         levelProgress = GameManagerBehaviour.instance.level;
         this.ChangeSelect(1);
+        DisplayTicket();
     }
     private void Start()
     {
         _instance = this;
-        GameObject book = GameObject.Find("Book");
-        this.transform.SetParent(book.transform);
     }
     public void LevelLoad()
     {
         if (GameManagerBehaviour.instance.levelSelect <= levelProgress)
         {
             SceneManager.LoadScene("Level " + GameManagerBehaviour.instance.levelSelect);
-            GameManagerBehaviour.instance.ChangeGameStateByUI(2);
+            GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.InGame);
         }
+    }
+    public void LoadMenu()
+    {
+        ScenesManagerBehaviour.instance.LoadMainMenu();
     }
     public void NextLevel()
     {
@@ -103,10 +107,11 @@ public class BookManager : MonoBehaviour
             ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
     }
-    
-    public void Destroy()
+
+
+    void DisplayTicket()
     {
-        Destroy(this.gameObject);
+        ticketText.text = "Ticket : " + GameManagerBehaviour.instance.ticket;
     }
     public void ChangeSelect(int level)
     {
