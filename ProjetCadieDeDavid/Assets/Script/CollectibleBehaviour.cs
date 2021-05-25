@@ -8,6 +8,14 @@ public class CollectibleBehaviour : MonoBehaviour
     public int amount;
     public GameObject particle;
 
+    void Update()
+    {
+        if (transform.position.magnitude > 12.0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerBehaviour player = collision.GetComponent<PlayerBehaviour>();

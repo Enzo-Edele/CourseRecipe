@@ -32,6 +32,16 @@ public class ScenesManagerBehaviour : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void LoadMainMenuOnlyInGame()
+    {
+        SceneManager.LoadScene("MainMenu");
+        if (!LevelManagerBehaviour.Instance.levelDone)
+        {
+            GameManagerBehaviour.instance.ResetCoinAndTicket();
+        }
+    }
+
     public void LoadRecipeScene()
     {
         SceneManager.LoadScene("Recipe");

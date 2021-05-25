@@ -16,6 +16,7 @@ public class GameManagerBehaviour : MonoBehaviour
     public List<int> firstStar;
     public List<int> secondStar;
     public List<int> thirdStar;
+    public List<int> ticketSpawn;
     public enum GameStates
     {
         MainMenu,
@@ -53,6 +54,7 @@ public class GameManagerBehaviour : MonoBehaviour
     private void Start()
     {
         AddCoin(0);
+        AddTicket(0);
         /*
         SaveData data = SaveSysteme.LoadData();
         level = data.level;
@@ -107,6 +109,7 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         ticket += numberOfTicket;
         ticketPerLevel -= numberOfTicket;
+        UIManagerBehaviour.instance.DisplayTicket();
     }
 
     public void ResetCoinAndTicket()
@@ -156,8 +159,16 @@ public class GameManagerBehaviour : MonoBehaviour
         switch (currentState)
         {
             case 0:
+                if (GameState == GameStates.Pause)
+                {
+                    Debug.Log("tutu");
+                    ScenesManagerBehaviour.instance.LoadMainMenuOnlyInGame();
+                }
+                else
+                {
+                    ScenesManagerBehaviour.instance.LoadMainMenu();
+                }
                 ChangeGameState(GameStates.MainMenu);
-                ScenesManagerBehaviour.instance.LoadMainMenu();
                 break;
             case 1:
                 ChangeGameState(GameStates.LevelSelection);

@@ -17,6 +17,7 @@ public class UIManagerBehaviour : MonoBehaviour
 
     public Text levelText;
     public Text coinText;
+    public TMP_Text ticketText;
     public TMP_Text[] listHUDText;
     public TMP_Text[] listNumberHUDText;
     public GameObject[] miniatureArtcileArray;
@@ -136,18 +137,19 @@ public class UIManagerBehaviour : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[GameManagerBehaviour.instance.levelSelect])
+        if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.firstStar[GameManagerBehaviour.instance.levelSelect-1])
         {
+            GameManagerBehaviour.instance.ticketSpawn[GameManagerBehaviour.instance.levelSelect - 1] += GameManagerBehaviour.instance.ticketPerLevel;
             GameManagerBehaviour.instance.ticketPerLevel = 0;
             GameManagerBehaviour.instance.coinPerLevel = 0;
             EndLevel();
             stars[0].SetActive(true);
             nextLevel.SetActive(true);
-            if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[GameManagerBehaviour.instance.levelSelect])
+            if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.secondStar[GameManagerBehaviour.instance.levelSelect-1])
             {
                 yield return new WaitForSeconds(1.0f);
                 stars[1].SetActive(true);
-                if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[GameManagerBehaviour.instance.levelSelect])
+                if (LevelManagerBehaviour.Instance.levelDone && LevelManagerBehaviour.Instance.score >= GameManagerBehaviour.instance.thirdStar[GameManagerBehaviour.instance.levelSelect-1])
                 {
                     yield return new WaitForSeconds(1.0f);
                     stars[2].SetActive(true);
@@ -194,6 +196,10 @@ public class UIManagerBehaviour : MonoBehaviour
     public void DisplayCoin()
     {
         coinText.text = "Coin : " + GameManagerBehaviour.instance.coin;
+    }
+    public void DisplayTicket()
+    {
+        ticketText.text = "Ticket : " + GameManagerBehaviour.instance.ticket;
     }
     public void DisplayListHUD()
     {

@@ -92,4 +92,5 @@ MonoBehaviour:
   panelLegDeux: {fileID: 4979799268060547639, guid: e302703cd5b6ec2478806ff22b97d524, type: 3}
   panelFruit: {fileID: 6066274365141833645, guid: c33cc1bf3d84f0d43a036c99dc0c34ab, type: 3}
   coin: {fileID: 3151611062320846309, guid: 358ebee2c6547604a99104a124315891, type: 3}
+  ticket: {fileID: 330690244167404394, guid: 2f69b12db4da7ab4d938bb731c27041b, type: 3}
   panelTransition: 5
