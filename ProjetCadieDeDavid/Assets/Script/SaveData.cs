@@ -9,6 +9,7 @@ public class SaveData
     public int coin;
     public int ticket;
     public int[] highScoreList = new int[GameManagerBehaviour.instance.HighScoreList.Count];
+    public int[] ticketSpawn = new int[GameManagerBehaviour.instance.ticketSpawn.Count];
 
     public SaveData(GameManagerBehaviour gameData)
     {
@@ -18,6 +19,7 @@ public class SaveData
         for(int i = 0; i < gameData.HighScoreList.Count; i++)
         {
             highScoreList[i] = gameData.HighScoreList[i];
+            ticketSpawn[i] = gameData.ticketSpawn[i];
         }
     }
 }

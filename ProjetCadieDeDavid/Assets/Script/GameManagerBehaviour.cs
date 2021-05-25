@@ -81,6 +81,7 @@ public class GameManagerBehaviour : MonoBehaviour
             for (int i = 0; i < data.highScoreList.Length; i++)
             {
                 HighScoreList.Add(data.highScoreList[i]);
+                ticketSpawn[i] = (data.ticketSpawn[i]);
             }
             this.UnlockLevel();
         }
@@ -161,7 +162,6 @@ public class GameManagerBehaviour : MonoBehaviour
             case 0:
                 if (GameState == GameStates.Pause)
                 {
-                    Debug.Log("tutu");
                     ScenesManagerBehaviour.instance.LoadMainMenuOnlyInGame();
                 }
                 else
