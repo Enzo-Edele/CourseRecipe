@@ -54,8 +54,8 @@ public class BookManager : MonoBehaviour
     public Image livreAnim;
     Animator anim;
 
-    private BookManager _instance;
-    public BookManager instance
+    private static BookManager _instance;
+    public static BookManager instance
     {
         get
         {
@@ -76,13 +76,15 @@ public class BookManager : MonoBehaviour
     private void Start()
     {
         _instance = this;
+        GameObject book = GameObject.Find("Book");
+        this.transform.SetParent(book.transform);
     }
     public void LevelLoad()
     {
         if (GameManagerBehaviour.instance.levelSelect <= levelProgress)
         {
             SceneManager.LoadScene("Level " + GameManagerBehaviour.instance.levelSelect);
-            GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.InGame);
+            GameManagerBehaviour.instance.ChangeGameStateByUI(2);
         }
     }
     public void NextLevel()
@@ -100,6 +102,11 @@ public class BookManager : MonoBehaviour
             GameManagerBehaviour.instance.levelSelect--;
             ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
+    }
+    
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
     public void ChangeSelect(int level)
     {

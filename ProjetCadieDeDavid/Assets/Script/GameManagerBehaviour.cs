@@ -165,6 +165,11 @@ public class GameManagerBehaviour : MonoBehaviour
                 {
                     ScenesManagerBehaviour.instance.LoadMainMenuOnlyInGame();
                 }
+                else if ( GameState == GameStates.Recipe)
+                {
+                    BookManager.instance.Destroy();
+                    ScenesManagerBehaviour.instance.LoadMainMenu();
+                }
                 else
                 {
                     ScenesManagerBehaviour.instance.LoadMainMenu();
@@ -175,6 +180,10 @@ public class GameManagerBehaviour : MonoBehaviour
                 ChangeGameState(GameStates.LevelSelection);
                 break;
             case 2:
+                if (GameState == GameStates.Recipe)
+                {
+                    BookManager.instance.Destroy();
+                }
                 ChangeGameState(GameStates.InGame);
                 break;
             case 3:

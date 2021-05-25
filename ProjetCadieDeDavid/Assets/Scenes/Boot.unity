@@ -213,14 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1512634078, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 291fd4a5bc706c24da80b486dfe43406, type: 2}
-    - target: {fileID: 1512634078, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -1524826272456445583, guid: 291fd4a5bc706c24da80b486dfe43406, type: 2}
     - target: {fileID: 15269770909236368, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -268,18 +260,6 @@ PrefabInstance:
     - target: {fileID: 15269770909236398, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_Name
       value: Managers
-      objectReference: {fileID: 0}
-    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: firstStar.Array.data[0]
-      value: 3750
-      objectReference: {fileID: 0}
-    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: secondStar.Array.data[0]
-      value: 3900
-      objectReference: {fileID: 0}
-    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: thirdStar.Array.data[0]
-      value: 4000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
