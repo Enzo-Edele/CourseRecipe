@@ -106,7 +106,12 @@ public class LevelManagerBehaviour : MonoBehaviour
             if (nextLevel)
             {
                 SpawnerManagerBehavior.Instance.panelTransition = runnerLentgh;
-                if(rayonInUse >= rayonArray.Length)
+                rayonInUse++;
+                if (rayonInUse < rayonArray.Length)
+                {
+                    SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
+                }
+                else
                 {
                     GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.GameOver);
                 }
@@ -234,8 +239,6 @@ public class LevelManagerBehaviour : MonoBehaviour
             case LevelStates.Collect:
                 Time.timeScale = 1;
                 timerCollect = timeCollect;
-                SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
-                rayonInUse++;
                 indexSpawnedList.Clear();
                 for(int i = 0; i < articleAskedArray.Length; i++)
                 {
