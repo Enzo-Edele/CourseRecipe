@@ -98,7 +98,7 @@ public class LevelManagerBehaviour : MonoBehaviour
             bool nextLevel = true;
             for (int i = 0; i < indexSpawnedList.Count; i++)
             {
-                if (articleSpawnedList[indexSpawnedList[i]] < articleNumberArray[i])
+                if (articleSpawnedList[indexSpawnedList[i]] < articleNumberArray[i] + articleNumberArray[i] * 0.1f)
                 {
                     nextLevel = false;
                 }
