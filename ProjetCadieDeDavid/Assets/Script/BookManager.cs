@@ -89,7 +89,7 @@ public class BookManager : MonoBehaviour
     }
     public void LoadMenu()
     {
-        ScenesManagerBehaviour.instance.LoadMainMenu();
+        GameManagerBehaviour.instance.ChangeGameStateByUI(0);
     }
     public void NextLevel()
     {
