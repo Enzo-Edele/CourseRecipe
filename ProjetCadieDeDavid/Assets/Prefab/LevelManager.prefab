@@ -177,7 +177,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OK
+  m_Text: 
 --- !u!1 &978666105
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,8 +214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 430, y: -481}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 756, y: -446}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &978666109
 CanvasRenderer:
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f519fecf4a907fe41bc9f495f5110c8b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -273,7 +273,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -283,8 +283,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 63a4c252e496d574c96480b978625fb5, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 3aaeb14d90fc668409f06cb82c9cd687, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -549,13 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51abaa99462da0a419eafb99414007c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
   levelDone: 0
   score: 0
-  firstStar: 0
-  secondStar: 0
-  thirdStar: 0
-  backgroundSpeed: 0
   minSpeed: 1
   maxSpeed: 6
   minTime: 5
@@ -567,7 +562,9 @@ MonoBehaviour:
   articleNumberArray: 
   articleCurrentList: []
   articleCurrentNumberList: 
+  articleSpawnedList: 
   rayonArray: []
+  rayonInUse: 0
   timeCollect: 10
   runnerLentgh: 2
   listHUDText:
