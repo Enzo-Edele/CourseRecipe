@@ -107,11 +107,13 @@ public class BookManager : MonoBehaviour
             ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
     }
-
-
     void DisplayTicket()
     {
         ticketText.text = "Ticket : " + GameManagerBehaviour.instance.ticket;
+    }
+    public void ChangePlayerSkin(int skin)
+    {
+        GameManagerBehaviour.instance.playerSkin = skin;
     }
     public void ChangeSelect(int level)
     {

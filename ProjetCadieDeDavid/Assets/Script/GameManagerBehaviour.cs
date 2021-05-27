@@ -20,7 +20,6 @@ public class GameManagerBehaviour : MonoBehaviour
     public enum GameStates
     {
         MainMenu,
-        LevelSelection,
         InGame,
         Pause,
         GameOver,
@@ -128,11 +127,7 @@ public class GameManagerBehaviour : MonoBehaviour
             case GameStates.MainMenu:
                 UIManagerBehaviour.instance.SetMainMenuActive();
                 UIManagerBehaviour.instance.StopAllCoroutines();
-                Time.timeScale = 0;
-                break;
-            case GameStates.LevelSelection:
-                UIManagerBehaviour.instance.SetLevelSelectionActive();
-                Time.timeScale = 0;
+                Time.timeScale = 1;
                 break;
             case GameStates.InGame:
                 UIManagerBehaviour.instance.SetHUDActive();
@@ -149,7 +144,6 @@ public class GameManagerBehaviour : MonoBehaviour
             case GameStates.Recipe:
                 UIManagerBehaviour.instance.SetRecipeActive();
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
-                Time.timeScale = 1;
                 break;
         }
     }
@@ -170,9 +164,6 @@ public class GameManagerBehaviour : MonoBehaviour
                 }
                 ChangeGameState(GameStates.MainMenu);
                 break;
-            case 1:
-                ChangeGameState(GameStates.LevelSelection);
-                break;
             case 2:
                 ChangeGameState(GameStates.InGame);
                 break;
@@ -187,10 +178,6 @@ public class GameManagerBehaviour : MonoBehaviour
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
                 break;
         }
-    }
-    public void ChangePlayerSkin(int skin)
-    {
-        playerSkin = skin;
     }
     public void UnlockLevel()
     {

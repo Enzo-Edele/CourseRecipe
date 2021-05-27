@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 public class UIManagerBehaviour : MonoBehaviour
 {
     public GameObject mainMenu;
-    public GameObject selection;
     public GameObject HUD;
     public GameObject pause;
     public GameObject gameOver;
     public GameObject canvas;
+    public GameObject book;
 
     public Text levelText;
     public Text coinText;
@@ -55,18 +55,13 @@ public class UIManagerBehaviour : MonoBehaviour
         orange.a = 255;
         green.a = 255;
     }
+    public void OpenBookByUI()
+    {
+        StartCoroutine(OpenBook());
+    }
     public void SetMainMenuActive()
     {
         mainMenu.SetActive(true);
-        selection.SetActive(false);
-        HUD.SetActive(false);
-        pause.SetActive(false);
-        gameOver.SetActive(false);
-    }
-    public void SetLevelSelectionActive()
-    {
-        mainMenu.SetActive(false);
-        selection.SetActive(true);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -74,7 +69,6 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetHUDActive()
     {
         mainMenu.SetActive(false);
-        selection.SetActive(false);
         HUD.SetActive(true);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -82,7 +76,6 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetPauseActive()
     {
         mainMenu.SetActive(false);
-        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(true);
         gameOver.SetActive(false);
@@ -92,7 +85,6 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetGameOverActive()
     {
         mainMenu.SetActive(false);
-        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(true);
@@ -104,7 +96,6 @@ public class UIManagerBehaviour : MonoBehaviour
     public void SetRecipeActive()
     {
         mainMenu.SetActive(false);
-        selection.SetActive(false);
         HUD.SetActive(false);
         pause.SetActive(false);
         gameOver.SetActive(false);
@@ -187,6 +178,13 @@ public class UIManagerBehaviour : MonoBehaviour
                 }
             }
         }
+    }
+    public IEnumerator OpenBook()
+    {
+        book.GetComponent<Animator>().SetBool("Open", true);
+        yield return new WaitForSeconds(1f);
+        GameManagerBehaviour.instance.ChangeGameStateByUI(5);
+        book.GetComponent<Animator>().SetBool("Open", false);
     }
     public void DisplayLevel()
     {
