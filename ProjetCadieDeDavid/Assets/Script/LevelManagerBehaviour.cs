@@ -171,7 +171,7 @@ public class LevelManagerBehaviour : MonoBehaviour
         bool found = false;
         for (int i = 0; i < articleCurrentList.Count; i++)
         {
-            if (articleCurrentList[i].Equals(nameArticle.Replace("(Clone)", "")))
+            if (articleCurrentList[i].Equals(nameArticle.Replace("2", "").Replace("3", "").Replace("(Clone)", "")))
             {
                 if(i < articleNumberArray.Length)
                 {
