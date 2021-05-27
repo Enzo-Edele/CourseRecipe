@@ -51,7 +51,8 @@ MonoBehaviour:
   - {fileID: 6501327905123026238, guid: b789d51c9af3a6c4bba70c39332a03f9, type: 3}
   rayonEpicerieDeux:
   - {fileID: 9098220060776173753, guid: 2ea54e353426d7b42ba95dc2647c3687, type: 3}
-  - {fileID: 2242193847193272004, guid: fefa4a1a2dfdf5c42a2760fdbed5bc5f, type: 3}
+  - {fileID: 1139512669476878947, guid: b3e4eee6762a66d488c47c2dc6dcbf5d, type: 3}
+  - {fileID: 1321116955468542836, guid: 0fc5ac7c8120f8f47895f12f360465b6, type: 3}
   rayonLaitier:
   - {fileID: 1892978250123382723, guid: 7ac99b64dff43974781bca9aa6de4ebd, type: 3}
   - {fileID: 2550162714654118408, guid: 58fbc364abefd094f8ea92cd0d81e095, type: 3}
