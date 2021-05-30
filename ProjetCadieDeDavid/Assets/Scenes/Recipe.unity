@@ -593,7 +593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a81a7ae759a9c26438c27e1dac50267d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a81a7ae759a9c26438c27e1dac50267d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2751,8 +2751,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
-  etoileFull: {fileID: 21300000, guid: a27c21d51c2b8e94bbb020222900f84a, type: 3}
-  etoileEmpty: {fileID: 21300000, guid: a81a7ae759a9c26438c27e1dac50267d, type: 3}
+  etoileFull: {fileID: 21300000, guid: f0b71e16841ab5c4cb27b819e571ae6b, type: 3}
+  etoileEmpty: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   scoreList: 
   livreAnim: {fileID: 1149183887}
 --- !u!1 &1092821291
@@ -4235,7 +4235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a81a7ae759a9c26438c27e1dac50267d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
