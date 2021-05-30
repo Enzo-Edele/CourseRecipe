@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 1562830053337495440, guid: 9fc54d00e44876941a52467a809e0e42, type: 3}
   - {fileID: 7437159809973629215, guid: c5c8d7eb80675b646b54d9dc7e163979, type: 3}
   - {fileID: 7801875380603631037, guid: 3d69189a3df26024bbd6cfc4faada13b, type: 3}
+  - {fileID: 1540055240470570583, guid: f08918206ae475c4bbae2f0223f43245, type: 3}
   rayonBouPoi:
   - {fileID: 4987135306835847736, guid: 4f6883902f3309d459ad1e142f75f46f, type: 3}
   - {fileID: 112697955939717946, guid: c53c99d4e1e6de747ae15e8b700fbe0f, type: 3}
