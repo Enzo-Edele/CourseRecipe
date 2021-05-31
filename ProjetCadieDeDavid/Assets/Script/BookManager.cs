@@ -81,6 +81,7 @@ public class BookManager : MonoBehaviour
     }
     public void LevelLoad()
     {
+        SoundManagerBehaviour.instance.PlayButtonSound();
         if (GameManagerBehaviour.instance.levelSelect <= levelProgress)
         {
             SceneManager.LoadScene("Level " + GameManagerBehaviour.instance.levelSelect);
@@ -89,6 +90,7 @@ public class BookManager : MonoBehaviour
     }
     public void LoadMenu()
     {
+        SoundManagerBehaviour.instance.PlayButtonSound();
         GameManagerBehaviour.instance.ChangeGameStateByUI(0);
     }
     public void NextLevel()
@@ -107,6 +109,15 @@ public class BookManager : MonoBehaviour
             ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
     }
+
+    public void PlayButtonSound()
+    {
+        SoundManagerBehaviour.instance.PlayButtonSound();
+    }
+    public void PlayButtonBackSound()
+    {
+        SoundManagerBehaviour.instance.PlayButtonBackSound();
+    }
     void DisplayTicket()
     {
         ticketText.text = "Ticket : " + GameManagerBehaviour.instance.ticket;
@@ -117,7 +128,11 @@ public class BookManager : MonoBehaviour
     }
     public void ChangeSelect(int level)
     {
-        switch(level)
+        if(!SoundManagerBehaviour.instance.backButtonSound.isPlaying)
+        {
+            SoundManagerBehaviour.instance.PlayButtonBackSound();
+        }
+        switch (level)
         {
             case 1:
                 listRecette = listeRecetteUn;

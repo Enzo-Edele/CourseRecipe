@@ -36,6 +36,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     public TMP_Text[] listHUDText;
     public TMP_Text[] listNumberHUDText;
     public GameObject[] miniatureArtcileArray;
+    public AudioSource inGameTheme;
 
     public enum LevelStates
     {
@@ -90,6 +91,8 @@ public class LevelManagerBehaviour : MonoBehaviour
         {
             articleSpawnedList.Add(0);
         }
+        SoundManagerBehaviour.instance.StopAllSound();
+        inGameTheme.Play();
     }
     private void Update()
     {
@@ -274,6 +277,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     //Button
     public void ChangeLevelStatebyUI(int levelState)
     {
+        SoundManagerBehaviour.instance.PlayButtonSound();
         switch (levelState)
         {
             case 1:

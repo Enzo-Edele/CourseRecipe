@@ -28,7 +28,6 @@ public class SpawnerManagerBehavior : MonoBehaviour
     GameObject panelRayon;
     public GameObject coin;
     public GameObject ticket;
-    bool ticketFall;
     Vector3 positionStart;
     Vector3 positionSpawnPannel;
     [HideInInspector]
@@ -114,16 +113,16 @@ public class SpawnerManagerBehavior : MonoBehaviour
         positionSpawnItem.y = Screen.height * 1.1f;
         positionSpawnItem = Camera.main.ScreenToWorldPoint(positionSpawnItem);
         positionSpawnItem.z = 0;
-        if (!ticketFall & GameManagerBehaviour.instance.ticketSpawn[GameManagerBehaviour.instance.levelSelect-1] + GameManagerBehaviour.instance.ticketPerLevel > 0)
+        if (GameManagerBehaviour.instance.ticketSpawn[GameManagerBehaviour.instance.levelSelect-1] + GameManagerBehaviour.instance.ticketPerLevel > 0)
         {
             Instantiate(ticket, positionSpawnItem, Quaternion.identity);
-            ticketFall = true;
+            timer = timeMax * 2;
         }
         else
         {
             Instantiate(coin, positionSpawnItem, Quaternion.identity);
+            timer = Random.Range(timeMin, timeMax);
         }
-        timer = Random.Range(timeMin, timeMax);
     }
     public void SpawnDecor()
     {

@@ -127,6 +127,10 @@ public class GameManagerBehaviour : MonoBehaviour
             case GameStates.MainMenu:
                 UIManagerBehaviour.instance.SetMainMenuActive();
                 UIManagerBehaviour.instance.StopAllCoroutines();
+                if(!SoundManagerBehaviour.instance.mainMenuTheme.isPlaying)
+                {
+                    SoundManagerBehaviour.instance.PlayMainMenuTheme();
+                }
                 Time.timeScale = 1;
                 break;
             case GameStates.InGame:
@@ -136,14 +140,21 @@ public class GameManagerBehaviour : MonoBehaviour
                 break;
             case GameStates.Pause:
                 UIManagerBehaviour.instance.SetPauseActive();
+                if (LevelManagerBehaviour.Instance.inGameTheme.isPlaying)
+                {
+                    LevelManagerBehaviour.Instance.inGameTheme.Pause();
+                }
                 Time.timeScale = 0;
                 break;
             case GameStates.GameOver:
                 UIManagerBehaviour.instance.SetGameOverActive();
+                LevelManagerBehaviour.Instance.inGameTheme.Stop();
+                SoundManagerBehaviour.instance.PlayGameOverTheme();
                 break;
             case GameStates.Recipe:
                 UIManagerBehaviour.instance.SetRecipeActive();
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
+                SoundManagerBehaviour.instance.PlayBookMenuTheme();
                 break;
         }
     }
