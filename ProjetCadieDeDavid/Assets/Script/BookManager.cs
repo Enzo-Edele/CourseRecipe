@@ -53,8 +53,8 @@ public class BookManager : MonoBehaviour
         inUseEtoileTrois = etoileTrois.GetComponent<Image>();
         anim = livreAnim.GetComponent<Animator>();
         levelProgress = GameManagerBehaviour.instance.level;
-        this.ChangeSelect(1);
         DisplayTicket();
+        this.ChangeSelect(1);
         ChangeSpriteSelection();
     }
     private void Start()
