@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 using TMPro;
 
@@ -287,6 +288,10 @@ public class LevelManagerBehaviour : MonoBehaviour
                 ChangeLevelStates(LevelManagerBehaviour.LevelStates.Run);
                 break;
         }
+    }
+    public void ReturnBook()
+    {
+        SceneManager.LoadScene("Recipe");
     }
 
     public void SetHUDOn()
