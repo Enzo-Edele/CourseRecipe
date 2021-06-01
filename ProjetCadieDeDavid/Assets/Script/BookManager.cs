@@ -10,9 +10,11 @@ public class BookManager : MonoBehaviour
 {
     int levelProgress;
 
+    Vector2 positionListe = new Vector2(580, 400);
     public GameObject[] arrayRecette;
 
-    public GameObject listRecette;
+    GameObject listRecette;
+    public Button startLevel;
     public TMP_Text levelText;
     public TMP_Text score;
     public GameObject etoileUn, etoileDeux, etoileTrois;
@@ -117,9 +119,13 @@ public class BookManager : MonoBehaviour
         {
             SoundManagerBehaviour.instance.PlayButtonBackSound();
         }
-        listRecette = arrayRecette[level -1];
+        //listRecette = arrayRecette[level -1];
+        if(listRecette != null)
+        {
+            Destroy(listRecette);
+        }
+        listRecette = Instantiate(arrayRecette[level - 1], positionListe, Quaternion.identity, GameObject.FindGameObjectWithTag("pageGauche").transform);
         recette.text = System.IO.File.ReadAllText("Assets/Recettes/Recipe" + level + ".txt");
-        anim.SetTrigger("turnPage");
         inUseRecette.sprite = newImageRecette[level - 1];
         GameManagerBehaviour.instance.levelSelect = level;
         levelText.text = "L"+"\n"+"E"+"\n"+"V"+"\n"+"E"+"\n"+"L"+"\n"+"\n"+ level;
@@ -139,5 +145,14 @@ public class BookManager : MonoBehaviour
             inUseEtoileTrois.sprite = etoileFull;
         }
         score.text = "Score : " + GameManagerBehaviour.instance.HighScoreList[level - 1];
+        if (GameManagerBehaviour.instance.levelSelect > levelProgress)
+        {
+            startLevel.interactable = false;
+        }
+        else
+        {
+            startLevel.interactable = true;
+        }
+        anim.SetTrigger("turnPage");
     }
 }
