@@ -94,10 +94,6 @@ public class GameManagerBehaviour : MonoBehaviour
                 Debug.Log("HighScore Level : "+ (i+1) +" = "+HighScoreList[i]);
             }
         }
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeGameState(GameStates.GameOver);
-        }
     }
     public void AddCoin(int numberOfCoin)
     {
