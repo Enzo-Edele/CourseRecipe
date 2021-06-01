@@ -55,6 +55,9 @@ public class BookManager : MonoBehaviour
     public Image livreAnim;
     Animator anim;
 
+    public GameObject selectionImage;
+    public Sprite[] imageSelection;
+
     private static BookManager _instance;
     public static BookManager instance
     {
@@ -74,6 +77,7 @@ public class BookManager : MonoBehaviour
         levelProgress = GameManagerBehaviour.instance.level;
         this.ChangeSelect(1);
         DisplayTicket();
+        ChangeSpriteSelection();
     }
     private void Start()
     {
@@ -125,6 +129,11 @@ public class BookManager : MonoBehaviour
     public void ChangePlayerSkin(int skin)
     {
         GameManagerBehaviour.instance.playerSkin = skin;
+        ChangeSpriteSelection();
+    }
+    void ChangeSpriteSelection()
+    {
+        selectionImage.GetComponent<Image>().sprite = imageSelection[GameManagerBehaviour.instance.playerSkin];
     }
     public void ChangeSelect(int level)
     {

@@ -2779,6 +2779,11 @@ MonoBehaviour:
   etoileEmpty: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   scoreList: 
   livreAnim: {fileID: 1149183887}
+  selectionImage: {fileID: 1748322957}
+  imageSelection:
+  - {fileID: 4819775848441355967, guid: c46892f9e926d184f9cf5d01b9fa36a1, type: 3}
+  - {fileID: 7067200038847739658, guid: c46892f9e926d184f9cf5d01b9fa36a1, type: 3}
+  - {fileID: 1006082595569031270, guid: c46892f9e926d184f9cf5d01b9fa36a1, type: 3}
 --- !u!1 &1092821291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,8 +3764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -810, y: 490}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -890, y: 489.6}
+  m_SizeDelta: {x: 140, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748322959
 MonoBehaviour:
@@ -3849,7 +3854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c46892f9e926d184f9cf5d01b9fa36a1, type: 3}
+  m_Sprite: {fileID: 7067200038847739658, guid: c46892f9e926d184f9cf5d01b9fa36a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
