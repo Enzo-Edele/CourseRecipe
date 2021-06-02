@@ -103,7 +103,7 @@ public class BookManager : MonoBehaviour
     }
     public void AchatMamieVelo(int amount)
     {
-        if(amount > GameManagerBehaviour.instance.coin)
+        if(amount < GameManagerBehaviour.instance.coin)
         {
             GameManagerBehaviour.instance.AddCoin(amount *-1);
             GameManagerBehaviour.instance.coinPerLevel = 0;
@@ -113,7 +113,7 @@ public class BookManager : MonoBehaviour
     }
     public void AchatMamieScooter(int amount)
     {
-        if (amount > GameManagerBehaviour.instance.coin)
+        if (amount < GameManagerBehaviour.instance.coin)
         {
             GameManagerBehaviour.instance.AddCoin(amount * -1);
             GameManagerBehaviour.instance.coinPerLevel = 0;
