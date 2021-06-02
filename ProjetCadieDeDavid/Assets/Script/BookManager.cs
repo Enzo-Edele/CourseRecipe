@@ -56,7 +56,7 @@ public class BookManager : MonoBehaviour
         anim = livreAnim.GetComponent<Animator>();
         levelProgress = GameManagerBehaviour.instance.level;
         DisplayTicket();
-        this.ChangeSelect(1);
+        this.ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         ChangeSpriteSelection();
         if(GameManagerBehaviour.instance.achatMamieVelo > 0)
         {
