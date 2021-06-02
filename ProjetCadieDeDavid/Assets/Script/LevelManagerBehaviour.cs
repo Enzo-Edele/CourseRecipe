@@ -291,7 +291,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     }
     public void ReturnBook()
     {
-        SceneManager.LoadScene("Recipe");
+        GameManagerBehaviour.instance.ChangeGameState(GameManagerBehaviour.GameStates.Recipe);
     }
 
     public void SetHUDOn()
