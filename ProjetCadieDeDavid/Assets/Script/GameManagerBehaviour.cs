@@ -12,6 +12,8 @@ public class GameManagerBehaviour : MonoBehaviour
     public int levelSelect;
     public int ticket;
     public int ticketPerLevel;
+    public int achatMamieVelo = 0;
+    public int achatMamieScooter = 0;
     public List<int> HighScoreList;
     public List<int> firstStar;
     public List<int> secondStar;
@@ -59,9 +61,12 @@ public class GameManagerBehaviour : MonoBehaviour
         level = data.level;
         coin = data.coin;
         ticket = data.ticket;
+        achatMamieVelo = data.achatMamieVelo;
+        achatMamieScooter = data.achatMamieScooter;
         for (int i = 0; i < data.highScoreList.Length; i++)
         {
             HighScoreList.Add(data.highScoreList[i]);
+            ticketSpawn[i] = (data.ticketSpawn[i]);
         }
         */
     }
@@ -82,7 +87,6 @@ public class GameManagerBehaviour : MonoBehaviour
                 HighScoreList.Add(data.highScoreList[i]);
                 ticketSpawn[i] = (data.ticketSpawn[i]);
             }
-            this.UnlockLevel();
         }
         if (Input.GetKeyDown("i"))
         {
@@ -184,20 +188,6 @@ public class GameManagerBehaviour : MonoBehaviour
                 ChangeGameState(GameStates.Recipe);
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
                 break;
-        }
-    }
-    public void UnlockLevel()
-    {
-        for (int i = 1; i < maxLevel; i++)
-        {
-            if (i <= GameManagerBehaviour.instance.level)
-            {
-                Debug.Log("Unlock Level " + (i));
-            }
-            if (i < GameManagerBehaviour.instance.level)
-            {
-                Debug.Log("Unlock recette " + (i));
-            }
         }
     }
 }

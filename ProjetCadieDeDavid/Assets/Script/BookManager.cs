@@ -35,6 +35,8 @@ public class BookManager : MonoBehaviour
 
     public GameObject selectionImage;
     public Sprite[] imageSelection;
+    public GameObject cadenaMamieVelo;
+    public GameObject cadenaMamieScooter;
 
     private static BookManager _instance;
     public static BookManager instance
@@ -56,6 +58,14 @@ public class BookManager : MonoBehaviour
         DisplayTicket();
         this.ChangeSelect(1);
         ChangeSpriteSelection();
+        if(GameManagerBehaviour.instance.achatMamieVelo > 0)
+        {
+            cadenaMamieVelo.SetActive(false);
+        }
+        if(GameManagerBehaviour.instance.achatMamieScooter > 0)
+        {
+            cadenaMamieScooter.SetActive(false);
+        }
     }
     private void Start()
     {
@@ -91,7 +101,26 @@ public class BookManager : MonoBehaviour
             ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         }
     }
-
+    public void AchatMamieVelo(int amount)
+    {
+        if(amount > GameManagerBehaviour.instance.coin)
+        {
+            GameManagerBehaviour.instance.AddCoin(amount *-1);
+            GameManagerBehaviour.instance.coinPerLevel = 0;
+            GameManagerBehaviour.instance.achatMamieVelo++;
+            cadenaMamieVelo.SetActive(false);
+        }
+    }
+    public void AchatMamieScooter(int amount)
+    {
+        if (amount > GameManagerBehaviour.instance.coin)
+        {
+            GameManagerBehaviour.instance.AddCoin(amount * -1);
+            GameManagerBehaviour.instance.coinPerLevel = 0;
+            GameManagerBehaviour.instance.achatMamieScooter++;
+            cadenaMamieScooter.SetActive(false);
+        }
+    }
     public void PlayButtonSound()
     {
         SoundManagerBehaviour.instance.PlayButtonSound();
