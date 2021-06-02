@@ -366,6 +366,30 @@ PrefabInstance:
       propertyPath: rayonArray.Array.data[2]
       value: Laitier
       objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleNumberArray.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleNumberArray.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleNumberArray.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleNumberArray.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleNumberArray.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleNumberArray.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
 --- !u!1001 &214504009
@@ -375,6 +399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4078764024215806762, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
+      propertyPath: premierRayon
+      value: EpicerieUn
+      objectReference: {fileID: 0}
     - target: {fileID: 7462569632099248008, guid: 29436874ca04a5240bd62567dd4bc1a2, type: 3}
       propertyPath: m_Name
       value: SpawnerManager
