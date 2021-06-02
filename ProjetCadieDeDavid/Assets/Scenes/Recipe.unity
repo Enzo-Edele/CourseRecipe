@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 573bd8518b959ca468711e502933e068, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: e062c8bab7a937544b87ee78e2801bb8, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 573bd8518b959ca468711e502933e068, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2904,19 +2904,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayRecette:
-  - {fileID: 5276132884857574003, guid: 19588a1b90d78f34287803ee7ea67d64, type: 3}
-  - {fileID: 3926343375660043146, guid: 0349435bcc549594886b46a2d27a38fe, type: 3}
-  - {fileID: 7401729230119501582, guid: 1df4a72eda8987e449d83e0ca1ae1c6c, type: 3}
-  - {fileID: 6421025205900925805, guid: 946ad076cbc529b44a765d5b8d2cf228, type: 3}
-  - {fileID: 8174604576646619129, guid: d6fcd8cffd068c047afb0cf3548cf65c, type: 3}
-  - {fileID: 2433043955442229629, guid: e67185da9038eb346b110c0369ebe77c, type: 3}
-  - {fileID: 2299586645565703965, guid: 7bc12b71233fa9743bcb07a9f432e3ad, type: 3}
-  - {fileID: 6489273550123009319, guid: ac4f8fb2392707047b9c93ab5a955c41, type: 3}
   - {fileID: 7966828624937662369, guid: d7261fb7606e4aa4e8431e71a7640469, type: 3}
+  - {fileID: 2299586645565703965, guid: 7bc12b71233fa9743bcb07a9f432e3ad, type: 3}
+  - {fileID: 8174604576646619129, guid: d6fcd8cffd068c047afb0cf3548cf65c, type: 3}
+  - {fileID: 7401729230119501582, guid: 1df4a72eda8987e449d83e0ca1ae1c6c, type: 3}
+  - {fileID: 2433043955442229629, guid: e67185da9038eb346b110c0369ebe77c, type: 3}
+  - {fileID: 7721297984394037739, guid: 3de13d87465238649b8b831d523aeaab, type: 3}
+  - {fileID: 6421025205900925805, guid: 946ad076cbc529b44a765d5b8d2cf228, type: 3}
   - {fileID: 4042106845128577280, guid: 2203db3884566e540a2e5478e8333eb4, type: 3}
   - {fileID: 2654092240932369440, guid: 9b50912e8533ace448043ceada416c1a, type: 3}
+  - {fileID: 3926343375660043146, guid: 0349435bcc549594886b46a2d27a38fe, type: 3}
+  - {fileID: 6489273550123009319, guid: ac4f8fb2392707047b9c93ab5a955c41, type: 3}
   - {fileID: 5104515151610649840, guid: 01119811647545f43be9887227a86ac0, type: 3}
   - {fileID: 7341192225725888132, guid: c4541c842d20e8c4c9b0e944320231e8, type: 3}
+  - {fileID: 5276132884857574003, guid: 19588a1b90d78f34287803ee7ea67d64, type: 3}
   startLevel: {fileID: 2005137202}
   levelText: {fileID: 58453224}
   score: {fileID: 195712810}
@@ -2928,18 +2929,19 @@ MonoBehaviour:
   ImageRecette: {fileID: 121045064}
   newImageRecette:
   - {fileID: 21300000, guid: 56485bd1f890eab498ed280c499a8cd1, type: 3}
-  - {fileID: 21300000, guid: 07edf7768309a5945bd38d925babaf73, type: 3}
-  - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
-  - {fileID: 21300000, guid: 836ce653804e8064bb80fad753c8d431, type: 3}
-  - {fileID: 21300000, guid: bfdb4d34d3249824888d4c96f00bee88, type: 3}
-  - {fileID: 21300000, guid: 56f1fb0ee4cf13b428cfe82a1d0fba15, type: 3}
-  - {fileID: 21300000, guid: 0010949a939cfd841afc2ea3aef5cf4d, type: 3}
+  - {fileID: 21300000, guid: 1ec0af361be3c384fb3f5ee9a11fbc46, type: 3}
   - {fileID: 21300000, guid: fa22431894d695c4cbb13c90bbb325cb, type: 3}
+  - {fileID: 21300000, guid: 56485bd1f890eab498ed280c499a8cd1, type: 3}
+  - {fileID: 21300000, guid: 56f1fb0ee4cf13b428cfe82a1d0fba15, type: 3}
+  - {fileID: 21300000, guid: 07edf7768309a5945bd38d925babaf73, type: 3}
   - {fileID: 21300000, guid: 62d8595264ec444419b4c5378c018e84, type: 3}
   - {fileID: 21300000, guid: a597ef0fdb74df7478dc5bd3fd92e541, type: 3}
-  - {fileID: 21300000, guid: 1ec0af361be3c384fb3f5ee9a11fbc46, type: 3}
+  - {fileID: 21300000, guid: 0010949a939cfd841afc2ea3aef5cf4d, type: 3}
+  - {fileID: 21300000, guid: 56485bd1f890eab498ed280c499a8cd1, type: 3}
+  - {fileID: 21300000, guid: bfdb4d34d3249824888d4c96f00bee88, type: 3}
+  - {fileID: 21300000, guid: 836ce653804e8064bb80fad753c8d431, type: 3}
   - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
-  - {fileID: 21300000, guid: 9763285594f981140ac5a6c296e92965, type: 3}
+  - {fileID: 21300000, guid: c2c4c3a6a2b142e4f9148804dab8e4b7, type: 3}
   etoileFull: {fileID: 21300000, guid: f0b71e16841ab5c4cb27b819e571ae6b, type: 3}
   etoileEmpty: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   scoreList: 
@@ -3831,7 +3833,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: c0ef538992b99694f82517208d6153da, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 12a0f2a370fa4af42998c8ae705ecdf8, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: c0ef538992b99694f82517208d6153da, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
