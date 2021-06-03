@@ -14,6 +14,7 @@ public class UIManagerBehaviour : MonoBehaviour
     public GameObject gameOver;
     public GameObject canvas;
     public GameObject book;
+    public GameObject transition;
 
     public Text levelText;
     public Text coinText;
@@ -183,6 +184,9 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         book.GetComponent<Animator>().SetBool("Open", true);
         yield return new WaitForSeconds(1f);
+        transition.SetActive(true);
+        transition.GetComponent<Animator>().SetBool("Open", true);
+        yield return new WaitForSeconds(0.5f);
         GameManagerBehaviour.instance.ChangeGameStateByUI(5);
         book.GetComponent<Animator>().SetBool("Open", false);
     }
