@@ -148,7 +148,6 @@ public class BookManager : MonoBehaviour
         {
             SoundManagerBehaviour.instance.PlayButtonBackSound();
         }
-        //listRecette = arrayRecette[level -1];
         if(listRecette != null)
         {
             Destroy(listRecette);

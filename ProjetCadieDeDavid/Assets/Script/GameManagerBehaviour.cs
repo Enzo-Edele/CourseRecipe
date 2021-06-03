@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManagerBehaviour : MonoBehaviour
 {
@@ -57,16 +58,24 @@ public class GameManagerBehaviour : MonoBehaviour
         AddCoin(0);
         AddTicket(0);
         
-        SaveData data = SaveSysteme.LoadData();
-        level = data.level;
-        coin = data.coin;
-        ticket = data.ticket;
-        achatMamieVelo = data.achatMamieVelo;
-        achatMamieScooter = data.achatMamieScooter;
-        for (int i = 0; i < data.highScoreList.Length; i++)
+        string path = Application.persistentDataPath + "/data.save";
+        if (File.Exists(path))
         {
-            HighScoreList.Add(data.highScoreList[i]);
-            ticketSpawn[i] = (data.ticketSpawn[i]);
+            SaveData data = SaveSysteme.LoadData();
+            level = data.level;
+            coin = data.coin;
+            ticket = data.ticket;
+            achatMamieVelo = data.achatMamieVelo;
+            achatMamieScooter = data.achatMamieScooter;
+            for (int i = 0; i < data.highScoreList.Length; i++)
+            {
+                HighScoreList[i] = (data.highScoreList[i]);
+                ticketSpawn[i] = (data.ticketSpawn[i]);
+            }
+        }
+        else
+        {
+            SaveSysteme.Save(this);
         }
         
     }
@@ -86,7 +95,7 @@ public class GameManagerBehaviour : MonoBehaviour
             achatMamieScooter = data.achatMamieScooter;
             for (int i = 0; i < data.highScoreList.Length; i++)
             {
-                HighScoreList.Add(data.highScoreList[i]);
+                HighScoreList[i] = (data.highScoreList[i]);
                 ticketSpawn[i] = (data.ticketSpawn[i]);
             }
         }
