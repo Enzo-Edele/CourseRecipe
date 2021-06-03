@@ -189,6 +189,8 @@ public class UIManagerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         GameManagerBehaviour.instance.ChangeGameStateByUI(5);
         book.GetComponent<Animator>().SetBool("Open", false);
+        transition.GetComponent<Animator>().SetBool("Open", false);
+        transition.SetActive(true);
     }
     public void DisplayLevel()
     {
