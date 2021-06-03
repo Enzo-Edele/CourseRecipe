@@ -95,7 +95,7 @@ public class GameManagerBehaviour : MonoBehaviour
             Debug.Log("Ticket : " + ticket);
             for (int i = 0; i < maxLevel; i++)
             {
-                Debug.Log("HighScore Level : "+ (i+1) +" = "+HighScoreList[i]);
+                Debug.Log("HighScore Level : " + (i + 1) + " = " + HighScoreList[i]);
             }
         }
     }
@@ -127,7 +127,7 @@ public class GameManagerBehaviour : MonoBehaviour
             case GameStates.MainMenu:
                 UIManagerBehaviour.instance.SetMainMenuActive();
                 UIManagerBehaviour.instance.StopAllCoroutines();
-                if(!SoundManagerBehaviour.instance.mainMenuTheme.isPlaying)
+                if (!SoundManagerBehaviour.instance.mainMenuTheme.isPlaying)
                 {
                     SoundManagerBehaviour.instance.PlayMainMenuTheme();
                 }
@@ -189,5 +189,10 @@ public class GameManagerBehaviour : MonoBehaviour
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
                 break;
         }
+    }
+
+    public void LevelSelect()
+    {
+        levelSelect++;
     }
 }
