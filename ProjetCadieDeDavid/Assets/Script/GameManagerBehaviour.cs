@@ -56,7 +56,7 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         AddCoin(0);
         AddTicket(0);
-        /*
+        
         SaveData data = SaveSysteme.LoadData();
         level = data.level;
         coin = data.coin;
@@ -68,7 +68,7 @@ public class GameManagerBehaviour : MonoBehaviour
             HighScoreList.Add(data.highScoreList[i]);
             ticketSpawn[i] = (data.ticketSpawn[i]);
         }
-        */
+        
     }
     private void Update()
     {
@@ -82,6 +82,8 @@ public class GameManagerBehaviour : MonoBehaviour
             level = data.level;
             coin = data.coin;
             ticket = data.ticket;
+            achatMamieVelo = data.achatMamieVelo;
+            achatMamieScooter = data.achatMamieScooter;
             for (int i = 0; i < data.highScoreList.Length; i++)
             {
                 HighScoreList.Add(data.highScoreList[i]);
@@ -93,6 +95,8 @@ public class GameManagerBehaviour : MonoBehaviour
             Debug.Log("Level : " + level);
             Debug.Log("Coin : " + coin);
             Debug.Log("Ticket : " + ticket);
+            Debug.Log("Velo : " + achatMamieVelo);
+            Debug.Log("Scooter : " + achatMamieScooter);
             for (int i = 0; i < maxLevel; i++)
             {
                 Debug.Log("HighScore Level : " + (i + 1) + " = " + HighScoreList[i]);

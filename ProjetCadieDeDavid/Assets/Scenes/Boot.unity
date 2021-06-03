@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: ticketSpawn.Array.size
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 15269772510276422, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3

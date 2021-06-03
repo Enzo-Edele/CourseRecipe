@@ -20,7 +20,7 @@ public class SaveData
         ticket = gameData.ticket;
         achatMamieVelo = gameData.achatMamieVelo;
         achatMamieScooter = gameData.achatMamieScooter;
-        for(int i = 0; i < gameData.HighScoreList.Count; i++)
+        for (int i = 0; i < gameData.HighScoreList.Count; i++)
         {
             highScoreList[i] = gameData.HighScoreList[i];
             ticketSpawn[i] = gameData.ticketSpawn[i];
