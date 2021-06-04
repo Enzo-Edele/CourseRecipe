@@ -48,6 +48,7 @@ public class BookManager : MonoBehaviour
     }
     private void Awake()
     {
+        _instance = this;
         inUseRecette = ImageRecette.GetComponent<Image>();
         ImageRecette.GetComponent<Image>().preserveAspect = true;
         inUseEtoileUn = etoileUn.GetComponent<Image>();
@@ -69,7 +70,7 @@ public class BookManager : MonoBehaviour
     }
     private void Start()
     {
-        _instance = this;
+        UIManagerBehaviour.instance.StartCoroutine(UIManagerBehaviour.instance.Transition());
     }
     public void LevelLoad()
     {
