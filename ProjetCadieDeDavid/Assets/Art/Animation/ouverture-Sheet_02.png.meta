@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: c7b32bd2e1a805e43b71bcb05bc44c84
+guid: 6dfe3955598651049a8235efde361af3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 232110277727296755
-    second: rendu-sheet 3_0
+      213: -8454791651892528491
+    second: ouverture-Sheet_02_0
   - first:
-      213: 4503646605440498536
-    second: rendu-sheet 3_1
+      213: 6441269998983421177
+    second: ouverture-Sheet_02_1
   - first:
-      213: -8513088426862223271
-    second: rendu-sheet 3_2
+      213: 5221447621818486312
+    second: ouverture-Sheet_02_2
+  - first:
+      213: -6020134966422961371
+    second: ouverture-Sheet_02_3
+  - first:
+      213: 7115847494470694807
+    second: ouverture-Sheet_02_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -98,64 +104,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rendu-sheet 3_0
+      name: ouverture-Sheet_02_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1702
-        height: 954
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 1450
+        height: 969
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fc17ac511f983300800000000000000
-      internalID: 232110277727296755
+      spriteID: 59af10bb9cb8aaa80800000000000000
+      internalID: -8454791651892528491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rendu-sheet 3_1
+      name: ouverture-Sheet_02_1
       rect:
         serializedVersion: 2
-        x: 1702
+        x: 1666
         y: 0
-        width: 1702
-        height: 954
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 1450
+        height: 969
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86bbc2fe9ba208e30800000000000000
-      internalID: 4503646605440498536
+      spriteID: 9fc99cfcfecf36950800000000000000
+      internalID: 6441269998983421177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rendu-sheet 3_2
+      name: ouverture-Sheet_02_2
       rect:
         serializedVersion: 2
-        x: 3404
+        x: 3442
         y: 0
-        width: 1702
-        height: 954
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 1450
+        height: 969
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95063671e2f6bd980800000000000000
-      internalID: -8513088426862223271
+      spriteID: 82e8cc792fe467840800000000000000
+      internalID: 5221447621818486312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ouverture-Sheet_02_3
+      rect:
+        serializedVersion: 2
+        x: 5289
+        y: 0
+        width: 1450
+        height: 969
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5238372e42f247ca0800000000000000
+      internalID: -6020134966422961371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ouverture-Sheet_02_4
+      rect:
+        serializedVersion: 2
+        x: 7082
+        y: 0
+        width: 1450
+        height: 969
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79777c7489190c260800000000000000
+      internalID: 7115847494470694807
       vertices: []
       indices: 
       edges: []

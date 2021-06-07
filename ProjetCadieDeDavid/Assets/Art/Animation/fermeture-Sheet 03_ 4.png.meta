@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: c7b32bd2e1a805e43b71bcb05bc44c84
+guid: aff0cacfb15f35d4a80989ddceb4704f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 232110277727296755
-    second: rendu-sheet 3_0
+      213: -96618180593615163
+    second: fermeture-Sheet 03_ 4_0
   - first:
-      213: 4503646605440498536
-    second: rendu-sheet 3_1
+      213: 4582929677055866170
+    second: fermeture-Sheet 03_ 4_1
   - first:
-      213: -8513088426862223271
-    second: rendu-sheet 3_2
+      213: 6228312650962087774
+    second: fermeture-Sheet 03_ 4_2
+  - first:
+      213: 7379448334127437297
+    second: fermeture-Sheet 03_ 4_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -98,7 +101,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rendu-sheet 3_0
+      name: fermeture-Sheet 03_ 4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fc17ac511f983300800000000000000
-      internalID: 232110277727296755
+      spriteID: 5ce7fd2d64eb8aef0800000000000000
+      internalID: -96618180593615163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rendu-sheet 3_1
+      name: fermeture-Sheet 03_ 4_1
       rect:
         serializedVersion: 2
         x: 1702
@@ -133,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86bbc2fe9ba208e30800000000000000
-      internalID: 4503646605440498536
+      spriteID: a35b2878246d99f30800000000000000
+      internalID: 4582929677055866170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rendu-sheet 3_2
+      name: fermeture-Sheet 03_ 4_2
       rect:
         serializedVersion: 2
         x: 3404
@@ -154,8 +157,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95063671e2f6bd980800000000000000
-      internalID: -8513088426862223271
+      spriteID: e5faaa66b596f6650800000000000000
+      internalID: 6228312650962087774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fermeture-Sheet 03_ 4_3
+      rect:
+        serializedVersion: 2
+        x: 5106
+        y: 0
+        width: 1702
+        height: 954
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f593027921196660800000000000000
+      internalID: 7379448334127437297
       vertices: []
       indices: 
       edges: []
