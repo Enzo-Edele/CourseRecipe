@@ -168,6 +168,7 @@ public class GameManagerBehaviour : MonoBehaviour
                 UIManagerBehaviour.instance.SetRecipeActive();
                 ScenesManagerBehaviour.instance.LoadRecipeScene();
                 SoundManagerBehaviour.instance.PlayBookMenuTheme();
+                Time.timeScale = 1;
                 break;
         }
     }
