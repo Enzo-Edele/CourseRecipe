@@ -149,6 +149,13 @@ public class BookManager : MonoBehaviour
         {
             SoundManagerBehaviour.instance.PlayButtonBackSound();
         }
+        StartCoroutine(turnPage(level));
+    }
+    IEnumerator turnPage(int level)
+    {
+        livreAnim.SetActive(true);
+        anim.SetTrigger("turnPage");
+        yield return new WaitForSeconds(1f);
         if (listRecette != null)
         {
             Destroy(listRecette);
@@ -182,13 +189,7 @@ public class BookManager : MonoBehaviour
         {
             startLevel.interactable = true;
         }
-        StartCoroutine(turnPage());
-    }
-    IEnumerator turnPage()
-    {
-        livreAnim.SetActive(true);
-        anim.SetTrigger("turnPage");
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(1.3f);
         livreAnim.SetActive(false);
     }
 }
