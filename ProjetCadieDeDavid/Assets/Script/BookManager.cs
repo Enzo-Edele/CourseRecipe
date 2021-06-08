@@ -20,7 +20,7 @@ public class BookManager : MonoBehaviour
     public GameObject etoileUn, etoileDeux, etoileTrois;
     public TMP_Text ticketText;
 
-    
+
     public TMP_Text recette;
     public GameObject ImageRecette;
     Image inUseRecette;
@@ -30,7 +30,7 @@ public class BookManager : MonoBehaviour
     public Sprite etoileFull, etoileEmpty;
     public List<int> scoreList;
 
-    public Image livreAnim;
+    public GameObject livreAnim;
     Animator anim;
 
     public GameObject selectionImage;
@@ -59,11 +59,11 @@ public class BookManager : MonoBehaviour
         DisplayTicket();
         this.ChangeSelect(GameManagerBehaviour.instance.levelSelect);
         ChangeSpriteSelection();
-        if(GameManagerBehaviour.instance.achatMamieVelo > 0)
+        if (GameManagerBehaviour.instance.achatMamieVelo > 0)
         {
             cadenaMamieVelo.SetActive(false);
         }
-        if(GameManagerBehaviour.instance.achatMamieScooter > 0)
+        if (GameManagerBehaviour.instance.achatMamieScooter > 0)
         {
             cadenaMamieScooter.SetActive(false);
         }
@@ -104,9 +104,9 @@ public class BookManager : MonoBehaviour
     }
     public void AchatMamieVelo(int amount)
     {
-        if(amount < GameManagerBehaviour.instance.coin)
+        if (amount < GameManagerBehaviour.instance.coin)
         {
-            GameManagerBehaviour.instance.AddCoin(amount *-1);
+            GameManagerBehaviour.instance.AddCoin(amount * -1);
             GameManagerBehaviour.instance.coinPerLevel = 0;
             GameManagerBehaviour.instance.achatMamieVelo++;
             cadenaMamieVelo.SetActive(false);
@@ -145,11 +145,11 @@ public class BookManager : MonoBehaviour
     }
     public void ChangeSelect(int level)
     {
-        if(!SoundManagerBehaviour.instance.backButtonSound.isPlaying)
+        if (!SoundManagerBehaviour.instance.backButtonSound.isPlaying)
         {
             SoundManagerBehaviour.instance.PlayButtonBackSound();
         }
-        if(listRecette != null)
+        if (listRecette != null)
         {
             Destroy(listRecette);
         }
@@ -157,7 +157,7 @@ public class BookManager : MonoBehaviour
         recette.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + level + ".txt");
         inUseRecette.sprite = newImageRecette[level - 1];
         GameManagerBehaviour.instance.levelSelect = level;
-        levelText.text = "L"+"\n"+"E"+"\n"+"V"+"\n"+"E"+"\n"+"L"+"\n"+"\n"+ level;
+        levelText.text = "L" + "\n" + "E" + "\n" + "V" + "\n" + "E" + "\n" + "L" + "\n" + "\n" + level;
         inUseEtoileUn.sprite = etoileEmpty;
         inUseEtoileDeux.sprite = etoileEmpty;
         inUseEtoileTrois.sprite = etoileEmpty;
@@ -182,6 +182,13 @@ public class BookManager : MonoBehaviour
         {
             startLevel.interactable = true;
         }
+        StartCoroutine(turnPage());
+    }
+    IEnumerator turnPage()
+    {
+        livreAnim.SetActive(true);
         anim.SetTrigger("turnPage");
+        yield return new WaitForSeconds(1.5f);
+        livreAnim.SetActive(false);
     }
 }

@@ -3384,7 +3384,7 @@ MonoBehaviour:
   etoileFull: {fileID: 21300000, guid: f0b71e16841ab5c4cb27b819e571ae6b, type: 3}
   etoileEmpty: {fileID: 21300000, guid: b577776035653e14ea96334638c5339b, type: 3}
   scoreList: 
-  livreAnim: {fileID: 1149183887}
+  livreAnim: {fileID: 1149183884}
   selectionImage: {fileID: 1748322957}
   imageSelection:
   - {fileID: 4819775848441355967, guid: c46892f9e926d184f9cf5d01b9fa36a1, type: 3}
@@ -3570,7 +3570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1149183885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3587,8 +3587,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1632, y: 864}
+  m_AnchoredPosition: {x: 0.000061035, y: -39.902008}
+  m_SizeDelta: {x: 1702, y: 954.0001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1149183886
 Animator:
