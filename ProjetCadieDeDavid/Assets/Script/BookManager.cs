@@ -188,7 +188,7 @@ public class BookManager : MonoBehaviour
     {
         livreAnim.SetActive(true);
         anim.SetTrigger("turnPage");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         livreAnim.SetActive(false);
     }
 }
