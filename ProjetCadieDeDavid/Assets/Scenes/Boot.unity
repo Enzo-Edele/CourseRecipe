@@ -317,6 +317,10 @@ PrefabInstance:
       propertyPath: thirdStar.Array.data[13]
       value: 5500
       objectReference: {fileID: 0}
+    - target: {fileID: 2072562838289888283, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8fa95d562ed07846ae6e219d73800dc, type: 3}
     - target: {fileID: 3611466961149802789, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -328,6 +332,6 @@ PrefabInstance:
     - target: {fileID: 5079939672698777705, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6b73c60f06fa90248b4d7605c924762a, type: 3}
+      objectReference: {fileID: 8300000, guid: f5e592672d2cbe84cb4b0a5eabcdf07e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
