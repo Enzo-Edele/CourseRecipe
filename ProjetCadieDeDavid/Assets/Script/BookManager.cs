@@ -19,7 +19,8 @@ public class BookManager : MonoBehaviour
     public TMP_Text score;
     public GameObject etoileUn, etoileDeux, etoileTrois;
     public TMP_Text ticketText;
-
+    public TMP_Text ticketLevelText;
+    public int[] ticketMax;
 
     public TMP_Text recette;
     public GameObject ImageRecette;
@@ -162,6 +163,7 @@ public class BookManager : MonoBehaviour
         }
         listRecette = Instantiate(arrayRecette[level - 1], positionListe, Quaternion.identity, GameObject.FindGameObjectWithTag("pageGauche").transform);
         recette.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + level + ".txt");
+        ticketLevelText.SetText(ticketMax[level - 1] - GameManagerBehaviour.instance.ticketSpawn[level - 1]+ "/" + ticketMax[level - 1]);
         inUseRecette.sprite = newImageRecette[level - 1];
         GameManagerBehaviour.instance.levelSelect = level;
         levelText.text = "L" + "\n" + "E" + "\n" + "V" + "\n" + "E" + "\n" + "L" + "\n" + "\n" + level;
