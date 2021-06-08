@@ -154,8 +154,7 @@ public class BookManager : MonoBehaviour
             Destroy(listRecette);
         }
         listRecette = Instantiate(arrayRecette[level - 1], positionListe, Quaternion.identity, GameObject.FindGameObjectWithTag("pageGauche").transform);
-        //string path = Application.persistentDataPath + "/Recipe" + level + ".txt";
-        //recette.text = File.ReadAllText(path);
+        recette.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + level + ".txt");
         inUseRecette.sprite = newImageRecette[level - 1];
         GameManagerBehaviour.instance.levelSelect = level;
         levelText.text = "L"+"\n"+"E"+"\n"+"V"+"\n"+"E"+"\n"+"L"+"\n"+"\n"+ level;
