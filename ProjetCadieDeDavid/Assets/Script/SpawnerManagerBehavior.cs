@@ -5,10 +5,9 @@ using UnityEngine;
 public class SpawnerManagerBehavior : MonoBehaviour
 {
     Vector3 positionSpawnItem;
-    float positionRnd, positionRndMax = 0.15f, positionRndMin = 0.9f;
+    float positionRnd, positionRndMax = 0.2f, positionRndMin = 0.9f;
     float timer = 3;
-    [HideInInspector]
-    public float timeMin = 1, timeMax = 2;
+    float timeMin = 1, timeMax = 3;
 
     public string premierRayon;
     public GameObject[] rayonEpicerieUn = new GameObject[0];
