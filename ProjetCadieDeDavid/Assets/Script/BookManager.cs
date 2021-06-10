@@ -21,7 +21,14 @@ public class BookManager : MonoBehaviour
     public TMP_Text ticketText;
     public TMP_Text ticketLevelText;
     public int[] ticketMax;
-
+    public GameObject cache;
+    public GameObject livreTicket;
+    public GameObject buttonLivreTicket;
+    public GameObject cacheTicketG;
+    public GameObject cacheTicketD;
+    public Text ticketPageG;
+    public Text ticketPageD;
+    int page = 0;
     public TMP_Text recette;
     public GameObject ImageRecette;
     Image inUseRecette;
@@ -152,8 +159,76 @@ public class BookManager : MonoBehaviour
         }
         StartCoroutine(turnPage(level));
     }
+    public void turnPageTicketUI(int pageUI)
+    {
+        page += pageUI;
+        if(page<0 || page > 2 || pageUI ==0)
+        {
+            page = 0;
+        }
+        StartCoroutine(turnPageTicket(page));
+    }
+    IEnumerator turnPageTicket(int pageUI)
+    {
+        buttonLivreTicket.SetActive(false);
+        livreAnim.SetActive(true);
+        anim.SetTrigger("turnPage");
+        yield return new WaitForSeconds(1f);
+        if (livreTicket.activeSelf && page == 0)
+        {
+            livreTicket.SetActive(false);
+        }
+        else
+        {
+            livreTicket.SetActive(true);
+            cacheTicketG.SetActive(true);
+            switch(page)
+            {
+                case 0:
+                    if(GameManagerBehaviour.instance.ticket <=8)
+                    {
+                        cacheTicketG.SetActive(true);
+                        ticketPageG.text = 8.ToString();
+                    }
+                    if (GameManagerBehaviour.instance.ticket <= 16)
+                    {
+                        cacheTicketD.SetActive(true);
+                        ticketPageD.text = 16.ToString();
+                    }
+                    break;
+                case 1:
+                    if (GameManagerBehaviour.instance.ticket <= 24)
+                    {
+                        cacheTicketG.SetActive(true);
+                        ticketPageG.text = 24.ToString();
+                    }
+                    if (GameManagerBehaviour.instance.ticket <= 32)
+                    {
+                        cacheTicketD.SetActive(true);
+                        ticketPageD.text = 32.ToString();
+                    }
+                    break;
+                case 2:
+                    if (GameManagerBehaviour.instance.ticket <= 42)
+                    {
+                        cacheTicketG.SetActive(true);
+                        ticketPageG.text = 42.ToString();
+                    }
+                    if (GameManagerBehaviour.instance.ticket <= 50)
+                    {
+                        cacheTicketD.SetActive(true);
+                        ticketPageD.text = 50.ToString();
+                    }
+                    break;
+            }
+        }
+        yield return new WaitForSeconds(1f);
+        buttonLivreTicket.SetActive(true);
+        livreAnim.SetActive(false);
+    }
     IEnumerator turnPage(int level)
     {
+        buttonLivreTicket.SetActive(false);
         livreAnim.SetActive(true);
         anim.SetTrigger("turnPage");
         yield return new WaitForSeconds(1f);
@@ -161,26 +236,28 @@ public class BookManager : MonoBehaviour
         {
             Destroy(listRecette);
         }
-        listRecette = Instantiate(arrayRecette[level - 1], positionListe, Quaternion.identity, GameObject.FindGameObjectWithTag("pageGauche").transform);
-        recette.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + level + ".txt");
-        ticketLevelText.SetText(ticketMax[level - 1] - GameManagerBehaviour.instance.ticketSpawn[level - 1]+ "/" + ticketMax[level - 1]);
         inUseRecette.sprite = newImageRecette[level - 1];
+        recette.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + level + ".txt");
+        listRecette = Instantiate(arrayRecette[level - 1], positionListe, Quaternion.identity, GameObject.FindGameObjectWithTag("pageGauche").transform);
+        ticketLevelText.SetText(ticketMax[level - 1] - GameManagerBehaviour.instance.ticketSpawn[level - 1]+ "/" + ticketMax[level - 1]);
         GameManagerBehaviour.instance.levelSelect = level;
         levelText.text = "L" + "\n" + "E" + "\n" + "V" + "\n" + "E" + "\n" + "L" + "\n" + "\n" + level;
         inUseEtoileUn.sprite = etoileEmpty;
         inUseEtoileDeux.sprite = etoileEmpty;
         inUseEtoileTrois.sprite = etoileEmpty;
+        cache.SetActive(true);
         if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.firstStar[level - 1])
         {
             inUseEtoileUn.sprite = etoileFull;
-        }
-        if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.secondStar[level - 1])
-        {
-            inUseEtoileDeux.sprite = etoileFull;
-        }
-        if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.thirdStar[level - 1])
-        {
-            inUseEtoileTrois.sprite = etoileFull;
+            cache.SetActive(false);
+            if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.secondStar[level - 1])
+            {
+                inUseEtoileDeux.sprite = etoileFull;
+                if (GameManagerBehaviour.instance.HighScoreList[level - 1] >= GameManagerBehaviour.instance.thirdStar[level - 1])
+                {
+                    inUseEtoileTrois.sprite = etoileFull;
+                }
+            }
         }
         score.text = "Score : " + GameManagerBehaviour.instance.HighScoreList[level - 1];
         if (GameManagerBehaviour.instance.levelSelect > levelProgress)
@@ -193,5 +270,6 @@ public class BookManager : MonoBehaviour
         }
         yield return new WaitForSeconds(1.3f);
         livreAnim.SetActive(false);
+        buttonLivreTicket.SetActive(true);
     }
 }

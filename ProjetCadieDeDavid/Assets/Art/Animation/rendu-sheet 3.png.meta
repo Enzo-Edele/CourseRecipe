@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -8513088426862223271
     second: rendu-sheet 3_2
+  - first:
+      213: 4671951274888400759
+    second: rendu-sheet 3_0
+  - first:
+      213: 1690324265139227087
+    second: rendu-sheet 3_1
+  - first:
+      213: 8767231513209978029
+    second: rendu-sheet 3_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +112,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1702
+        width: 1660
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -112,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fc17ac511f983300800000000000000
-      internalID: 232110277727296755
+      spriteID: 77f08a37eea16d040800000000000000
+      internalID: 4671951274888400759
       vertices: []
       indices: 
       edges: []
@@ -122,9 +131,9 @@ TextureImporter:
       name: rendu-sheet 3_1
       rect:
         serializedVersion: 2
-        x: 1702
+        x: 1719
         y: 0
-        width: 1702
+        width: 1669
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -133,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86bbc2fe9ba208e30800000000000000
-      internalID: 4503646605440498536
+      spriteID: fc9c8d2a6fc357710800000000000000
+      internalID: 1690324265139227087
       vertices: []
       indices: 
       edges: []
@@ -143,9 +152,9 @@ TextureImporter:
       name: rendu-sheet 3_2
       rect:
         serializedVersion: 2
-        x: 3404
+        x: 3447
         y: 0
-        width: 1702
+        width: 1659
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -154,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95063671e2f6bd980800000000000000
-      internalID: -8513088426862223271
+      spriteID: dacbd784c967ba970800000000000000
+      internalID: 8767231513209978029
       vertices: []
       indices: 
       edges: []

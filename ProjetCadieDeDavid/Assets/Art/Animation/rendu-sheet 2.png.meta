@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: 5169270678480747997
     second: rendu-sheet 2_3
+  - first:
+      213: -1120103124141511176
+    second: rendu-sheet 2_0
+  - first:
+      213: 6742812784180123113
+    second: rendu-sheet 2_1
+  - first:
+      213: 1031322513330857644
+    second: rendu-sheet 2_2
+  - first:
+      213: 4142667381533270530
+    second: rendu-sheet 2_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +118,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1702
+        width: 1653
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18295135307bf03b0800000000000000
-      internalID: -5544011391363083647
+      spriteID: 8fd6db5a4289470f0800000000000000
+      internalID: -1120103124141511176
       vertices: []
       indices: 
       edges: []
@@ -125,9 +137,9 @@ TextureImporter:
       name: rendu-sheet 2_1
       rect:
         serializedVersion: 2
-        x: 1702
+        x: 1713
         y: 0
-        width: 1702
+        width: 1652
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -136,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b72df53be69f700800000000000000
-      internalID: 574612144152279902
+      spriteID: 9e5d4049088439d50800000000000000
+      internalID: 6742812784180123113
       vertices: []
       indices: 
       edges: []
@@ -146,9 +158,9 @@ TextureImporter:
       name: rendu-sheet 2_2
       rect:
         serializedVersion: 2
-        x: 3404
+        x: 3434
         y: 0
-        width: 1702
+        width: 1653
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,8 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 031ec004a38556ef0800000000000000
-      internalID: -115589208222146256
+      spriteID: ca6e2f79c5eff4e00800000000000000
+      internalID: 1031322513330857644
       vertices: []
       indices: 
       edges: []
@@ -167,9 +179,9 @@ TextureImporter:
       name: rendu-sheet 2_3
       rect:
         serializedVersion: 2
-        x: 5106
+        x: 5146
         y: 0
-        width: 1702
+        width: 1662
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -178,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dddffaa4b40fcb740800000000000000
-      internalID: 5169270678480747997
+      spriteID: 20263e2e806bd7930800000000000000
+      internalID: 4142667381533270530
       vertices: []
       indices: 
       edges: []
