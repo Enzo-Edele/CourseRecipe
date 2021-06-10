@@ -28,6 +28,8 @@ public class BookManager : MonoBehaviour
     public GameObject cacheTicketD;
     public Text ticketPageG;
     public Text ticketPageD;
+    public TMP_Text ticketTextPageG;
+    public TMP_Text ticketTextPageD;
     int page = 0;
     public TMP_Text recette;
     public GameObject ImageRecette;
@@ -162,13 +164,13 @@ public class BookManager : MonoBehaviour
     public void turnPageTicketUI(int pageUI)
     {
         page += pageUI;
-        if(page<0 || page > 2 || pageUI ==0)
+        if(page< 0 || page > 2 || pageUI ==0)
         {
             page = 0;
         }
-        StartCoroutine(turnPageTicket(page));
+        StartCoroutine(turnPageTicket());
     }
-    IEnumerator turnPageTicket(int pageUI)
+    IEnumerator turnPageTicket()
     {
         buttonLivreTicket.SetActive(false);
         livreAnim.SetActive(true);
@@ -181,40 +183,47 @@ public class BookManager : MonoBehaviour
         else
         {
             livreTicket.SetActive(true);
-            cacheTicketG.SetActive(true);
+            cacheTicketG.SetActive(false);
+            cacheTicketD.SetActive(false);
             switch(page)
             {
                 case 0:
-                    if(GameManagerBehaviour.instance.ticket <=8)
+                    ticketPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 15 + ".txt");
+                    ticketPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 16 + ".txt");
+                    if (GameManagerBehaviour.instance.ticket < 8)
                     {
                         cacheTicketG.SetActive(true);
                         ticketPageG.text = 8.ToString();
                     }
-                    if (GameManagerBehaviour.instance.ticket <= 16)
+                    if (GameManagerBehaviour.instance.ticket < 16)
                     {
                         cacheTicketD.SetActive(true);
                         ticketPageD.text = 16.ToString();
                     }
                     break;
                 case 1:
-                    if (GameManagerBehaviour.instance.ticket <= 24)
+                    ticketPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 17 + ".txt");
+                    ticketPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 18 + ".txt");
+                    if (GameManagerBehaviour.instance.ticket < 24)
                     {
                         cacheTicketG.SetActive(true);
                         ticketPageG.text = 24.ToString();
                     }
-                    if (GameManagerBehaviour.instance.ticket <= 32)
+                    if (GameManagerBehaviour.instance.ticket < 32)
                     {
                         cacheTicketD.SetActive(true);
                         ticketPageD.text = 32.ToString();
                     }
                     break;
                 case 2:
-                    if (GameManagerBehaviour.instance.ticket <= 42)
+                    ticketPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 19 + ".txt");
+                    ticketPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 20 + ".txt");
+                    if (GameManagerBehaviour.instance.ticket < 42)
                     {
                         cacheTicketG.SetActive(true);
                         ticketPageG.text = 42.ToString();
                     }
-                    if (GameManagerBehaviour.instance.ticket <= 50)
+                    if (GameManagerBehaviour.instance.ticket < 50)
                     {
                         cacheTicketD.SetActive(true);
                         ticketPageD.text = 50.ToString();
