@@ -164,10 +164,6 @@ public class BookManager : MonoBehaviour
     public void turnPageTicketUI(int pageUI)
     {
         page += pageUI;
-        if(page< 0 || page > 2 || pageUI ==0)
-        {
-            page = 0;
-        }
         StartCoroutine(turnPageTicket());
     }
     IEnumerator turnPageTicket()
@@ -176,9 +172,10 @@ public class BookManager : MonoBehaviour
         livreAnim.SetActive(true);
         anim.SetTrigger("turnPage");
         yield return new WaitForSeconds(1f);
-        if (livreTicket.activeSelf && page == 0)
+        if (livreTicket.activeSelf && page < 0 || page > 2)
         {
             livreTicket.SetActive(false);
+            page = 0;
         }
         else
         {
