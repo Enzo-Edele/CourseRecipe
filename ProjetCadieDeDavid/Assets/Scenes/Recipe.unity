@@ -4419,8 +4419,8 @@ MonoBehaviour:
   cacheTicketD: {fileID: 1550839190}
   ticketPageG: {fileID: 1623518978}
   ticketPageD: {fileID: 2045453692}
-  ticketTextPageG: {fileID: 0}
-  ticketTextPageD: {fileID: 0}
+  ticketTextPageG: {fileID: 463100626}
+  ticketTextPageD: {fileID: 1758742192}
   recette: {fileID: 1092821293}
   ImageRecette: {fileID: 121045064}
   newImageRecette:

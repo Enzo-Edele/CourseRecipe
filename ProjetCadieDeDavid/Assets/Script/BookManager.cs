@@ -185,8 +185,8 @@ public class BookManager : MonoBehaviour
             switch(page)
             {
                 case 0:
-                    ticketPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 15 + ".txt");
-                    ticketPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 16 + ".txt");
+                    ticketTextPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 15 + ".txt");
+                    ticketTextPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 16 + ".txt");
                     if (GameManagerBehaviour.instance.ticket < 8)
                     {
                         cacheTicketG.SetActive(true);
