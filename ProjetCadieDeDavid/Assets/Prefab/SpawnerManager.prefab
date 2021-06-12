@@ -43,8 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e461ea9cd8a1e44b00100c4b350a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMin: 1
-  timeMax: 2
   premierRayon: Laitier
   rayonEpicerieUn:
   - {fileID: 431362367167235925, guid: 4a1443524283b3b419d7fe46d9d9e563, type: 3}
@@ -88,13 +86,16 @@ MonoBehaviour:
   panel:
   - {fileID: 1096639065347422549, guid: 359711ee07a34684d8ac39733bb5d506, type: 3}
   - {fileID: 4842960745046056080, guid: eb56dfbb3f043b14b840068c5534a5c2, type: 3}
-  panelEpUn: {fileID: 6359358930039568031, guid: 54b989561a2d42441add32a24e079dbe, type: 3}
-  panelEpDeux: {fileID: 450492575120449403, guid: 7fafdd8458b81324fbc109b195c91caf, type: 3}
-  panelLaitier: {fileID: 4291484036190538432, guid: e560c72631dff114ea8b0da1aecc27e3, type: 3}
-  panelBouPoi: {fileID: 557958451209324816, guid: 366d8efef3d526444ade2f4b8aa8bd34, type: 3}
-  panelLegUn: {fileID: 4979799268060547639, guid: e302703cd5b6ec2478806ff22b97d524, type: 3}
-  panelLegDeux: {fileID: 4979799268060547639, guid: e302703cd5b6ec2478806ff22b97d524, type: 3}
-  panelFruit: {fileID: 6066274365141833645, guid: c33cc1bf3d84f0d43a036c99dc0c34ab, type: 3}
+  - {fileID: 1704589616655150263, guid: 8f7fa0ca53e995549b7d19a7fba9ed43, type: 3}
+  - {fileID: 2971447369146061079, guid: 056c6f6f1def80d43ae3feb5343bd638, type: 3}
+  - {fileID: 2908424268829431070, guid: 306096d911a3df849b2e5d48f1adea5c, type: 3}
+  panelEpUn: {fileID: 2010730920240359661, guid: 724261770d2c0f34f89ce0ad43818bc0, type: 3}
+  panelEpDeux: {fileID: 5413100663291894535, guid: 01b3e27359dd66f40bcf3faecb5ee84b, type: 3}
+  panelLaitier: {fileID: 8710557310359259863, guid: cba0039691391454c8a88e1d81425fba, type: 3}
+  panelBouPoi: {fileID: 2488522804486187811, guid: 7880fefaaf95d8c479c9dfc51ffa304d, type: 3}
+  panelLegUn: {fileID: 383615501222717, guid: 7e04c49e3af0ba74ea3a1d3ea11da599, type: 3}
+  panelLegDeux: {fileID: 548337708950778567, guid: 0c8b763b04ad3024fa1e324bce40bc3b, type: 3}
+  panelFruit: {fileID: 8133519013699268415, guid: 5143e2df03ef47d4d97561273e551c2d, type: 3}
   coin: {fileID: 3151611062320846309, guid: 358ebee2c6547604a99104a124315891, type: 3}
   ticket: {fileID: 330690244167404394, guid: 2f69b12db4da7ab4d938bb731c27041b, type: 3}
   panelTransition: 5
