@@ -62,7 +62,7 @@ public class UIManagerBehaviour : MonoBehaviour
     }
     public void Reset()
     {
-        GameManagerBehaviour.instance.level = 0;
+        GameManagerBehaviour.instance.level = 1;
         GameManagerBehaviour.instance.coin = 0;
         GameManagerBehaviour.instance.ticket = 0;
         GameManagerBehaviour.instance.achatMamieVelo = 0;

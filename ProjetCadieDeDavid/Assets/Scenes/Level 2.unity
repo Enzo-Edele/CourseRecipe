@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: rayonArray.Array.data[2]
       value: Laitier
       objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: timeCollect
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
 --- !u!1001 &258848968
