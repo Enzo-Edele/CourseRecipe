@@ -60,6 +60,20 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         StartCoroutine(OpenBook());
     }
+    public void Reset()
+    {
+        GameManagerBehaviour.instance.level = 0;
+        GameManagerBehaviour.instance.coin = 0;
+        GameManagerBehaviour.instance.ticket = 0;
+        GameManagerBehaviour.instance.achatMamieVelo = 0;
+        GameManagerBehaviour.instance.achatMamieScooter = 0;
+        for (int i = 0; i < GameManagerBehaviour.instance.HighScoreList.Count; i++)
+        {
+            GameManagerBehaviour.instance.HighScoreList[i] = 0;
+            //GameManagerBehaviour.instance.ticketSpawn[i] = data.ticketSpawn[i];
+        }
+        SaveSysteme.Save(GameManagerBehaviour.instance);
+    }
     public void SetMainMenuActive()
     {
         mainMenu.SetActive(true);

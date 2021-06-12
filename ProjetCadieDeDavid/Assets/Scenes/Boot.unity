@@ -130,9 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 948956447, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: orthographic size
-      value: 5.3450418
+    - target: {fileID: 312735433, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reset
       objectReference: {fileID: 0}
     - target: {fileID: 15269770909236368, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,14 +181,6 @@ PrefabInstance:
     - target: {fileID: 15269770909236398, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_Name
       value: Managers
-      objectReference: {fileID: 0}
-    - target: {fileID: 15269770909236398, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 15269771064610539, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
