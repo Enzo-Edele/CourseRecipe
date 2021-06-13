@@ -70,7 +70,7 @@ public class UIManagerBehaviour : MonoBehaviour
         for (int i = 0; i < GameManagerBehaviour.instance.HighScoreList.Count; i++)
         {
             GameManagerBehaviour.instance.HighScoreList[i] = 0;
-            //GameManagerBehaviour.instance.ticketSpawn[i] = data.ticketSpawn[i];
+            GameManagerBehaviour.instance.ticketSpawn[i] = GameManagerBehaviour.instance.ticketMax[i];
         }
         SaveSysteme.Save(GameManagerBehaviour.instance);
     }

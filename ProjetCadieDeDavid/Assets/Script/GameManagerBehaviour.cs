@@ -20,6 +20,7 @@ public class GameManagerBehaviour : MonoBehaviour
     public List<int> secondStar;
     public List<int> thirdStar;
     public List<int> ticketSpawn;
+    public List<int> ticketMax;
     public enum GameStates
     {
         MainMenu,

@@ -20,7 +20,6 @@ public class BookManager : MonoBehaviour
     public GameObject etoileUn, etoileDeux, etoileTrois;
     public TMP_Text ticketText;
     public TMP_Text ticketLevelText;
-    public int[] ticketMax;
     public GameObject cache;
     public GameObject livreTicket;
     public GameObject buttonLivreTicket;
@@ -245,7 +244,7 @@ public class BookManager : MonoBehaviour
         inUseRecette.sprite = newImageRecette[level - 1];
         recette.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + level + ".txt");
         listRecette = Instantiate(arrayRecette[level - 1], positionListe, Quaternion.identity, GameObject.FindGameObjectWithTag("pageGauche").transform);
-        ticketLevelText.SetText(ticketMax[level - 1] - GameManagerBehaviour.instance.ticketSpawn[level - 1]+ "/" + ticketMax[level - 1]);
+        ticketLevelText.SetText(GameManagerBehaviour.instance.ticketMax[level - 1] - GameManagerBehaviour.instance.ticketSpawn[level - 1]+ "/" + GameManagerBehaviour.instance.ticketMax[level - 1]);
         GameManagerBehaviour.instance.levelSelect = level;
         levelText.text = "L" + "\n" + "E" + "\n" + "V" + "\n" + "E" + "\n" + "L" + "\n" + "\n" + level;
         inUseEtoileUn.sprite = etoileEmpty;
