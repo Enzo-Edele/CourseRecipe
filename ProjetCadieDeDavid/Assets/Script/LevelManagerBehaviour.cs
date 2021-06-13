@@ -249,7 +249,9 @@ public class LevelManagerBehaviour : MonoBehaviour
                 Time.timeScale = 1;
                 timerCollect = timeCollect;
                 indexSpawnedList.Clear();
-                for(int i = 0; i < articleAskedArray.Length; i++)
+                //test var
+                int list = 0;
+                for(int i = 0; i < articleAskedArray.Length; i++) //vérifier actualisation du nombre requis
                 {
                     for (int y = 0; y < SpawnerManagerBehavior.Instance.rayon.Count; y++)
                     { 
@@ -257,6 +259,8 @@ public class LevelManagerBehaviour : MonoBehaviour
                         {
                             indexSpawnedList.Add(i);
                             Debug.Log("Change état : " + articleAskedArray[i] + " = " + SpawnerManagerBehavior.Instance.rayon[y].name);
+                            Debug.Log("Nombre "+ articleAskedArray[i] + " requis : "+ indexSpawnedList[list]);
+                            list++;
                         }
                     }
                 }
