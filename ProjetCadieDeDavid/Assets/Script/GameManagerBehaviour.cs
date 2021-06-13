@@ -61,7 +61,7 @@ public class GameManagerBehaviour : MonoBehaviour
     {
         AddCoin(0);
         AddTicket(0);
-        
+        //
         string path = Application.persistentDataPath + "/data.save";
         if (File.Exists(path))
         {
