@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Frederic
+
 public class PlayerSpawnerBehaviour : MonoBehaviour
 {
     public GameObject[] player;

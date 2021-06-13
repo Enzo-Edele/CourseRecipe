@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Frederic
+
 public class EnemySpawnerBehaviour : MonoBehaviour
 {
     public bool right;

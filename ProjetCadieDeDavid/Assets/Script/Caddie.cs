@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Enzo Recolte articles
+//Frederic Deplacement & particule
+
 public class Caddie : MonoBehaviour
 {
     public enum PlayerStates

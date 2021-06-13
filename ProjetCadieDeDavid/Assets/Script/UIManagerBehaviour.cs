@@ -6,6 +6,8 @@ using System;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+//Frederic
+
 public class UIManagerBehaviour : MonoBehaviour
 {
     public GameObject mainMenu;

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Frederic
+
 public class CollectibleBehaviour : MonoBehaviour
 {
     public bool coin;

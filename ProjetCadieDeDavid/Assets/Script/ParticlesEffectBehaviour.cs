@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Frederic
+
 public class ParticlesEffectBehaviour : MonoBehaviour
 {
     public float speed = 2f;

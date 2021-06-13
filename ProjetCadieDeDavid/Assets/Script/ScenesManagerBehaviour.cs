@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Frederic
+
 public class ScenesManagerBehaviour : MonoBehaviour
 {
     private static ScenesManagerBehaviour _instance;

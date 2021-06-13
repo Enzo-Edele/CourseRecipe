@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.IO;
 
+//Enzo
+//Frederic gestion texte des recette & ticket
+
 public class BookManager : MonoBehaviour
 {
     int levelProgress;

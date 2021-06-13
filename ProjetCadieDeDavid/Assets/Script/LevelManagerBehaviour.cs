@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 using System;
 using TMPro;
 
+//Frederic
+//Enzo
+
 public class LevelManagerBehaviour : MonoBehaviour
 {
     public bool levelDone;

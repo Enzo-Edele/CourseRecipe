@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Frederic
+
 public class EtaleBehaviour : MonoBehaviour
 {
     PlatformEffector2D effector2D;

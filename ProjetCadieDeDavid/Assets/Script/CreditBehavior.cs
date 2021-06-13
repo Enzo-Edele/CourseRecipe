@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Enzo
+
 public class CreditBehavior : MonoBehaviour
 {
+    Vector2 positionInit;
+
     public float speed = 0.3f;
     public GameObject thank;
     void Start()
     {
-        
+        positionInit = transform.position;
     }
     void Update()
     {
@@ -21,5 +25,9 @@ public class CreditBehavior : MonoBehaviour
             positionThank.y = positionThank.y + speed;
             thank.transform.position = positionThank;
         }
+    }
+    public void StartCredit()
+    {
+        transform.position = positionInit;
     }
 }

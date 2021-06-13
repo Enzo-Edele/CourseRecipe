@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Frderic
+
 public class ScoreUIBehaviour : MonoBehaviour
 {
     public GameObject[] image;
