@@ -11,8 +11,11 @@ public class CreditBehavior : MonoBehaviour
 
     public float speed = 0.3f;
     public GameObject thank;
+    public AudioSource créditTheme;
     void Start()
     {
+        SoundManagerBehaviour.instance.StopAllSound();
+        créditTheme.Play();
         positionInit = transform.position;
         positionInitTHX = thank.transform.position;
     }

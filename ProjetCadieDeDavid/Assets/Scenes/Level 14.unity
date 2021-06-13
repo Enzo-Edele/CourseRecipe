@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: articleAskedArray.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: articleNumberArray.Array.size
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: articleNumberArray.Array.data[5]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: rayonArray.Array.data[0]
@@ -253,6 +253,10 @@ PrefabInstance:
     - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
       propertyPath: rayonArray.Array.data[3]
       value: Fruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156230040217466237, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
+      propertyPath: articleAskedArray.Array.data[6]
+      value: Carotte
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a1754b2d3a30145911228e3507193d, type: 3}
