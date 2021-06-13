@@ -5762,7 +5762,7 @@ MonoBehaviour:
   recette: {fileID: 1092821293}
   ImageRecette: {fileID: 121045064}
   newImageRecette:
-  - {fileID: 21300000, guid: 56485bd1f890eab498ed280c499a8cd1, type: 3}
+  - {fileID: 21300000, guid: 04bc2fb08f4420443914d217bcb8e5f9, type: 3}
   - {fileID: 21300000, guid: 1ec0af361be3c384fb3f5ee9a11fbc46, type: 3}
   - {fileID: 21300000, guid: fa22431894d695c4cbb13c90bbb325cb, type: 3}
   - {fileID: 21300000, guid: 56485bd1f890eab498ed280c499a8cd1, type: 3}
