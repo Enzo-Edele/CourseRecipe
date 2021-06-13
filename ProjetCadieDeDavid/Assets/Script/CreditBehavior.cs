@@ -7,12 +7,14 @@ using UnityEngine;
 public class CreditBehavior : MonoBehaviour
 {
     Vector2 positionInit;
+    Vector2 positionInitTHX;
 
     public float speed = 0.3f;
     public GameObject thank;
     void Start()
     {
         positionInit = transform.position;
+        positionInitTHX = thank.transform.position;
     }
     void Update()
     {
@@ -29,5 +31,6 @@ public class CreditBehavior : MonoBehaviour
     public void StartCredit()
     {
         transform.position = positionInit;
+        thank.transform.position = positionInitTHX;
     }
 }
