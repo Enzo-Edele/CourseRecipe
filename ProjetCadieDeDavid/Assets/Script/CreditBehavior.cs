@@ -12,6 +12,7 @@ public class CreditBehavior : MonoBehaviour
     public float speed = 0.3f;
     public GameObject thank;
     public AudioSource créditTheme;
+    public float timeCrédit = 10f;
     void Start()
     {
         SoundManagerBehaviour.instance.StopAllSound();
@@ -29,11 +30,18 @@ public class CreditBehavior : MonoBehaviour
         {
             positionThank.y = positionThank.y + speed;
             thank.transform.position = positionThank;
+            StartCoroutine(EndCrédit());
         }
     }
     public void StartCredit()
     {
         transform.position = positionInit;
         thank.transform.position = positionInitTHX;
+    }
+
+    IEnumerator EndCrédit()
+    {
+        yield return new WaitForSeconds(timeCrédit);
+        GameManagerBehaviour.instance.ChangeGameStateByUI(0);
     }
 }

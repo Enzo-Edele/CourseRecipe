@@ -182,5 +182,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7602621152616904071, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: "timeCr\xE9dit"
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
