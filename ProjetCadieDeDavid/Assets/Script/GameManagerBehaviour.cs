@@ -89,6 +89,10 @@ public class GameManagerBehaviour : MonoBehaviour
         {
             SaveSysteme.Save(this);
         }
+        if (Input.GetKeyDown("a"))
+        {
+            level++;
+        }
         if (Input.GetKeyDown("l"))
         {
             SaveData data = SaveSysteme.LoadData();

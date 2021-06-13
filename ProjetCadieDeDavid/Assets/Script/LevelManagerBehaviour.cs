@@ -23,11 +23,11 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int playerLife;
 
     public GameObject menuBriefing;
-    public string[] articleAskedArray;
-    public int[] articleNumberArray;
+    public string[] articleAskedArray; //article demander
+    public int[] articleNumberArray; //nombre souhaiter
     public List <string> articleCurrentList = new List<string>();
     public List<int> articleCurrentNumberList = new List<int>();
-    public List<int> articleSpawnedList = new List<int>();
+    public List<int> articleSpawnedList = new List<int>(); //nombre de l'aricle spawner
     List<int> indexSpawnedList = new List<int>(); //recupére l'index de l'article a vérifié dans le rayon
 
     public string[] rayonArray;
@@ -108,9 +108,8 @@ public class LevelManagerBehaviour : MonoBehaviour
                 if (articleSpawnedList[indexSpawnedList[i]] < articleNumberArray[i] + articleNumberArray[i] * 0.1f)
                 {
                     nextLevel = false;
-                    Debug.Log(articleSpawnedList[indexSpawnedList[i]]);
+                    Debug.Log(articleAskedArray[indexSpawnedList[i]]+" Spawned = " +articleSpawnedList[indexSpawnedList[i]]+" / "+ (articleNumberArray[i] + articleNumberArray[i] * 0.1f));
                 }
-                Debug.Log("i : " + i);
             }
             if (nextLevel)
             {
@@ -257,6 +256,7 @@ public class LevelManagerBehaviour : MonoBehaviour
                         if(articleAskedArray[i] == SpawnerManagerBehavior.Instance.rayon[y].name)
                         {
                             indexSpawnedList.Add(i);
+                            Debug.Log("Change état : " + articleAskedArray[i] + " = " + SpawnerManagerBehavior.Instance.rayon[y].name);
                         }
                     }
                 }
