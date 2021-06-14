@@ -22,6 +22,7 @@ public class BookManager : MonoBehaviour
     public TMP_Text score;
     public GameObject etoileUn, etoileDeux, etoileTrois;
     public TMP_Text ticketText;
+    public Text coinText;
     public TMP_Text ticketLevelText;
     public GameObject cache;
     public GameObject livreTicket;
@@ -153,6 +154,10 @@ public class BookManager : MonoBehaviour
     void DisplayTicket()
     {
         ticketText.text = "Ticket : " + GameManagerBehaviour.instance.ticket;
+    }
+    public void DisplayCoin()
+    {
+        coinText.text = GameManagerBehaviour.instance.coin.ToString();
     }
     public void ChangePlayerSkin(int skin)
     {
