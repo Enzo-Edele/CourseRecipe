@@ -28,7 +28,7 @@ public class LevelManagerBehaviour : MonoBehaviour
     public List <string> articleCurrentList = new List<string>();
     public List<int> articleCurrentNumberList = new List<int>();
     public List<int> articleSpawnedList = new List<int>(); //nombre de l'aricle spawner
-    List<int> indexSpawnedList = new List<int>(); //recupére l'index de l'article a vérifié dans le rayon
+    public List<int> indexSpawnedList = new List<int>(); //recupére l'index de l'article a vérifié dans le rayon
 
     public string[] rayonArray;
     public int rayonInUse = 0;
@@ -105,10 +105,10 @@ public class LevelManagerBehaviour : MonoBehaviour
             bool nextLevel = true;
             for (int i = 0; i < indexSpawnedList.Count; i++)
             {
-                if (articleSpawnedList[indexSpawnedList[i]] < articleNumberArray[i] + articleNumberArray[i] * 0.1f)
+                if (articleSpawnedList[indexSpawnedList[i]] < articleNumberArray[indexSpawnedList[i]] + articleNumberArray[indexSpawnedList[i]] * 0.1f)
                 {
                     nextLevel = false;
-                    Debug.Log(articleAskedArray[indexSpawnedList[i]]+" Spawned = " +articleSpawnedList[indexSpawnedList[i]]+" / "+ (articleNumberArray[i] + articleNumberArray[i] * 0.1f));
+                    Debug.Log(articleAskedArray[indexSpawnedList[i]]+" Spawned = " +articleSpawnedList[indexSpawnedList[i]]+" / "+ (articleNumberArray[indexSpawnedList[i]] + articleNumberArray[indexSpawnedList[i]] * 0.1f));
                 }
             }
             if (nextLevel)

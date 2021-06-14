@@ -76,6 +76,7 @@ public class GameManagerBehaviour : MonoBehaviour
                 HighScoreList[i] = (data.highScoreList[i]);
                 ticketSpawn[i] = (data.ticketSpawn[i]);
             }
+            Debug.Log("Load");
         }
         else
         {

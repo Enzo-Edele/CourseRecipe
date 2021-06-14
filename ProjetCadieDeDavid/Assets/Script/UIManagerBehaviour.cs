@@ -75,6 +75,7 @@ public class UIManagerBehaviour : MonoBehaviour
             GameManagerBehaviour.instance.ticketSpawn[i] = GameManagerBehaviour.instance.ticketMax[i];
         }
         SaveSysteme.Save(GameManagerBehaviour.instance);
+        Debug.Log("reset");
     }
     public void SetMainMenuActive()
     {
