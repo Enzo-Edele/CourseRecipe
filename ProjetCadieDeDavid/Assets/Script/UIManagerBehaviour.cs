@@ -62,7 +62,8 @@ public class UIManagerBehaviour : MonoBehaviour
     {
         StartCoroutine(OpenBook());
     }
-    public void Reset()
+
+    public void ResetSave()
     {
         GameManagerBehaviour.instance.level = 1;
         GameManagerBehaviour.instance.coin = 0;
@@ -77,6 +78,7 @@ public class UIManagerBehaviour : MonoBehaviour
         SaveSysteme.Save(GameManagerBehaviour.instance);
         Debug.Log("reset");
     }
+    
     public void SetMainMenuActive()
     {
         mainMenu.SetActive(true);

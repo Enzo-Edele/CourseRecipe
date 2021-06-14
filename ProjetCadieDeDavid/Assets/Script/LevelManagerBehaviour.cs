@@ -27,8 +27,8 @@ public class LevelManagerBehaviour : MonoBehaviour
     public int[] articleNumberArray; //nombre souhaiter
     public List <string> articleCurrentList = new List<string>();
     public List<int> articleCurrentNumberList = new List<int>();
-    public List<int> articleSpawnedList = new List<int>(); //nombre de l'aricle spawner
-    public List<int> indexSpawnedList = new List<int>(); //recupére l'index de l'article a vérifié dans le rayon
+    public List<int> articleSpawnedList = new List<int>(); //nombre de l'aricle spawned
+    List<int> indexSpawnedList = new List<int>(); //recupére l'index de l'article a vérifié dans le rayon
 
     public string[] rayonArray;
     public int rayonInUse = 0;
@@ -143,7 +143,6 @@ public class LevelManagerBehaviour : MonoBehaviour
             if(art.Equals(articleAskedArray[i]))
             {
                 articleSpawnedList[i]++;
-                Debug.Log(articleAskedArray[i] + " : " + articleSpawnedList[i]);
             }
         }
     }
@@ -251,14 +250,13 @@ public class LevelManagerBehaviour : MonoBehaviour
                 indexSpawnedList.Clear();
                 //test var
                 int list = 0;
-                for(int i = 0; i < articleAskedArray.Length; i++) //vérifier actualisation du nombre requis
+                for(int i = 0; i < articleAskedArray.Length; i++) 
                 {
                     for (int y = 0; y < SpawnerManagerBehavior.Instance.rayon.Count; y++)
                     { 
                         if(articleAskedArray[i] == SpawnerManagerBehavior.Instance.rayon[y].name)
                         {
                             indexSpawnedList.Add(i);
-                            Debug.Log("Change état : " + articleAskedArray[i] + " = " + SpawnerManagerBehavior.Instance.rayon[y].name);
                             Debug.Log("Nombre "+ articleAskedArray[i] + " requis : "+ indexSpawnedList[list]);
                             list++;
                         }
