@@ -32,6 +32,7 @@ public class BookManager : MonoBehaviour
     public Text ticketPageD;
     public TMP_Text ticketTextPageG;
     public TMP_Text ticketTextPageD;
+    public GameObject buttonCrédit;
     int page = 0;
     public TMP_Text recette;
     public GameObject ImageRecette;
@@ -49,6 +50,8 @@ public class BookManager : MonoBehaviour
     public Sprite[] imageSelection;
     public GameObject cadenaMamieVelo;
     public GameObject cadenaMamieScooter;
+    public GameObject crédit;
+    public GameObject fondFix;
 
     private static BookManager _instance;
     public static BookManager instance
@@ -69,7 +72,12 @@ public class BookManager : MonoBehaviour
         anim = livreAnim.GetComponent<Animator>();
         levelProgress = GameManagerBehaviour.instance.level;
         DisplayTicket();
-        this.ChangeSelect(levelProgress);
+        this.ChangeSelect(GameManagerBehaviour.instance.levelSelect);
+        if(levelProgress == GameManagerBehaviour.instance.maxLevel && GameManagerBehaviour.instance.gameDone != 1)
+        {
+            GameManagerBehaviour.instance.gameDone = 1;
+            StartCoroutine(fermetureLivre());
+        }
         ChangeSpriteSelection();
         if (GameManagerBehaviour.instance.achatMamieVelo > 0)
         {
@@ -168,8 +176,13 @@ public class BookManager : MonoBehaviour
         page += pageUI;
         StartCoroutine(turnPageTicket());
     }
+    public void FermtureByUI()
+    {
+        StartCoroutine(fermetureLivre());
+    }
     IEnumerator turnPageTicket()
     {
+        PlayButtonBackSound();
         buttonLivreTicket.SetActive(false);
         livreAnim.SetActive(true);
         anim.SetTrigger("turnPage");
@@ -237,6 +250,7 @@ public class BookManager : MonoBehaviour
     IEnumerator turnPage(int level)
     {
         buttonLivreTicket.SetActive(false);
+        buttonCrédit.SetActive(false);
         livreAnim.SetActive(true);
         anim.SetTrigger("turnPage");
         yield return new WaitForSeconds(1f);
@@ -279,5 +293,18 @@ public class BookManager : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         livreAnim.SetActive(false);
         buttonLivreTicket.SetActive(true);
+        buttonCrédit.SetActive(true);
+    }
+    IEnumerator fermetureLivre()
+    {
+        PlayButtonBackSound();
+        livreAnim.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        fondFix.SetActive(true);
+        anim.SetTrigger("Fermeture");
+        yield return new WaitForSeconds(4f);
+        crédit.SetActive(true);
+        livreAnim.SetActive(false);
+        fondFix.SetActive(false);
     }
 }

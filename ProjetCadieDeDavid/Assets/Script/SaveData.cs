@@ -12,6 +12,7 @@ public class SaveData
     public int ticket;
     public int achatMamieVelo;
     public int achatMamieScooter;
+    public int gameDone;
     public int[] highScoreList = new int[GameManagerBehaviour.instance.HighScoreList.Count];
     public int[] ticketSpawn = new int[GameManagerBehaviour.instance.ticketSpawn.Count];
 
@@ -22,6 +23,7 @@ public class SaveData
         ticket = gameData.ticket;
         achatMamieVelo = gameData.achatMamieVelo;
         achatMamieScooter = gameData.achatMamieScooter;
+        gameDone = gameData.gameDone;
         for (int i = 0; i < gameData.HighScoreList.Count; i++)
         {
             highScoreList[i] = gameData.HighScoreList[i];

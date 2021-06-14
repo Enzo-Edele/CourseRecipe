@@ -18,6 +18,7 @@ public class GameManagerBehaviour : MonoBehaviour
     public int ticketPerLevel;
     public int achatMamieVelo = 0;
     public int achatMamieScooter = 0;
+    public int gameDone = 0;
     public List<int> HighScoreList;
     public List<int> firstStar;
     public List<int> secondStar;
@@ -71,6 +72,7 @@ public class GameManagerBehaviour : MonoBehaviour
             ticket = data.ticket;
             achatMamieVelo = data.achatMamieVelo;
             achatMamieScooter = data.achatMamieScooter;
+            gameDone = data.gameDone;
             for (int i = 0; i < data.highScoreList.Length; i++)
             {
                 HighScoreList[i] = (data.highScoreList[i]);

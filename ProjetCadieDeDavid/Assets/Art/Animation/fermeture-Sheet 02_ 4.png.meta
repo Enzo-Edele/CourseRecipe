@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: -5421025948467085839
     second: fermeture-Sheet 02_ 4_3
+  - first:
+      213: 544695701278089272
+    second: fermeture-Sheet 02_ 4_0
+  - first:
+      213: 5946271319324215720
+    second: fermeture-Sheet 02_ 4_1
+  - first:
+      213: -4585176121804339549
+    second: fermeture-Sheet 02_ 4_2
+  - first:
+      213: -7910340724038179160
+    second: fermeture-Sheet 02_ 4_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +118,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1702
+        width: 1513
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 414e7b5a05608b110800000000000000
-      internalID: 1276777437806978068
+      spriteID: 830ec59bad52f8700800000000000000
+      internalID: 544695701278089272
       vertices: []
       indices: 
       edges: []
@@ -125,9 +137,9 @@ TextureImporter:
       name: fermeture-Sheet 02_ 4_1
       rect:
         serializedVersion: 2
-        x: 1702
+        x: 1770
         y: 0
-        width: 1702
+        width: 1513
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -136,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 654970fa4eb7b0b20800000000000000
-      internalID: 3101708990493987926
+      spriteID: 8a9c96e9246658250800000000000000
+      internalID: 5946271319324215720
       vertices: []
       indices: 
       edges: []
@@ -146,9 +158,9 @@ TextureImporter:
       name: fermeture-Sheet 02_ 4_2
       rect:
         serializedVersion: 2
-        x: 3404
+        x: 3526
         y: 0
-        width: 1702
+        width: 1513
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,8 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e20528d46ec25c670800000000000000
-      internalID: 8558296034541981742
+      spriteID: 3a6cf3b4c9e2e50c0800000000000000
+      internalID: -4585176121804339549
       vertices: []
       indices: 
       edges: []
@@ -167,9 +179,9 @@ TextureImporter:
       name: fermeture-Sheet 02_ 4_3
       rect:
         serializedVersion: 2
-        x: 5106
+        x: 5283
         y: 0
-        width: 1702
+        width: 1513
         height: 954
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -178,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fdb1772f95a4c4b0800000000000000
-      internalID: -5421025948467085839
+      spriteID: 8a6e563b503d83290800000000000000
+      internalID: -7910340724038179160
       vertices: []
       indices: 
       edges: []
