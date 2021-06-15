@@ -971,7 +971,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 982437078}
         m_TargetAssemblyTypeName: BookManager, Assembly-CSharp
-        m_MethodName: AchatMamieVelo
+        m_MethodName: AchatMamieScooter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
