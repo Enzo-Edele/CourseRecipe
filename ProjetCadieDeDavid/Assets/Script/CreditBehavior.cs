@@ -30,6 +30,9 @@ public class CreditBehavior : MonoBehaviour
         {
             positionThank.y = positionThank.y + speed;
             thank.transform.position = positionThank;
+        }
+        else
+        {
             StartCoroutine(EndCrédit());
         }
     }
