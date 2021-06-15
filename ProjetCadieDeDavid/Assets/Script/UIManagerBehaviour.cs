@@ -256,7 +256,7 @@ public class UIManagerBehaviour : MonoBehaviour
         }
     }
     void EndLevel()
-     {
+    {
         if(LevelManagerBehaviour.Instance.score > GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex]-1)
         {
               GameManagerBehaviour.instance.HighScoreList[SceneManager.GetActiveScene().buildIndex - 1] = LevelManagerBehaviour.Instance.score;

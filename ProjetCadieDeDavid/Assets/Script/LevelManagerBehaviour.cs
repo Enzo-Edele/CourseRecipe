@@ -86,6 +86,7 @@ public class LevelManagerBehaviour : MonoBehaviour
         }
         UIManagerBehaviour.instance.DisplayLevel();
         UIManagerBehaviour.instance.DisplayListHUD();
+        GameManagerBehaviour.instance.AddCoin(0);
         //SpawnerManagerBehavior.Instance.ChangeRayonState(rayonArray[rayonInUse]);
     }
     private void Start()
