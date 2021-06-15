@@ -130,6 +130,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 312735432, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -346
+      objectReference: {fileID: 0}
+    - target: {fileID: 312735432, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269770539965610, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -346
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269770539965610, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -194
+      objectReference: {fileID: 0}
     - target: {fileID: 15269770909236368, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -178,5 +194,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 15269771107406569, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -346
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269771107406569, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: thirdStar.Array.data[13]
+      value: 8500
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: thirdStar.Array.data[7]
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: secondStar.Array.data[13]
+      value: 8400
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269771950272237, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: firstStar.Array.data[13]
+      value: 8300
+      objectReference: {fileID: 0}
+    - target: {fileID: 537892297329294255, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14290e6e5a305fb4d849ecb322ab3337, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
