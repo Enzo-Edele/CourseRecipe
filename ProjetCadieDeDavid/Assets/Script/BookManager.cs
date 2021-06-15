@@ -73,12 +73,7 @@ public class BookManager : MonoBehaviour
         anim = livreAnim.GetComponent<Animator>();
         levelProgress = GameManagerBehaviour.instance.level;
         DisplayTicket();
-        this.ChangeSelect(GameManagerBehaviour.instance.levelSelect);
-        if(levelProgress == GameManagerBehaviour.instance.maxLevel && GameManagerBehaviour.instance.gameDone != 1)
-        {
-            GameManagerBehaviour.instance.gameDone = 1;
-            StartCoroutine(fermetureLivre());
-        }
+        this.ChangeSelect(levelProgress);
         ChangeSpriteSelection();
         if (GameManagerBehaviour.instance.achatMamieVelo > 0)
         {
@@ -92,6 +87,11 @@ public class BookManager : MonoBehaviour
     private void Start()
     {
         UIManagerBehaviour.instance.StartCoroutine(UIManagerBehaviour.instance.Transition());
+        if (GameManagerBehaviour.instance.gameDone == 2)
+        {
+            GameManagerBehaviour.instance.gameDone = 1;
+            StartCoroutine(fermetureLivre(2.5f));
+        }
     }
     public void LevelLoad()
     {
@@ -183,7 +183,7 @@ public class BookManager : MonoBehaviour
     }
     public void FermtureByUI()
     {
-        StartCoroutine(fermetureLivre());
+        StartCoroutine(fermetureLivre(0));
     }
     IEnumerator turnPageTicket()
     {
@@ -300,8 +300,9 @@ public class BookManager : MonoBehaviour
         buttonLivreTicket.SetActive(true);
         buttonCrédit.SetActive(true);
     }
-    IEnumerator fermetureLivre()
+    IEnumerator fermetureLivre(float wait)
     {
+        yield return new WaitForSeconds(wait);
         PlayButtonBackSound();
         livreAnim.SetActive(true);
         yield return new WaitForSeconds(0.5f);

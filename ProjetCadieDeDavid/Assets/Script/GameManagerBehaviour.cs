@@ -88,13 +88,9 @@ public class GameManagerBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown("s"))
+        /*if (Input.GetKeyDown("s"))
         {
             SaveSysteme.Save(this);
-        }
-        if (Input.GetKeyDown("a"))
-        {
-            level++;
         }
         if (Input.GetKeyDown("l"))
         {
@@ -109,7 +105,7 @@ public class GameManagerBehaviour : MonoBehaviour
                 HighScoreList[i] = (data.highScoreList[i]);
                 ticketSpawn[i] = (data.ticketSpawn[i]);
             }
-        }
+        }*/
         if (Input.GetKeyDown("i"))
         {
             Debug.Log("Level : " + level);
@@ -121,10 +117,6 @@ public class GameManagerBehaviour : MonoBehaviour
             {
                 Debug.Log("HighScore Level : " + (i + 1) + " = " + HighScoreList[i]);
             }
-        }
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeGameState(GameStates.GameOver);
         }
     }
     public void AddCoin(int numberOfCoin)
