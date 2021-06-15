@@ -12287,7 +12287,7 @@ MonoBehaviour:
   speed: 0.3
   thank: {fileID: 1669904401}
   "cr\xE9ditTheme": {fileID: 2128626901}
-  "timeCr\xE9dit": 30
+  "timeCr\xE9dit": 40
 --- !u!1 &2135402208
 GameObject:
   m_ObjectHideFlags: 0
