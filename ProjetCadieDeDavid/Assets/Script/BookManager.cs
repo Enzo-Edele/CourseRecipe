@@ -219,8 +219,8 @@ public class BookManager : MonoBehaviour
                     }
                     break;
                 case 1:
-                    ticketPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 17 + ".txt");
-                    ticketPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 18 + ".txt");
+                    ticketTextPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 17 + ".txt");
+                    ticketTextPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 18 + ".txt");
                     if (GameManagerBehaviour.instance.ticket < 24)
                     {
                         cacheTicketG.SetActive(true);
@@ -233,8 +233,8 @@ public class BookManager : MonoBehaviour
                     }
                     break;
                 case 2:
-                    ticketPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 19 + ".txt");
-                    ticketPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 20 + ".txt");
+                    ticketTextPageG.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 19 + ".txt");
+                    ticketTextPageD.text = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/Recette/Recipe" + 20 + ".txt");
                     if (GameManagerBehaviour.instance.ticket < 42)
                     {
                         cacheTicketG.SetActive(true);
