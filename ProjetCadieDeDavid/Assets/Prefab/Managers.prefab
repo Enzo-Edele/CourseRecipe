@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -93}
+  m_AnchoredPosition: {x: -346, y: 13}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &312735435
@@ -437,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -300}
+  m_AnchoredPosition: {x: -346, y: -194}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &15269770539965615
@@ -2687,7 +2687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: 78}
+  m_AnchoredPosition: {x: -346, y: 184}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &15269771107406570
@@ -5404,9 +5404,9 @@ MonoBehaviour:
   achatMamieScooter: 0
   gameDone: 0
   HighScoreList: 
-  firstStar: 080700009c180000841c0000c0120000901a00003c280000841c0000841c0000b83d0000c0120000901a00009c180000cc100000901a0000
-  secondStar: 6c07000000190000e81c000024130000f41a0000a0280000e81c0000e81c00001c3e000024130000f41a00000019000030110000f41a0000
-  thirdStar: d0070000641900004c1d000088130000581b0000042900004c1d00004c1d0000803e000088130000581b00006419000094110000581b0000
+  firstStar: 080700009c180000841c0000c0120000901a00003c280000841c0000841c0000b83d0000c0120000901a00009c180000cc1000006c200000
+  secondStar: 6c07000000190000e81c000024130000f41a0000a0280000e81c0000e81c00001c3e000024130000f41a00000019000030110000d0200000
+  thirdStar: d0070000641900004c1d000088130000581b0000042900004c1d00004c1d0000803e000088130000581b0000641900009411000034210000
   ticketSpawn: 0300000002000000040000000200000004000000030000000400000006000000010000000400000002000000040000000700000004000000
   ticketMax: 0300000002000000040000000200000004000000030000000400000006000000010000000400000002000000040000000700000004000000
 --- !u!1 &15269771964221740
@@ -8027,7 +8027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e593e6bf8671e0441a990bd3ffe25cea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14290e6e5a305fb4d849ecb322ab3337, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8387,7 +8387,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b8fa95d562ed07846ae6e219d73800dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5c4bbebffe6c43b4f8b9155dd2913d72, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
