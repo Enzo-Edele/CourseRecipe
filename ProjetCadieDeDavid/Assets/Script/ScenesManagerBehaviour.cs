@@ -63,4 +63,7 @@ public class ScenesManagerBehaviour : MonoBehaviour
         Application.Quit();
         SaveSysteme.Save(GameManagerBehaviour.instance);
     }
+    private void OnApplicationQuit() {
+        SaveSysteme.Save(GameManagerBehaviour.instance);
+    }
 }

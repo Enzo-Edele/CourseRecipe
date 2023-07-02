@@ -88,7 +88,7 @@ public class GameManagerBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        /*if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("s"))
         {
             SaveSysteme.Save(this);
         }
@@ -105,7 +105,7 @@ public class GameManagerBehaviour : MonoBehaviour
                 HighScoreList[i] = (data.highScoreList[i]);
                 ticketSpawn[i] = (data.ticketSpawn[i]);
             }
-        }*/
+        }
         if (Input.GetKeyDown("i"))
         {
             Debug.Log("Level : " + level);

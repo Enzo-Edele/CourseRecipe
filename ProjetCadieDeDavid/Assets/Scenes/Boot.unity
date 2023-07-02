@@ -218,13 +218,17 @@ PrefabInstance:
       propertyPath: firstStar.Array.data[13]
       value: 8300
       objectReference: {fileID: 0}
+    - target: {fileID: 15269771964221740, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 15269772292756572, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 537892297329294255, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 14290e6e5a305fb4d849ecb322ab3337, type: 3}
-    - target: {fileID: 2072562838289888283, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5c4bbebffe6c43b4f8b9155dd2913d72, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875d4e144a988664eb6ed65fb0b891f6, type: 3}

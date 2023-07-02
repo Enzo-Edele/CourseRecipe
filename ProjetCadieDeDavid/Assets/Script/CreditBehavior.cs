@@ -23,12 +23,12 @@ public class CreditBehavior : MonoBehaviour
     void Update()
     {
         Vector2 position = transform.position;
-        position.y = position.y + speed;
+        position.y += speed * Time.deltaTime;
         transform.position = position;
         Vector2 positionThank = thank.transform.position;
         if(positionThank.y < Screen.height * 0.5f)
         {
-            positionThank.y = positionThank.y + speed;
+            positionThank.y += speed * Time.deltaTime;
             thank.transform.position = positionThank;
         }
         else
